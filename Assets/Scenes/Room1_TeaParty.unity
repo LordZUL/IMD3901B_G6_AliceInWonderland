@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 334002862}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Interactable
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 524694674}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Interactable
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,12 +525,12 @@ GameObject:
   - component: {fileID: 909139426}
   - component: {fileID: 909139425}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: handTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &909139424
 Transform:
   m_ObjectHideFlags: 0
@@ -540,7 +540,7 @@ Transform:
   m_GameObject: {fileID: 909139423}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.554, y: 0, z: 1.076}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -724,7 +724,7 @@ Transform:
   m_GameObject: {fileID: 1069342370}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.554, y: 0, z: 1.076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 1232426980}
   - component: {fileID: 1232426982}
   - component: {fileID: 1232426981}
+  - component: {fileID: 1232426983}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1033,6 +1034,24 @@ MonoBehaviour:
   mouseSensitivity: 100
   controller: {fileID: 1232426981}
   cameraTransform: {fileID: 1525175191}
+--- !u!114 &1232426983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232426979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab57eaa9935833041829df988d5134db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 5
+  playerCamera: {fileID: 1525175194}
+  crosshairUIScript: {fileID: 1096280593}
+  holdPoint: {fileID: 1069342371}
+  maxThrowForce: 20
+  chargeSpeed: 1
 --- !u!1 &1436210837
 GameObject:
   m_ObjectHideFlags: 0
