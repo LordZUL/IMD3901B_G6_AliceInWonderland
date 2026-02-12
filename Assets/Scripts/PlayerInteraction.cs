@@ -81,6 +81,11 @@ public class PlayerInteractions : MonoBehaviour
             {
                 ThrowHeldObject();
             }
+            // if player eat the object... will edit the controls later feel like e is for eat and f is for interaction lol
+            if (Keyboard.current.fKey.isPressed)
+            {
+                Destroy(heldObject);
+            }
         }
 
 
