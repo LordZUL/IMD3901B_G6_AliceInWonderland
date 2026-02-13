@@ -49,14 +49,6 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (hit.collider.CompareTag("PickUp") || hit.collider.CompareTag("ConsumeGetSmall") || hit.collider.CompareTag("ConsumeGetBig"))
             {
-                /*if (hit.collider.CompareTag("ConsumeGetSmall"))
-                {
-                    tagNumber = 1;
-                }
-                if (hit.collider.CompareTag("ConsumeGetBig"))
-                {
-                    tagNumber = 2;
-                }*/
                 crosshairUIScript.SetInteract(true);
 
                 if (Keyboard.current.eKey.wasPressedThisFrame)
@@ -88,14 +80,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (Keyboard.current.qKey.wasPressedThisFrame)
             {
-                /*heldObject.transform.SetParent(null);
-
-                // Re-enable physics
-                heldObjectRb.isKinematic = false;
-                heldObjectRb.useGravity = true;
-
-                heldObject = null;
-                heldObjectRb = null;*/
+                
                 isChargingThrow = true;
                 throwChargeTime = 0f;
                 tagNumber = 0;

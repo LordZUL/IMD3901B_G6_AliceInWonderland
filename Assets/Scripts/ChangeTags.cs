@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+//using static Text;
 
 public class ChangeTags : MonoBehaviour
 {
+    public Test test;
     public string newTag;
-    //public Text TagText;
+    public Text TagText;
     public ScaleOnButton scaleOnButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,10 +17,9 @@ public class ChangeTags : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (scaleOnButton.status == 2)
+        if (test.currentSize == Test.SizeState.Big)
         {
-            gameObject.tag = newTag;
-            //TagText.text = newTag;
+            gameObject.tag = "PickUp";
         }
         else
         {

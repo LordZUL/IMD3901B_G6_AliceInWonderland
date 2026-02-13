@@ -1,8 +1,10 @@
 // to identify objects
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
+    public Test test;
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
     private void Awake()
@@ -11,8 +13,20 @@ public class ObjectGrabbable : MonoBehaviour
     }
     public void Grab(Transform objectGrabPointTransform)
     {
+        /*
+        Debug.Log(test.currentSize);
+        if ( gameObject.tag == "NotInteractable" && test.currentSize != Test.SizeState.Big)
+        {
+            return;
+        }
+        else
+        {
+            this.objectGrabPointTransform = objectGrabPointTransform;
+            objectRigidbody.useGravity = false;
+        }*/
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidbody.useGravity = false;
+
     }
     public void Drop()
     {

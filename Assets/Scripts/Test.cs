@@ -41,9 +41,10 @@ public class Test : MonoBehaviour
                     // if object under ray has that script
                     if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                     {
-                        crosshairUIScript.SetInteract(true);
+                        //crosshairUIScript.SetInteract(true);
                         objectGrabbable.Grab(objectGrabPointTransform);
-                        Debug.Log(objectGrabbable);
+                        
+                        
                     }
                 }
             }
