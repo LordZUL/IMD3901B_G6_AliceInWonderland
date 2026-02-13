@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,34 +11,31 @@ public class ScaleOnButton : MonoBehaviour
     //public PlayerInteractions playerInteraction;
     //public Test test;
     private ObjectGrabbable objectGrabbable;
+    public Test player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Update()
     {
         // in interaction the handheld object gets destroyed, this function also runs on the objects around where it will scale up the objects if handheld object tag is 'grow'
-        if (objectGrabbable.tag == "ConsumeGetSmall")
+        if (player == null)
         {
-            // grab object scale; kinda want to try making player small XD
-            transform.localScale = transform.localScale + new Vector3(scale, scale, scale);
-            
+            return;
         }
-        if (objectGrabbable.gameObject.tag == "ConsumeGetBig")
+        if (player.currentSize == Test.SizeState.Small)
         {
-            scale = 50f;
-
             // grab object scale; kinda want to try making player small XD
-            //transform.localScale = transform.localScale - new Vector3(scale, scale, scale);
-            Vector3 newScale = transform.localScale - new Vector3(scale, scale, scale);
-            
-            //clamp -> I asked chatGPT and it gave me clamp solution
-            
-            newScale = new Vector3(
-            Mathf.Max(newScale.x, 0.01f),
-            Mathf.Max(newScale.y, 0.01f),
-            Mathf.Max(newScale.z, 0.01f));
+            //transform.localScale = transform.localScale + new Vector3(scale, scale, scale);
+            transform.localScale = Vector3.one * 10f;
 
-            transform.localScale = newScale;
+        }
+        else if (player.currentSize == Test.SizeState.Big)
+        {
+            transform.localScale = Vector3.one * 0.1f;
 
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
         }
     }
 }
