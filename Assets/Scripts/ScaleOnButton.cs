@@ -3,7 +3,10 @@ using UnityEngine.InputSystem;
 
 public class ScaleOnButton : MonoBehaviour
 {
-    public float scale = 0.1f;
+    // how to get variable from another script: https://www.youtube.com/watch?v=2pCkInvkwZ0
+    //trigger action very certain amount of time
+    public float scale = 1f;
+    public PlayerInteractions playerInteraction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,13 +17,11 @@ public class ScaleOnButton : MonoBehaviour
     void Update()
     {
         // in interaction the handheld object gets destroyed, this function also runs on the objects around where it will scale up the objects if handheld object tag is 'grow'
-
-        if (Keyboard.current.fKey.isPressed)
+        if (playerInteraction.isConsumed ==true)
         {
-            scale = 0.01f;
+            
             // grab object scale; kinda want to try making player small XD
             transform.localScale = transform.localScale + new Vector3(scale, scale, scale);
-            
         }
     }
 }

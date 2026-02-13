@@ -9,6 +9,7 @@ public class PlayerInteractions : MonoBehaviour
     public Camera playerCamera;
     public CrosshairUI crosshairUIScript;
     public Transform holdPoint;
+    public bool isConsumed=false;
     private GameObject heldObject;
     private Rigidbody heldObjectRb;
 
@@ -53,7 +54,10 @@ public class PlayerInteractions : MonoBehaviour
         }
         //if pickup tag not detected, curser turn white. 
         crosshairUIScript.SetInteract(false);
-
+        if (heldObject == null)
+        {
+            isConsumed = false;
+        }
         if (heldObject != null)
         {
             if (Keyboard.current.qKey.wasPressedThisFrame)
@@ -85,8 +89,11 @@ public class PlayerInteractions : MonoBehaviour
             if (Keyboard.current.fKey.isPressed)
             {
                 Destroy(heldObject);
+                isConsumed = true;
             }
+            
         }
+
 
 
 
