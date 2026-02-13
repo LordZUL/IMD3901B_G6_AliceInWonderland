@@ -9,7 +9,12 @@ public class PlayerInteractions : MonoBehaviour
     public Camera playerCamera;
     public CrosshairUI crosshairUIScript;
     public Transform holdPoint;
-    public bool isConsumed=false;
+
+    // tag number
+    private int tagNumber = 0;
+    public bool isConsumedBig=false;
+    public bool isConsumedSmall = false;
+
     private GameObject heldObject;
     private Rigidbody heldObjectRb;
 
@@ -36,8 +41,16 @@ public class PlayerInteractions : MonoBehaviour
         // if object in 5f, detect tag; if tag is pickup, ui is true and turns it pink, if e is pressed and held object is 0, pickup Object
         if (Physics.Raycast(ray, out hit, interactRange))
         {
-            if (hit.collider.CompareTag("PickUp"))
+            if (hit.collider.CompareTag("PickUp") || hit.collider.CompareTag("ConsumeGetSmall") || hit.collider.CompareTag("ConsumeGetBig"))
             {
+                if (hit.collider.CompareTag("ConsumeGetSmall"))
+                {
+                    tagNumber = 1;
+                }
+                if (hit.collider.CompareTag("ConsumeGetBig"))
+                {
+                    tagNumber = 2;
+                }
                 crosshairUIScript.SetInteract(true);
 
                 if (Keyboard.current.eKey.wasPressedThisFrame)
@@ -45,6 +58,8 @@ public class PlayerInteractions : MonoBehaviour
                     if (heldObject == null)
                     {
                         PickUpObject(hit.collider.gameObject);
+                        
+
                     }
 
                 }
@@ -56,7 +71,9 @@ public class PlayerInteractions : MonoBehaviour
         crosshairUIScript.SetInteract(false);
         if (heldObject == null)
         {
-            isConsumed = false;
+            isConsumedBig = false;
+            isConsumedSmall = false;
+            tagNumber = 0;
         }
         if (heldObject != null)
         {
@@ -89,7 +106,20 @@ public class PlayerInteractions : MonoBehaviour
             if (Keyboard.current.fKey.isPressed)
             {
                 Destroy(heldObject);
-                isConsumed = true;
+                //isConsumedSmall = true;
+                if (tagNumber == 1)
+                {
+                    isConsumedSmall = true;
+                }
+                if (tagNumber == 2)
+                {
+                    isConsumedBig = true;
+                }
+                /*
+                else
+                {
+                    tagNumber =0;
+                }*/
             }
             
         }
