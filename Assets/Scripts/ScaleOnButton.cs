@@ -5,7 +5,7 @@ public class ScaleOnButton : MonoBehaviour
 {
     // how to get variable from another script: https://www.youtube.com/watch?v=2pCkInvkwZ0
     //trigger action very certain amount of time: https://www.youtube.com/watch?v=NFvmfoRnarY <- this is way too much for my brain to handle... ill just do it after demo -> if I have time qwq
-    public float scale = 1f;
+    public float scale = 50f;
     public int status;
     public PlayerInteractions playerInteraction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,10 +37,11 @@ public class ScaleOnButton : MonoBehaviour
             Vector3 newScale = transform.localScale - new Vector3(scale, scale, scale);
             
             //clamp -> I asked chatGPT and it gave me clamp solution
+            
             newScale = new Vector3(
-            Mathf.Max(newScale.x, 0.1f),
-            Mathf.Max(newScale.y, 0.1f),
-            Mathf.Max(newScale.z, 0.1f));
+            Mathf.Max(newScale.x, 0.01f),
+            Mathf.Max(newScale.y, 0.01f),
+            Mathf.Max(newScale.z, 0.01f));
 
             transform.localScale = newScale;
 
