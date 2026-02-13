@@ -12,8 +12,14 @@ public class PlayerInteractions : MonoBehaviour
 
     // tag number
     private int tagNumber = 0;
-    public bool isConsumedBig=false;
+    
+    public bool isConsumedBig = false;
     public bool isConsumedSmall = false;
+    /*
+    public enum SizeState { Normal, Small, Big } // use enum instead to determine size
+    public SizeState currentSize = SizeState.Normal;*/
+
+    
 
     private GameObject heldObject;
     private Rigidbody heldObjectRb;
@@ -43,14 +49,14 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (hit.collider.CompareTag("PickUp") || hit.collider.CompareTag("ConsumeGetSmall") || hit.collider.CompareTag("ConsumeGetBig"))
             {
-                if (hit.collider.CompareTag("ConsumeGetSmall"))
+                /*if (hit.collider.CompareTag("ConsumeGetSmall"))
                 {
                     tagNumber = 1;
                 }
                 if (hit.collider.CompareTag("ConsumeGetBig"))
                 {
                     tagNumber = 2;
-                }
+                }*/
                 crosshairUIScript.SetInteract(true);
 
                 if (Keyboard.current.eKey.wasPressedThisFrame)
@@ -69,12 +75,15 @@ public class PlayerInteractions : MonoBehaviour
         }
         //if pickup tag not detected, curser turn white. 
         crosshairUIScript.SetInteract(false);
+
+        // if you are not holding anything
+        /*
         if (heldObject == null)
         {
-            isConsumedBig = false;
-            isConsumedSmall = false;
+            //isConsumedBig = false;
+            //isConsumedSmall = false;
             tagNumber = 0;
-        }
+        }*/
         if (heldObject != null)
         {
             if (Keyboard.current.qKey.wasPressedThisFrame)
@@ -89,11 +98,13 @@ public class PlayerInteractions : MonoBehaviour
                 heldObjectRb = null;*/
                 isChargingThrow = true;
                 throwChargeTime = 0f;
+                tagNumber = 0;
             }
             if (Keyboard.current.qKey.isPressed)
             {
                 isChargingThrow = true;
                 throwChargeTime += Time.deltaTime * chargeSpeed;
+                //tagNumber = 0;
 
                 // Clamp to max 1.0 (normalized)
                 throwChargeTime = Mathf.Clamp01(throwChargeTime);
@@ -105,16 +116,27 @@ public class PlayerInteractions : MonoBehaviour
             // if player eat the object... will edit the controls later feel like e is for eat and f is for interaction lol
             if (Keyboard.current.fKey.isPressed)
             {
-                Destroy(heldObject);
+                
+                /*if (heldObject.tag == "ConsumeGetSmall")
+                {
+                    tagNumber = 1;
+                }
+                if (heldObject.tag == "ConsumeGetBig")
+                {
+                    tagNumber = 2;
+                }*/
                 //isConsumedSmall = true;
                 if (tagNumber == 1)
                 {
                     isConsumedSmall = true;
+                    isConsumedBig = false;
                 }
                 if (tagNumber == 2)
                 {
                     isConsumedBig = true;
+                    isConsumedSmall = false;
                 }
+                Destroy(heldObject);
                 /*
                 else
                 {
@@ -136,8 +158,16 @@ public class PlayerInteractions : MonoBehaviour
         heldObject = obj;
         heldObjectRb = obj.GetComponent<Rigidbody>();
 
+        //obj.tag = "Untagged";
+        if (obj.tag == "ConsumeGetSmall")
+        {
+            tagNumber = 1;
+        }
+        if (obj.tag == "ConsumeGetBig")
+        {
+            tagNumber = 2;
+        }
         obj.tag = "Untagged";
-
         // Disable physics
         heldObjectRb.isKinematic = true;
         heldObjectRb.useGravity = false;
