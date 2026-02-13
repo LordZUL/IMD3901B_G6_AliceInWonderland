@@ -65,7 +65,32 @@ public class Test : MonoBehaviour
         // if Q is pressed when currently holding something 
         if (Keyboard.current.qKey.wasPressedThisFrame && objectGrabbable != null)
         {
-            //destoy object holding -> consume. If object tag == small, operate accordingly
+            //destoy object holding -> consume. If object tag == small, etc
+            // if you ate the mushrooom -> object around you turn small
+            if (objectGrabbable.gameObject.tag == "ConsumeGetBig")
+            {
+                if (currentSize == SizeState.Small)
+                {
+                    currentSize = SizeState.Normal;
+                }
+                else
+                {
+                    currentSize = SizeState.Big;
+                }
+                    
+            }
+            else if (objectGrabbable.gameObject.tag == "ConsumeGetSmall")
+            {
+                if (currentSize == SizeState.Big)
+                {
+                    currentSize = SizeState.Normal;
+                }
+                else
+                {
+                    currentSize = SizeState.Small;
+                }
+            }
+
             Destroy(objectGrabbable.gameObject);
             objectGrabbable = null;
         }
