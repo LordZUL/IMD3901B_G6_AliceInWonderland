@@ -384,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 207043031}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 6.72}
+  m_LocalPosition: {x: 0, y: 2.5, z: 4.02}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -521,11 +521,11 @@ Transform:
   m_GameObject: {fileID: 334002861}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: -2.3380003, y: 1.75, z: 0.35680008}
   m_LocalScale: {x: 0.26836833, y: 1, z: 0.32557}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1771095934}
+  m_Father: {fileID: 446442235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &334002867
 MonoBehaviour:
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 446442235}
   - component: {fileID: 446442236}
   m_Layer: 0
-  m_Name: PivotCube
+  m_Name: PivotCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,6 +572,8 @@ Transform:
   m_Children:
   - {fileID: 207043037}
   - {fileID: 1478158875}
+  - {fileID: 524694678}
+  - {fileID: 334002866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &446442236
@@ -586,7 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3d6dfb5b2b5664ba35be2cfba462aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.001
+  scale: 0.1
 --- !u!1 &524694673
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,12 +719,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524694673}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.777, y: 1.25, z: 3.0568}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.777, y: 1.25, z: 0.35680008}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 446442235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &524694679
 MonoBehaviour:
@@ -1211,6 +1213,7 @@ MonoBehaviour:
   crosshairImage: {fileID: 1436210839}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  interactionText: {fileID: 0}
 --- !u!1 &1232426979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,7 +1413,7 @@ Transform:
   m_GameObject: {fileID: 1478158874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.72, y: 7.5, z: 6.72}
+  m_LocalPosition: {x: 7.72, y: 7.5, z: 4.02}
   m_LocalScale: {x: 5, y: 15, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1683,7 +1686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1771095934
 Transform:
   m_ObjectHideFlags: 0
@@ -1696,8 +1699,7 @@ Transform:
   m_LocalPosition: {x: -2.3380003, y: 1.25, z: 3.0568}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 334002866}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1771095935
@@ -1858,7 +1860,6 @@ SceneRoots:
   - {fileID: 84952861}
   - {fileID: 1088741328}
   - {fileID: 1232426980}
-  - {fileID: 524694678}
   - {fileID: 1096280592}
   - {fileID: 1004792612}
   - {fileID: 446442235}
