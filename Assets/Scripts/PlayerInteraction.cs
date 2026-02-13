@@ -99,6 +99,8 @@ public class PlayerInteractions : MonoBehaviour
         heldObject = obj;
         heldObjectRb = obj.GetComponent<Rigidbody>();
 
+        obj.tag = "Untagged";
+
         // Disable physics
         heldObjectRb.isKinematic = true;
         heldObjectRb.useGravity = false;
@@ -116,6 +118,8 @@ public class PlayerInteractions : MonoBehaviour
         // Re-enable physics
         heldObjectRb.isKinematic = false;
         heldObjectRb.useGravity = true;
+
+        heldObject.tag = "PickUp";
 
         // Calculate force
         float finalForce = throwChargeTime * maxThrowForce;
