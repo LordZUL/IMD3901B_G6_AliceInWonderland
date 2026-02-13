@@ -253,8 +253,8 @@ GameObject:
   - component: {fileID: 207043035}
   - component: {fileID: 207043034}
   - component: {fileID: 207043033}
-  - component: {fileID: 207043038}
-  - component: {fileID: 207043039}
+  - component: {fileID: 207043040}
+  - component: {fileID: 207043041}
   m_Layer: 0
   m_Name: Cube
   m_TagString: NotInteractable
@@ -271,7 +271,7 @@ Rigidbody:
   m_GameObject: {fileID: 207043031}
   serializedVersion: 5
   m_Mass: 20
-  m_LinearDamping: 0
+  m_LinearDamping: 5
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -372,13 +372,13 @@ Transform:
   m_GameObject: {fileID: 207043031}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 4.02}
+  m_LocalPosition: {x: 0, y: 3.28, z: 4.02}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 446442235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &207043038
+--- !u!114 &207043040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -387,33 +387,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 207043031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c65a22069e8965a40a24aa581ee7087d, type: 3}
+  m_Script: {fileID: 11500000, guid: ee653adf96d2e2540b7cb803fb42a5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newTag: PickUp
-  scaleOnButton: {fileID: 446442236}
---- !u!64 &207043039
-MeshCollider:
+--- !u!114 &207043041
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207043031}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3d6dfb5b2b5664ba35be2cfba462aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 0.1
+  status: 0
 --- !u!1 &334002861
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +555,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scale: 1
   status: 0
-  playerInteraction: {fileID: 0}
 --- !u!1 &446442234
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +604,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scale: 0.1
   status: 0
-  playerInteraction: {fileID: 1232426983}
 --- !u!1 &518429099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1199,7 @@ Rigidbody:
   m_GameObject: {fileID: 1088741324}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 5
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1463,6 +1451,7 @@ MonoBehaviour:
     m_Bits: 55
   objectGrabPointTransform: {fileID: 1658809993}
   crosshairUIScript: {fileID: 1096280593}
+  currentSize: 0
 --- !u!1 &1436210837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1541,7 @@ GameObject:
   - component: {fileID: 1478158878}
   - component: {fileID: 1478158877}
   - component: {fileID: 1478158881}
+  - component: {fileID: 1478158882}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: NotInteractable
@@ -1687,6 +1677,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee653adf96d2e2540b7cb803fb42a5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1478158882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478158874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3d6dfb5b2b5664ba35be2cfba462aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 0.1
+  status: 0
 --- !u!1 &1525175190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,7 +1907,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scale: 1
   status: 0
-  playerInteraction: {fileID: 0}
 --- !u!1 &1829907661
 GameObject:
   m_ObjectHideFlags: 0
