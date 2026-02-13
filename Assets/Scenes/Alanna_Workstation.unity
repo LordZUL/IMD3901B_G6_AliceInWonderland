@@ -254,9 +254,10 @@ GameObject:
   - component: {fileID: 207043034}
   - component: {fileID: 207043033}
   - component: {fileID: 207043032}
+  - component: {fileID: 207043038}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: NotInteractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,7 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3d6dfb5b2b5664ba35be2cfba462aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.01
+  scale: 1
+  status: 0
   playerInteraction: {fileID: 0}
 --- !u!54 &207043033
 Rigidbody:
@@ -391,6 +393,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446442235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &207043038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207043031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65a22069e8965a40a24aa581ee7087d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newTag: PickUp
+  scaleOnButton: {fileID: 446442236}
 --- !u!1 &334002861
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +423,7 @@ GameObject:
   - component: {fileID: 334002867}
   m_Layer: 0
   m_Name: Carrot
-  m_TagString: PickUp
+  m_TagString: ConsumeGetSmall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,7 +556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3d6dfb5b2b5664ba35be2cfba462aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.1
+  scale: 1
+  status: 0
   playerInteraction: {fileID: 0}
 --- !u!1 &446442234
 GameObject:
@@ -588,7 +605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3d6dfb5b2b5664ba35be2cfba462aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.1
+  scale: 1
+  status: 0
   playerInteraction: {fileID: 1232426983}
 --- !u!1 &524694673
 GameObject:
@@ -606,7 +624,7 @@ GameObject:
   - component: {fileID: 524694679}
   m_Layer: 0
   m_Name: mushroom
-  m_TagString: PickUp
+  m_TagString: ConsumeGetBig
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,7 +757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3d6dfb5b2b5664ba35be2cfba462aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.1
+  scale: 1
+  status: 0
   playerInteraction: {fileID: 0}
 --- !u!1 &909139423
 GameObject:
@@ -1308,7 +1327,8 @@ MonoBehaviour:
   playerCamera: {fileID: 1525175194}
   crosshairUIScript: {fileID: 1096280593}
   holdPoint: {fileID: 1069342371}
-  isConsumed: 0
+  isConsumedBig: 0
+  isConsumedSmall: 0
   maxThrowForce: 20
   chargeSpeed: 1
 --- !u!1 &1436210837
@@ -1434,7 +1454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3d6dfb5b2b5664ba35be2cfba462aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.01
+  scale: 1
+  status: 0
   playerInteraction: {fileID: 0}
 --- !u!54 &1478158877
 Rigidbody:
@@ -1718,7 +1739,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3d6dfb5b2b5664ba35be2cfba462aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.001
+  scale: 1
+  status: 0
   playerInteraction: {fileID: 0}
 --- !u!1 &1829907661
 GameObject:
