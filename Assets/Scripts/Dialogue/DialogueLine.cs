@@ -1,16 +1,12 @@
 using UnityEngine;
 
+[System.Serializable]
+
 public class DialogueLine : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public string speakerName;
+    [TextArea(1, 3)]
+    public string dialogueText;
+    public Sprite speakerPortrait;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
