@@ -41,7 +41,23 @@ public class PlayerInteractions : MonoBehaviour
         //I think this is ray from camera
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
+        // ================= DIALOGUE INTERACTION =================
+        if (Physics.Raycast(ray, out hit, interactRange))
+        {
+            DialogueNPC3D npc = hit.collider.GetComponent<DialogueNPC3D>();
 
+            if (npc != null)
+            {
+                crosshairUIScript.SetInteract(true);
+
+                if (Keyboard.current.hKey.wasPressedThisFrame)
+                {
+                    npc.TryStartDialogue();
+                }
+
+                return; // stops pickup logic
+            }
+        }
         //bool isLookingAtInteractable = false;
 
         // if object in 5f, detect tag; if tag is pickup, ui is true and turns it pink, if e is pressed and held object is 0, pickup Object
