@@ -25,6 +25,8 @@ public class DialogueNPC3D : MonoBehaviour
         }
     }
 
+
+
     // Check if player is within interaction range
     bool PlayerInRange()
     {

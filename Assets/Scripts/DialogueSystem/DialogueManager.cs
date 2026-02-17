@@ -110,5 +110,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueGameObject.SetActive(false);
         dialogueFinished = true;
+
     }
 }
