@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
+
 
 public class DialogueManager : MonoBehaviour
 {
@@ -42,7 +44,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (dialogueGameObject.activeSelf && Input.GetKeyDown(KeyCode.E))
+        if (dialogueGameObject.activeSelf && Keyboard.current.eKey.wasPressedThisFrame)
         {
             NextLine();
         }
