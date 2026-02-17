@@ -108,7 +108,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
+
     {
         dialogueGameObject.SetActive(false);
         dialogueFinished = true;
