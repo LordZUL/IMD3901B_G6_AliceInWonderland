@@ -1397,7 +1397,7 @@ MonoBehaviour:
   crosshairUIScript: {fileID: 797294526}
   holdPoint: {fileID: 2007705360}
   isConsumedBig: 0
-  isConsumedSmall: 0
+  isConsumedSmall: 1
   maxThrowForce: 20
   chargeSpeed: 1
 --- !u!143 &1500664971
