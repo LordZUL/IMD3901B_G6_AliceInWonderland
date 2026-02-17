@@ -2990,10 +2990,7 @@ MonoBehaviour:
   typingSpeed: 0.05
   isTyping: 0
   dialogueFinished: 1
-  dialogueLines:
-  - characterName: 
-    dialogueText: 
-    characterSprite: {fileID: 0}
+  dialogueLines: []
 --- !u!4 &1501059064
 Transform:
   m_ObjectHideFlags: 0
