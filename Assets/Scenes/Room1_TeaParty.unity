@@ -2721,6 +2721,92 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test: {fileID: 1232426984}
+--- !u!1001 &1506225716
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.29
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.83
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.09
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.24718538
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9689683
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 151.378
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      propertyPath: m_Name
+      value: teapot1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1506225718}
+  m_SourcePrefab: {fileID: 100100000, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+--- !u!1 &1506225717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 836bcba330bb11d41aa13ba5b045cf21, type: 3}
+  m_PrefabInstance: {fileID: 1506225716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1506225718
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506225717}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.318739, y: 6.2805347, z: 5.064657}
+  m_Center: {x: -0.1352086, y: 0.15839577, z: 0.17642999}
 --- !u!1 &1525175190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,6 +3158,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0f3da227ba8f6ad49a4d5aa5c1f3adfc, type: 3}
       propertyPath: m_Name
       value: teapot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0f3da227ba8f6ad49a4d5aa5c1f3adfc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0f3da227ba8f6ad49a4d5aa5c1f3adfc, type: 3}
       propertyPath: m_TagString
@@ -3520,3 +3610,4 @@ SceneRoots:
   - {fileID: 524694678}
   - {fileID: 1843317827}
   - {fileID: 1033829256}
+  - {fileID: 1506225716}
