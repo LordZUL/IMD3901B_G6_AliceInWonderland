@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.Loadscene("Room1_TeaParty");
+        SceneManager.LoadScene("Room1_TeaParty");
     }
 
     public void QuitGame()
