@@ -4289,7 +4289,7 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
   interactionText: {fileID: 332879279}
-  rabbitInteractionText: {fileID: 0}
+  rabbitInteractionText: {fileID: 1228635090}
 --- !u!1001 &1219279720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4492,7 +4492,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 44.75
-  m_fontSizeBase: 36
+  m_fontSizeBase: 35.85
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -5296,7 +5296,7 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
   interactionText: {fileID: 332879279}
-  rabbitInteractionText: {fileID: 0}
+  rabbitInteractionText: {fileID: 1228635090}
 --- !u!1001 &1474308129
 PrefabInstance:
   m_ObjectHideFlags: 0
