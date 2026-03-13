@@ -25,6 +25,7 @@ public class PlayerInteractions : MonoBehaviour
     private Rigidbody heldObjectRb;
 
     // To throw object
+
     private bool isChargingThrow = false; // if player is holding E
     private float throwChargeTime = 0f; // the PEAK mechanic
 

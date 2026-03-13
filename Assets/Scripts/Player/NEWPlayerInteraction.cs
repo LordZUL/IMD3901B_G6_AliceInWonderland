@@ -99,6 +99,6 @@ public class NEWPlayerInteraction : MonoBehaviour
             Destroy(objectGrabbable.gameObject);
             objectGrabbable = null;
         }
-        crosshairUIScript.SetInteract(false);
+        //crosshairUIScript.SetInteract(false);
     }
 }
