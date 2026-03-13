@@ -11,6 +11,7 @@ TagManager:
   - NotInteractable
   - Mushroom
   - Carrot
+  - Rabbit
   layers:
   - Default
   - TransparentFX

@@ -10,7 +10,7 @@ public class Test : MonoBehaviour
     public Transform playerCameraTransform;
     public LayerMask pickUpLayerMask;
     public Transform objectGrabPointTransform;
-    public CrosshairUI crosshairUIScript;
+    public CrosshairUI crosshairUI;
 
     // to track if hands empty rn
     private ObjectGrabbable objectGrabbable;
@@ -43,8 +43,8 @@ public class Test : MonoBehaviour
                     {
                         //crosshairUIScript.SetInteract(true);
                         objectGrabbable.Grab(objectGrabPointTransform);
-                        
-                        
+
+
                     }
                 }
             }
@@ -78,7 +78,7 @@ public class Test : MonoBehaviour
                 {
                     currentSize = SizeState.Big;
                 }
-                    
+
             }
             else if (objectGrabbable.gameObject.tag == "ConsumeGetSmall")
             {
@@ -95,6 +95,6 @@ public class Test : MonoBehaviour
             Destroy(objectGrabbable.gameObject);
             objectGrabbable = null;
         }
-        crosshairUIScript.SetInteract(false);
+        crosshairUI.SetInteract(false, null);
     }
 }
