@@ -24,6 +24,8 @@ public class ObjectGrabbable : MonoBehaviour
             this.objectGrabPointTransform = objectGrabPointTransform;
             objectRigidbody.useGravity = false;
         }*/
+
+        // set gravity to false
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidbody.useGravity = false;
 

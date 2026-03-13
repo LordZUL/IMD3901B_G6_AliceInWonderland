@@ -9,6 +9,8 @@ TagManager:
   - ConsumeGetSmall
   - ConsumeGetBig
   - NotInteractable
+  - Mushroom
+  - Carrot
   layers:
   - Default
   - TransparentFX
