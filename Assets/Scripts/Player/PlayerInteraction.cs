@@ -7,19 +7,19 @@ public class PlayerInteractions : MonoBehaviour
     // temporary: interactRange can be more and then it shows (E) pick up
     public float interactRange = 5f;
     public Camera playerCamera;
-    public CrosshairUI crosshairUIScript;
+    public CrosshairUI crosshairUI;
     public Transform holdPoint;
 
     // tag number
     private int tagNumber = 0;
-    
+
     public bool isConsumedBig = false;
     public bool isConsumedSmall = false;
     /*
     public enum SizeState { Normal, Small, Big } // use enum instead to determine size
     public SizeState currentSize = SizeState.Normal;*/
 
-    
+
 
     private GameObject heldObject;
     private Rigidbody heldObjectRb;
@@ -48,7 +48,7 @@ public class PlayerInteractions : MonoBehaviour
 
             if (npc != null)
             {
-                crosshairUIScript.SetInteract(true);
+                crosshairUI.SetInteract(true, hit.collider.gameObject);
 
                 if (Keyboard.current.hKey.wasPressedThisFrame)
                 {
@@ -65,14 +65,14 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (hit.collider.CompareTag("PickUp") || hit.collider.CompareTag("ConsumeGetSmall") || hit.collider.CompareTag("ConsumeGetBig"))
             {
-                crosshairUIScript.SetInteract(true);
+                crosshairUI.SetInteract(true, hit.collider.gameObject);
 
                 if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
                     if (heldObject == null)
                     {
                         PickUpObject(hit.collider.gameObject);
-                        
+
 
                     }
 
@@ -82,7 +82,7 @@ public class PlayerInteractions : MonoBehaviour
             }
         }
         //if pickup tag not detected, curser turn white. 
-        crosshairUIScript.SetInteract(false);
+        crosshairUI.SetInteract(false, null);
 
         // if you are not holding anything
         /*
@@ -96,7 +96,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (Keyboard.current.qKey.wasPressedThisFrame)
             {
-                
+
                 isChargingThrow = true;
                 throwChargeTime = 0f;
                 tagNumber = 0;
@@ -117,7 +117,7 @@ public class PlayerInteractions : MonoBehaviour
             // if player eat the object... will edit the controls later feel like e is for eat and f is for interaction lol
             if (Keyboard.current.fKey.isPressed)
             {
-                
+
                 /*if (heldObject.tag == "ConsumeGetSmall")
                 {
                     tagNumber = 1;
@@ -144,7 +144,7 @@ public class PlayerInteractions : MonoBehaviour
                     tagNumber =0;
                 }*/
             }
-            
+
         }
 
 

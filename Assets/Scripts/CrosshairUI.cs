@@ -8,6 +8,7 @@ public class CrosshairUI : MonoBehaviour
     public Color interactColor = Color.pink;
 
     public GameObject interactionText;
+    public GameObject rabbitInteractionText;
 
     private bool hasInteractedOnce = false;
 
@@ -15,25 +16,55 @@ public class CrosshairUI : MonoBehaviour
     {
         if (interactionText != null)
             interactionText.SetActive(false);
+
+        if (rabbitInteractionText != null)
+            rabbitInteractionText.SetActive(false);
     }
 
-    public void SetInteract(bool canInteract)
+    public void SetInteract(bool canInteract, GameObject target)
     {
         crosshairImage.color = canInteract ? interactColor : normalColor;
 
-        // Only show interaction text if the player hasn't interacted yet
-        if (!hasInteractedOnce && interactionText != null)
+        if (hasInteractedOnce)
+            return;
+
+        if (canInteract && target != null)
         {
-            interactionText.SetActive(canInteract);
+            if (target.CompareTag("Rabbit"))
+            {
+                if (rabbitInteractionText != null)
+                    rabbitInteractionText.SetActive(true);
+
+                if (interactionText != null)
+                    interactionText.SetActive(false);
+            }
+            else
+            {
+                if (interactionText != null)
+                    interactionText.SetActive(true);
+
+                if (rabbitInteractionText != null)
+                    rabbitInteractionText.SetActive(false);
+            }
+        }
+        else
+        {
+            if (interactionText != null)
+                interactionText.SetActive(false);
+
+            if (rabbitInteractionText != null)
+                rabbitInteractionText.SetActive(false);
         }
     }
 
-    // Call this when the player actually interacts (presses the interact key)
     public void RegisterInteraction()
     {
         hasInteractedOnce = true;
 
         if (interactionText != null)
             interactionText.SetActive(false);
+
+        if (rabbitInteractionText != null)
+            rabbitInteractionText.SetActive(false);
     }
 }
