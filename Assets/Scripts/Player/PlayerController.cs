@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 10f;
     public float mouseSensitivity = 2f;
 
     public CharacterController controller;
