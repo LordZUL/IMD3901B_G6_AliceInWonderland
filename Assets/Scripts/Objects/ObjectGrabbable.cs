@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
-    public Test test;
+    public NEWPlayerInteraction player;
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
     private void Awake()

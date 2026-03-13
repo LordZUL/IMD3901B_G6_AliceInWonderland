@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ChangeTags : MonoBehaviour
 {
-    public Test test;
+    public NEWPlayerInteraction test;
     public string newTag;
     public Text TagText;
     public ScaleOnButton scaleOnButton;
@@ -17,7 +17,7 @@ public class ChangeTags : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (test.currentSize == Test.SizeState.Big)
+        if (test.currentSize == NEWPlayerInteraction.SizeState.Big)
         {
             gameObject.tag = "PickUp";
         }

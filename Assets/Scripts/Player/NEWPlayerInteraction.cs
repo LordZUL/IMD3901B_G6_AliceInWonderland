@@ -52,9 +52,9 @@ public class NEWPlayerInteraction : MonoBehaviour
                     }
                 }
             }
+            //currently holding something
             else
             {
-                //currently holding something
                 objectGrabbable.Drop();
                 objectGrabbable = null;
             }
@@ -67,24 +67,26 @@ public class NEWPlayerInteraction : MonoBehaviour
             }*/
 
         }
-        // if Q is pressed when currently holding something 
+        // if Q is pressed when currently holding something -> eat object
         if (Keyboard.current.qKey.wasPressedThisFrame && objectGrabbable != null)
         {
             //destoy object holding -> consume. If object tag == small, etc
             // if you ate the mushrooom -> object around you turn small
-            if (objectGrabbable.gameObject.tag == "ConsumeGetBig")
+            if (objectGrabbable.gameObject.tag == "Mushroom")
             {
+                // if your size is small when u eat it, grow to normal
                 if (currentSize == SizeState.Small)
                 {
                     currentSize = SizeState.Normal;
                 }
+                //if normal or large
                 else
                 {
                     currentSize = SizeState.Big;
                 }
 
             }
-            else if (objectGrabbable.gameObject.tag == "ConsumeGetSmall")
+            else if (objectGrabbable.gameObject.tag == "Carrot")
             {
                 if (currentSize == SizeState.Big)
                 {

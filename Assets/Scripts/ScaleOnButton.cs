@@ -11,7 +11,7 @@ public class ScaleOnButton : MonoBehaviour
     //public PlayerInteractions playerInteraction;
     //public Test test;
     private ObjectGrabbable objectGrabbable;
-    public Test player;
+    public NEWPlayerInteraction player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Update()
@@ -21,14 +21,14 @@ public class ScaleOnButton : MonoBehaviour
         {
             return;
         }
-        if (player.currentSize == Test.SizeState.Small)
+        if (player.currentSize == NEWPlayerInteraction.SizeState.Small)
         {
             // grab object scale; kinda want to try making player small XD
             //transform.localScale = transform.localScale + new Vector3(scale, scale, scale);
             transform.localScale = Vector3.one * 10f;
 
         }
-        else if (player.currentSize == Test.SizeState.Big)
+        else if (player.currentSize == NEWPlayerInteraction.SizeState.Big)
         {
             transform.localScale = Vector3.one * 0.1f;
 
