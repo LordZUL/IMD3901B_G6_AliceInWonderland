@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController controller;
     public Transform cameraTransform;
+    //public Camera playerCamera;
+
 
     float xRotation = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
