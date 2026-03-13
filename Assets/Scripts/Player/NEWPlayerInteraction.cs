@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class NEWPlayerInteraction : MonoBehaviour
 {
     // Interactions: hold e for more control during puzzel solve. Press E to have it locked. WASD, jump, climb (stamina)
-    // Player vaulting: https://www.youtube.com/watch?v=9k7iBucBV7s 
+    // Player vaulting: https://www.youtube.com/watch?v=9k7iBucBV7s -> basically done
     // Player grab (press): inventory?? Not sure if going to apply it for beta.. we'll see
     // Hold: grab items with finer control; perfect for the first rabbit puzzel! https://www.youtube.com/watch?v=2IhzPTS4av4&t=361s
     // Jumping advanced: not doing it right now https://www.youtube.com/watch?v=h2r3_KjChf4
