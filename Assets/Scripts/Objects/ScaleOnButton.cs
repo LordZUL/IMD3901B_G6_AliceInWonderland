@@ -7,17 +7,21 @@ public class ScaleOnButton : MonoBehaviour
     // how to get variable from another script: https://www.youtube.com/watch?v=2pCkInvkwZ0
     //trigger action very certain amount of time: https://www.youtube.com/watch?v=NFvmfoRnarY <- this is way too much for my brain to handle... ill just do it after demo -> if I have time qwq
     public float scale = 10f;
-    public Transform playerTransform;
+    //public Transform playerTransform;
   
     //private ObjectGrabbable objectGrabbable;
     public NEWPlayerInteraction player;
     private NEWPlayerInteraction.SizeState lastSizeState;
     private Vector3 scaleSize = Vector3.one;
     private Vector3 originalScale;
+    private Vector3 originalPosition;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         originalScale = transform.localScale;
+        originalPosition = transform.position;
+        //playerTransform = player.transform;
         if (player != null)
         {
             lastSizeState = player.currentSize;
@@ -46,11 +50,11 @@ public class ScaleOnButton : MonoBehaviour
         }
         else if (lastSizeState == NEWPlayerInteraction.SizeState.Big)
         {
-            ScaleAroundPlayer(0.1f);
+            ScaleAroundPlayer(0.5f);
         }
         else
         {
-            transform.localScale = originalScale;
+            ScaleAroundPlayer(1f);
         }
         //float scaleFactor = 1f;
         /*
@@ -98,27 +102,13 @@ public class ScaleOnButton : MonoBehaviour
 
         transform.localScale *= scaleFactor;
         transform.position = playerTransform.position + offset * scaleFactor;*/
-        Vector3 pivot = new Vector3(
-         player.transform.position.x,
-         0f,
-         player.transform.position.z
-     );
+        Vector3 pivot = new Vector3 (player.transform.position.x,0f, player.transform.position.z);
 
+        //Vector3 offset = originalPosition - pivot;
         Vector3 offset = transform.position - pivot;
 
-        offset *= scaleFactor;
+        transform.position = pivot + offset * scaleFactor;
 
-        transform.position = pivot + offset;
-
-        transform.localScale *= scaleFactor;
-    }
-    void SetScaleAroundPlayer(float newScale)
-    {
-        float factor = newScale / transform.localScale.x;
-
-        Vector3 offset = transform.position - player.transform.position;
-
-        transform.localScale = Vector3.one * newScale;
-        transform.position = player.transform.position + offset * factor;
+        transform.localScale = originalScale * scaleFactor;
     }
 }

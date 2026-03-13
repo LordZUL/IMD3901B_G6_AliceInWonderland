@@ -38,6 +38,10 @@ public class NEWPlayerInteraction : MonoBehaviour
             if (objectGrabbable == null)
             {
                 float pickupDistance = 5f;
+                if (currentSize == SizeState.Big)
+                {
+                    pickupDistance = 100f;
+                }
                 // raycast will hit everything infront of player camera within distance and not on playerLayer
                 if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickupDistance, pickUpLayerMask))
                 {
@@ -51,6 +55,7 @@ public class NEWPlayerInteraction : MonoBehaviour
 
                     }
                 }
+
             }
             //currently holding something
             else
@@ -68,39 +73,44 @@ public class NEWPlayerInteraction : MonoBehaviour
 
         }
         // if Q is pressed when currently holding something -> eat object
-        if (Keyboard.current.qKey.wasPressedThisFrame && objectGrabbable != null)
+        // need to check if object is mushroom or carrot
+        if ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot"))
         {
-            //destoy object holding -> consume. If object tag == small, etc
-            // if you ate the mushrooom -> object around you turn small
-            if (objectGrabbable.gameObject.tag == "Mushroom")
+            if (Keyboard.current.qKey.wasPressedThisFrame && objectGrabbable != null)
             {
-                // if your size is small when u eat it, grow to normal
-                if (currentSize == SizeState.Small)
+                //destoy object holding -> consume. If object tag == small, etc
+                // if you ate the mushrooom -> object around you turn small
+                if (objectGrabbable.gameObject.tag == "Mushroom")
                 {
-                    currentSize = SizeState.Normal;
+                    // if your size is small when u eat it, grow to normal
+                    if (currentSize == SizeState.Small)
+                    {
+                        currentSize = SizeState.Normal;
+                    }
+                    //if normal or large
+                    else
+                    {
+                        currentSize = SizeState.Big;
+                    }
+
                 }
-                //if normal or large
-                else
+                else if (objectGrabbable.gameObject.tag == "Carrot")
                 {
-                    currentSize = SizeState.Big;
+                    if (currentSize == SizeState.Big)
+                    {
+                        currentSize = SizeState.Normal;
+                    }
+                    else
+                    {
+                        currentSize = SizeState.Small;
+                    }
                 }
 
+                Destroy(objectGrabbable.gameObject);
+                objectGrabbable = null;
             }
-            else if (objectGrabbable.gameObject.tag == "Carrot")
-            {
-                if (currentSize == SizeState.Big)
-                {
-                    currentSize = SizeState.Normal;
-                }
-                else
-                {
-                    currentSize = SizeState.Small;
-                }
-            }
-
-            Destroy(objectGrabbable.gameObject);
-            objectGrabbable = null;
         }
+            
         //crosshairUIScript.SetInteract(false);
     }
 }

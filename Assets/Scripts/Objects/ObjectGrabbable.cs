@@ -1,16 +1,19 @@
 // to identify objects
 using NUnit.Framework.Internal;
 using UnityEngine;
-
+//to activate and deactive componentshttps://www.youtube.com/watch?v=ELhWPrxxks8
 public class ObjectGrabbable : MonoBehaviour
 {
+
     public NEWPlayerInteraction player;
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
+
     private void Awake()
     {
         objectRigidbody = GetComponent<Rigidbody>();
     }
+
     public void Grab(Transform objectGrabPointTransform)
     {
         /*
