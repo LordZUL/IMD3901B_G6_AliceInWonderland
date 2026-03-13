@@ -4654,7 +4654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRange: 5
   playerCamera: {fileID: 1525175194}
-  crosshairUI: {fileID: 0}
+  crosshairUI: {fileID: 1436210841}
   holdPoint: {fileID: 1069342371}
   isConsumedBig: 0
   isConsumedSmall: 0
