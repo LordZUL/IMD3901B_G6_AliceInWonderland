@@ -1,6 +1,7 @@
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.PlayerSettings;
 
 public class ScaleOnButton : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class ScaleOnButton : MonoBehaviour
         }
         else if (lastSizeState == NEWPlayerInteraction.SizeState.Big)
         {
-            ScaleAroundPlayer(0.5f);
+            ScaleAroundPlayer(0.1f);
         }
         else
         {
@@ -97,11 +98,15 @@ public class ScaleOnButton : MonoBehaviour
     }*/
     void ScaleAroundPlayer(float scaleFactor)
     {
+        //Vector3 pos = player.transform.position;
+
         /*
         Vector3 offset = transform.position - playerTransform.position;
 
         transform.localScale *= scaleFactor;
         transform.position = playerTransform.position + offset * scaleFactor;*/
+
+        //float playerY = player.transform.position.y;
         Vector3 pivot = new Vector3 (player.transform.position.x,0f, player.transform.position.z);
 
         //Vector3 offset = originalPosition - pivot;
@@ -110,5 +115,39 @@ public class ScaleOnButton : MonoBehaviour
         transform.position = pivot + offset * scaleFactor;
 
         transform.localScale = originalScale * scaleFactor;
+        //Vector3 pos = player.transform.position;
+        //pos.y = 500f;   // new height
+        //player.transform.position = pos;
+        //player.transform.position = 10f;
+
+        //SnapPlayerToGround();
+
+        // keep player height
+        /*
+        Vector3 p = player.transform.position;
+        player.transform.position = new Vector3(p.x, playerY, p.z);*/
+    }
+
+    void SnapPlayerToGround()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(player.transform.position + Vector3.up * 2f, Vector3.down, out hit, 10f))
+        {
+            Vector3 pos = player.transform.position;
+
+            CapsuleCollider col = player.GetComponent<CapsuleCollider>();
+
+            if (col != null)
+            {
+                pos.y = hit.point.y + col.height * 0.5f;
+            }
+            else
+            {
+                pos.y = hit.point.y + 1f; // fallback height
+            }
+
+            player.transform.position = pos;
+        }
     }
 }
