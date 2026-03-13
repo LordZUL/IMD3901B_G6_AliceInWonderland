@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+// Added Player Jumping: https://www.youtube.com/watch?v=cKPdSKBM4rs -> Player control
 
 public class PlayerController : MonoBehaviour
 {
@@ -43,5 +44,7 @@ public class PlayerController : MonoBehaviour
 
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+
+        // space for jump
     }
 }
