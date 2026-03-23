@@ -12,6 +12,7 @@ TagManager:
   - Mushroom
   - Carrot
   - Rabbit
+  - paintcan
   layers:
   - Default
   - TransparentFX
