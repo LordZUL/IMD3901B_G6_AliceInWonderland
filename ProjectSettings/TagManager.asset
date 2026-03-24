@@ -12,7 +12,7 @@ TagManager:
   - Mushroom
   - Carrot
   - Rabbit
-  - paintcan
+  - PaintCan
   layers:
   - Default
   - TransparentFX
@@ -22,7 +22,7 @@ TagManager:
   - UI
   - Player
   - VaultLayer
-  - 
+  - Interactable
   - 
   - 
   - 
