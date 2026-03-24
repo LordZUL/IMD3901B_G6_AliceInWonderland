@@ -2,10 +2,9 @@
 
 public class Rose : MonoBehaviour
 {
-    public bool isPainted = false;
     public Material redMaterial;
-
     private Renderer rend;
+    private bool isPainted = false;
 
     void Start()
     {
@@ -23,6 +22,9 @@ public class Rose : MonoBehaviour
             rend.material = redMaterial;
         }
 
-        Debug.Log("Rose painted red 🌹");
+        Debug.Log("Rose painted 🌹");
+
+        // ✅ ADD THIS
+        MazeManager.instance.AddPaintedRose();
     }
 }
