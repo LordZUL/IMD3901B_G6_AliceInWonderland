@@ -18,108 +18,95 @@ public class Room3Player : MonoBehaviour
     public enum SizeState { Normal, Small, Big }
     public SizeState currentSize = SizeState.Normal;
 
-    private RaycastHit hit;
-
     private bool hasPaint = false;
 
     void Update()
     {
-        HandleRaycastUI();
-        HandleGrabDrop();
-        HandleUseItem();
-    }
-
-    void HandleRaycastUI()
-    {
         float distance = (currentSize == SizeState.Big) ? bigPickupDistance : normalPickupDistance;
 
-        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, distance, pickUpLayerMask))
+        RaycastHit hit;
+        bool isLookingAtSomething = false;
+
+        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, distance))
         {
-            // GRABBABLE OBJECT
-            if (hit.transform.GetComponent<R3ObjectGrabbable1>() != null)
+            GameObject hitObj = hit.transform.gameObject;
+
+            // 🐰 RABBIT
+            DialogueNPC3D npc = hitObj.GetComponent<DialogueNPC3D>();
+            if (npc != null)
             {
-                crosshairUIScript.SetInteract(true, hit.transform.gameObject);
-                return;
-            }
+                isLookingAtSomething = true;
+                crosshairUIScript.SetInteract(true, hitObj);
 
-            // ROSE (paintable)
-            if (hit.transform.GetComponent<Rose>() != null)
-            {
-                crosshairUIScript.SetInteract(true, hit.transform.gameObject);
-                return;
-            }
-        }
-
-        crosshairUIScript.SetInteract(false, null);
-    }
-
-    void HandleGrabDrop()
-    {
-        if (!Keyboard.current.eKey.wasPressedThisFrame) return;
-
-        if (objectGrabbable == null)
-        {
-            TryGrab();
-        }
-        else
-        {
-            if (objectGrabbable.CompareTag("PaintCan"))
-            {
-                hasPaint = true;
-                Destroy(objectGrabbable.gameObject);
-            }
-            else
-            {
-                objectGrabbable.Drop();
-            }
-
-            objectGrabbable = null;
-        }
-    }
-
-    void TryGrab()
-    {
-        float distance = (currentSize == SizeState.Big) ? bigPickupDistance : normalPickupDistance;
-
-        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, distance, pickUpLayerMask))
-        {
-            if (hit.transform.TryGetComponent(out R3ObjectGrabbable1 grabbable))
-            {
-                objectGrabbable = grabbable;
-                objectGrabbable.Grab(objectGrabPointTransform);
-            }
-        }
-    }
-
-    void HandleUseItem()
-    {
-        float distance = (currentSize == SizeState.Big) ? bigPickupDistance : normalPickupDistance;
-
-        // ✅ PAINT ROSES (FIXED WITH LAYER MASK)
-        if (Keyboard.current.eKey.wasPressedThisFrame && hasPaint)
-        {
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, distance, pickUpLayerMask))
-            {
-                if (hit.transform.TryGetComponent(out Rose rose))
+                if (Keyboard.current.hKey.wasPressedThisFrame)
                 {
-                    Debug.Log("Painting Rose 🌹");
+                    npc.TryStartDialogue();
+                }
+
+                return;
+            }
+
+            // 🌹 ROSE
+            Rose rose = hitObj.GetComponent<Rose>();
+            if (rose != null)
+            {
+                isLookingAtSomething = true;
+                crosshairUIScript.SetInteract(true, hitObj);
+
+                if (Keyboard.current.eKey.wasPressedThisFrame && hasPaint)
+                {
+                    Debug.Log("🌹 Painting Rose");
                     rose.Paint();
-                    return;
+                }
+
+                return;
+            }
+
+            // 📦 GRABBABLE (ONLY if correct layer)
+            if (((1 << hitObj.layer) & pickUpLayerMask) != 0)
+            {
+                if (hitObj.GetComponent<R3ObjectGrabbable1>() != null)
+                {
+                    isLookingAtSomething = true;
+                    crosshairUIScript.SetInteract(true, hitObj);
                 }
             }
         }
 
-        // OPTIONAL: USING HELD ITEMS
-        if (objectGrabbable == null) return;
-        if (!Keyboard.current.qKey.wasPressedThisFrame) return;
-
-        GameObject heldObject = objectGrabbable.gameObject;
-
-        if (heldObject.CompareTag("PaintCan"))
+        if (!isLookingAtSomething)
         {
-            hasPaint = true;
-            Destroy(heldObject);
-            objectGrabbable = null;
+            crosshairUIScript.SetInteract(false, null);
+        }
+
+        // 🖐️ GRAB / DROP
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            if (objectGrabbable == null)
+            {
+                if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, distance, pickUpLayerMask))
+                {
+                    if (hit.transform.TryGetComponent(out R3ObjectGrabbable1 grabbable))
+                    {
+                        objectGrabbable = grabbable;
+                        objectGrabbable.Grab(objectGrabPointTransform);
+                    }
+                }
+            }
+            else
+            {
+                if (objectGrabbable.CompareTag("PaintCan"))
+                {
+                    hasPaint = true;
+                    Debug.Log("🎨 Got Paint!");
+                    Destroy(objectGrabbable.gameObject);
+                }
+                else
+                {
+                    objectGrabbable.Drop();
+                }
+
+                objectGrabbable = null;
+            }
         }
     }
 }
