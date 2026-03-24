@@ -13,14 +13,13 @@ public class Room3Player : MonoBehaviour
     public float normalPickupDistance = 5f;
     public float bigPickupDistance = 10f;
 
-    private ObjectGrabbable objectGrabbable;
+    private R3ObjectGrabbable1 objectGrabbable;
 
     public enum SizeState { Normal, Small, Big }
     public SizeState currentSize = SizeState.Normal;
 
     private RaycastHit hit;
 
-    // ✅ NEW
     private bool hasPaint = false;
 
     void Update()
@@ -36,14 +35,14 @@ public class Room3Player : MonoBehaviour
 
         if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, distance, pickUpLayerMask))
         {
-            // ✅ GRABBABLE OBJECT
-            if (hit.transform.GetComponent<ObjectGrabbable>() != null)
+            // GRABBABLE OBJECT
+            if (hit.transform.GetComponent<R3ObjectGrabbable1>() != null)
             {
                 crosshairUIScript.SetInteract(true, hit.transform.gameObject);
                 return;
             }
 
-            // ✅ ROSE (paintable)
+            // ROSE (paintable)
             if (hit.transform.GetComponent<Rose>() != null)
             {
                 crosshairUIScript.SetInteract(true, hit.transform.gameObject);
@@ -64,7 +63,6 @@ public class Room3Player : MonoBehaviour
         }
         else
         {
-            // ✅ CHECK IF PAINT CAN
             if (objectGrabbable.CompareTag("PaintCan"))
             {
                 hasPaint = true;
@@ -85,7 +83,7 @@ public class Room3Player : MonoBehaviour
 
         if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, distance, pickUpLayerMask))
         {
-            if (hit.transform.TryGetComponent(out ObjectGrabbable grabbable))
+            if (hit.transform.TryGetComponent(out R3ObjectGrabbable1 grabbable))
             {
                 objectGrabbable = grabbable;
                 objectGrabbable.Grab(objectGrabPointTransform);
@@ -97,20 +95,21 @@ public class Room3Player : MonoBehaviour
     {
         float distance = (currentSize == SizeState.Big) ? bigPickupDistance : normalPickupDistance;
 
-        // ✅ PAINT ROSES WITHOUT HOLDING THEM
+        // ✅ PAINT ROSES (FIXED WITH LAYER MASK)
         if (Keyboard.current.eKey.wasPressedThisFrame && hasPaint)
         {
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, distance))
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, distance, pickUpLayerMask))
             {
                 if (hit.transform.TryGetComponent(out Rose rose))
                 {
+                    Debug.Log("Painting Rose 🌹");
                     rose.Paint();
                     return;
                 }
             }
         }
 
-        // ✅ OPTIONAL: USING HELD ITEMS (Q)
+        // OPTIONAL: USING HELD ITEMS
         if (objectGrabbable == null) return;
         if (!Keyboard.current.qKey.wasPressedThisFrame) return;
 
