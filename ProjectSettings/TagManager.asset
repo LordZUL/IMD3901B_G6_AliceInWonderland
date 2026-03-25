@@ -13,6 +13,7 @@ TagManager:
   - Carrot
   - Rabbit
   - PaintCan
+  - Cat
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Player
   - VaultLayer
   - Interactable
-  - 
+  - Cat
   - 
   - 
   - 
