@@ -2,16 +2,21 @@ using System.Collections;
 using UnityEngine;
 public class glowingTiles : MonoBehaviour
 {
-    public Renderer rend;
+    //public Renderer rend;
     public Color glowColor = Color.cyan;
     public float glowIntensity = 5f;
 
+    Material mat;
+
     void Start()
     {
-        StartCoroutine(GlowRoutine());
+        //StartCoroutine(GlowRoutine());
+        mat = GetComponent<Renderer>().material;
+        mat.EnableKeyword("_EMISSION");
+        SetGlow(false);
     }
 
-    IEnumerator GlowRoutine()
+    /*IEnumerator GlowRoutine()
     {
         while (true)
         {
@@ -27,18 +32,17 @@ public class glowingTiles : MonoBehaviour
             // Turn glow OFF
             SetGlow(false);
         }
-    }
+    }*/
 
-    void SetGlow(bool state)
+    public void SetGlow(bool state)
     {
         if (state)
         {
-            rend.material.EnableKeyword("_EMISSION");
-            rend.material.SetColor("_EmissionColor", glowColor * glowIntensity);
+            mat.SetColor("_EmissionColor", glowColor * glowIntensity);
         }
         else
         {
-            rend.material.SetColor("_EmissionColor", Color.black);
+            mat.SetColor("_EmissionColor", Color.black);
         }
     }
 }
