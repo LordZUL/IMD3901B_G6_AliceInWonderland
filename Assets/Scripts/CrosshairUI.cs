@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CrosshairUI : MonoBehaviour
@@ -9,6 +9,7 @@ public class CrosshairUI : MonoBehaviour
 
     public GameObject interactionText;
     public GameObject rabbitInteractionText;
+    public GameObject paintInteractionText;
 
     private bool hasInteractedOnce = false;
 
@@ -21,39 +22,29 @@ public class CrosshairUI : MonoBehaviour
             rabbitInteractionText.SetActive(false);
     }
 
-    public void SetInteract(bool canInteract, GameObject target)
+    public void SetInteract(bool isInteract, GameObject target)
     {
-        crosshairImage.color = canInteract ? interactColor : normalColor;
+        // turn everything off first
+        interactionText.SetActive(false);
+        rabbitInteractionText.SetActive(false);
+        paintInteractionText.SetActive(false);
 
-        if (hasInteractedOnce)
-            return;
+        if (!isInteract || target == null) return;
 
-        if (canInteract && target != null)
+        // 🐰 Rabbit
+        if (target.GetComponent<DialogueNPC3D>() != null)
         {
-            if (target.CompareTag("Rabbit"))
-            {
-                if (rabbitInteractionText != null)
-                    rabbitInteractionText.SetActive(true);
-
-                if (interactionText != null)
-                    interactionText.SetActive(false);
-            }
-            else
-            {
-                if (interactionText != null)
-                    interactionText.SetActive(true);
-
-                if (rabbitInteractionText != null)
-                    rabbitInteractionText.SetActive(false);
-            }
+            rabbitInteractionText.SetActive(true);
         }
+        // 🌹 Rose
+        else if (target.GetComponent<Rose>() != null)
+        {
+            paintInteractionText.SetActive(true);
+        }
+        // 📦 Default pickup
         else
         {
-            if (interactionText != null)
-                interactionText.SetActive(false);
-
-            if (rabbitInteractionText != null)
-                rabbitInteractionText.SetActive(false);
+            interactionText.SetActive(true);
         }
     }
 
