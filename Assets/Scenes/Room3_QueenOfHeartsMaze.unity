@@ -557,7 +557,7 @@ MonoBehaviour:
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
   interactionText: {fileID: 1990541242}
   rabbitInteractionText: {fileID: 714109987}
-  paintInteractionText: {fileID: 0}
+  paintInteractionText: {fileID: 882272763}
 --- !u!114 &443760483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3739,7 +3739,7 @@ MonoBehaviour:
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
   interactionText: {fileID: 1990541242}
   rabbitInteractionText: {fileID: 714109987}
-  paintInteractionText: {fileID: 0}
+  paintInteractionText: {fileID: 882272763}
 --- !u!114 &1994221268
 MonoBehaviour:
   m_ObjectHideFlags: 0

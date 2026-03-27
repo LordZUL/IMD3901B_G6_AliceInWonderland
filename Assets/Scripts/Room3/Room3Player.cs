@@ -42,13 +42,9 @@ public class Room3Player : MonoBehaviour
                 {
                     npc.TryStartDialogue();
                 }
-
-                return;
             }
-
             // 🌹 ROSE
-            Rose rose = hitObj.GetComponent<Rose>();
-            if (rose != null)
+            else if (hitObj.GetComponent<Rose>() != null)
             {
                 isLookingAtSomething = true;
                 crosshairUIScript.SetInteract(true, hitObj);
@@ -56,14 +52,11 @@ public class Room3Player : MonoBehaviour
                 if (Keyboard.current.eKey.wasPressedThisFrame && hasPaint)
                 {
                     Debug.Log("🌹 Painting Rose");
-                    rose.Paint();
+                    hitObj.GetComponent<Rose>().Paint();
                 }
-
-                return;
             }
-
-            // 📦 GRABBABLE (ONLY if correct layer)
-            if (((1 << hitObj.layer) & pickUpLayerMask) != 0)
+            // 📦 GRABBABLE
+            else if (((1 << hitObj.layer) & pickUpLayerMask) != 0)
             {
                 if (hitObj.GetComponent<R3ObjectGrabbable1>() != null)
                 {
@@ -73,12 +66,13 @@ public class Room3Player : MonoBehaviour
             }
         }
 
+        // ❌ NOTHING HIT
         if (!isLookingAtSomething)
         {
             crosshairUIScript.SetInteract(false, null);
         }
 
-        // 🖐️ GRAB / DROP
+        // 🖐️ GRAB / DROP (NOW ALWAYS RUNS)
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
             if (objectGrabbable == null)
@@ -109,4 +103,5 @@ public class Room3Player : MonoBehaviour
             }
         }
     }
+
 }
