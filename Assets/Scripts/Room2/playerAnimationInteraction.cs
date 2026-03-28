@@ -1,5 +1,5 @@
 using UnityEngine;
-
+// so when animation plays player dont move
 public class playerAnimationInteraction : MonoBehaviour
 {
     public PlayerController player;

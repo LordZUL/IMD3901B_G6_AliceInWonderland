@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 88009563}
   - component: {fileID: 88009562}
-  - component: {fileID: 88009561}
   - component: {fileID: 88009560}
   - component: {fileID: 88009559}
   - component: {fileID: 88009558}
@@ -215,26 +214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1555880830}
---- !u!114 &88009561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88009555}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab57eaa9935833041829df988d5134db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactRange: 5
-  playerCamera: {fileID: 1555880830}
-  crosshairUI: {fileID: 0}
-  holdPoint: {fileID: 782944656}
-  isConsumedBig: 0
-  isConsumedSmall: 0
-  maxThrowForce: 20
-  chargeSpeed: 1
 --- !u!114 &88009562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +231,7 @@ MonoBehaviour:
   jumpForce: 5
   cameraTransform: {fileID: 1555880827}
   rb: {fileID: 88009556}
+  canMove: 1
 --- !u!4 &88009563
 Transform:
   m_ObjectHideFlags: 0
@@ -4804,6 +4784,7 @@ MonoBehaviour:
   jumpForce: 5
   cameraTransform: {fileID: 1742442723}
   rb: {fileID: 0}
+  canMove: 1
 --- !u!4 &1500664973
 Transform:
   m_ObjectHideFlags: 0
@@ -6233,6 +6214,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28f1b163ae3fa92439c256d87bf054c3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1866945608}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28f1b163ae3fa92439c256d87bf054c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1866945612}
   m_SourcePrefab: {fileID: 100100000, guid: 28f1b163ae3fa92439c256d87bf054c3, type: 3}
 --- !u!1 &1866945601 stripped
 GameObject:
@@ -6323,6 +6307,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1866945603}
   delayAfter: 30
+--- !u!114 &1866945612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866945601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ceeed5b9716be44996a3c49af7c0f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 88009562}
 --- !u!1 &1876647713
 GameObject:
   m_ObjectHideFlags: 0
