@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 88009565}
   m_Layer: 6
   m_Name: Player (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,9 +410,7 @@ MonoBehaviour:
   catLayer:
     serializedVersion: 2
     m_Bits: 512
-  playerGlowColor: {r: 0, g: 1, b: 0, a: 1}
-  permanentIntensity: 1.5
-  emissionIntensity: 5
+  emissionIntensity: 1
 --- !u!54 &108440432
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1021,9 +1019,7 @@ MonoBehaviour:
   catLayer:
     serializedVersion: 2
     m_Bits: 512
-  playerGlowColor: {r: 0, g: 1, b: 0, a: 1}
-  permanentIntensity: 1.5
-  emissionIntensity: 5
+  emissionIntensity: 1
 --- !u!54 &437359449
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1583,9 +1579,7 @@ MonoBehaviour:
   catLayer:
     serializedVersion: 2
     m_Bits: 512
-  playerGlowColor: {r: 0, g: 1, b: 0, a: 1}
-  permanentIntensity: 1.5
-  emissionIntensity: 5
+  emissionIntensity: 1
 --- !u!54 &517776051
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2277,9 +2271,7 @@ MonoBehaviour:
   catLayer:
     serializedVersion: 2
     m_Bits: 512
-  playerGlowColor: {r: 0, g: 1, b: 0, a: 1}
-  permanentIntensity: 1.5
-  emissionIntensity: 5
+  emissionIntensity: 1
 --- !u!54 &728163258
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2717,9 +2709,7 @@ MonoBehaviour:
   catLayer:
     serializedVersion: 2
     m_Bits: 512
-  playerGlowColor: {r: 0, g: 1, b: 0, a: 1}
-  permanentIntensity: 1.5
-  emissionIntensity: 5
+  emissionIntensity: 1
 --- !u!54 &760219466
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3672,9 +3662,7 @@ MonoBehaviour:
   catLayer:
     serializedVersion: 2
     m_Bits: 512
-  playerGlowColor: {r: 0, g: 1, b: 0, a: 1}
-  permanentIntensity: 1.5
-  emissionIntensity: 5
+  emissionIntensity: 1
 --- !u!54 &1010212351
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5485,8 +5473,6 @@ MonoBehaviour:
   catLayer:
     serializedVersion: 2
     m_Bits: 512
-  playerGlowColor: {r: 0, g: 1, b: 0, a: 1}
-  permanentIntensity: 1.5
   emissionIntensity: 1
 --- !u!54 &1770059773
 Rigidbody:
@@ -5951,9 +5937,7 @@ MonoBehaviour:
   catLayer:
     serializedVersion: 2
     m_Bits: 512
-  playerGlowColor: {r: 0, g: 1, b: 0, a: 1}
-  permanentIntensity: 1.5
-  emissionIntensity: 5
+  emissionIntensity: 1
 --- !u!54 &1831516593
 Rigidbody:
   m_ObjectHideFlags: 0
