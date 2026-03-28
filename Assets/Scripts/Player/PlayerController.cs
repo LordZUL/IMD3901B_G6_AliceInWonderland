@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 // Added Player Jumping: https://www.youtube.com/watch?v=cKPdSKBM4rs -> Player control
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
 
     float xRotation = 0f;
+    public bool canMove = true;
 
     void Start()
     {
@@ -43,7 +45,13 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Movement (physics here!)
-        Vector2 moveInput = new Vector2(
+        if (!canMove)
+        {
+            // Stop horizontal movement but keep gravity
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+            return;
+        }
+            Vector2 moveInput = new Vector2(
             (Keyboard.current.aKey.isPressed ? -1 : 0) + (Keyboard.current.dKey.isPressed ? 1 : 0),
             (Keyboard.current.sKey.isPressed ? -1 : 0) + (Keyboard.current.wKey.isPressed ? 1 : 0)
         );
@@ -60,5 +68,17 @@ public class PlayerController : MonoBehaviour
     bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, 1.1f);
+    }
+
+
+    // when animation plays
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
     }
 }
