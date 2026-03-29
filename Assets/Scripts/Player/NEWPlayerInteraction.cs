@@ -16,6 +16,7 @@ public class NEWPlayerInteraction : MonoBehaviour
     public LayerMask pickUpLayerMask;
     public Transform objectGrabPointTransform;
     public CrosshairUI crosshairUIScript;
+    public ScreenFade screenFade;
 
     // to track if hands empty rn
     private ObjectGrabbable objectGrabbable;
@@ -73,6 +74,7 @@ public class NEWPlayerInteraction : MonoBehaviour
 
             }*/
 
+            // SCENE LOADING STUFF
             // If player is near door, then when they interact with it by pressing e it loads the next scene in the build profile
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit doorHit, 5f))
             {
@@ -81,7 +83,8 @@ public class NEWPlayerInteraction : MonoBehaviour
                     if (Keyboard.current.eKey.wasPressedThisFrame)
                     {
                         Debug.Log("Loading next room...");
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                        StartCoroutine(LoadNextScene());
+                        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                     }
 
                     return;
@@ -129,5 +132,13 @@ public class NEWPlayerInteraction : MonoBehaviour
         }
             
         //crosshairUIScript.SetInteract(false);
+    }
+
+    IEnumerator LoadNextScene()
+    {
+        // Calls the FadeToBlack IEnumerator from the ScreenFade script 
+        yield return StartCoroutine(screenFade.FadeToBlack());
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
