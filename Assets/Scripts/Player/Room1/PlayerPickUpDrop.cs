@@ -1,16 +1,13 @@
 using UnityEngine;
-
+// only when player pick up uninteractables
 public class PlayerPickUpDrop : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Transform playerCameraTransform;
+    private void update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            //Physics.Raycast(transform.position);
+        }
     }
 }
