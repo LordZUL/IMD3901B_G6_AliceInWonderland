@@ -5373,14 +5373,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232426980}
-  - component: {fileID: 1232426982}
   - component: {fileID: 1232426984}
   - component: {fileID: 1232426986}
-  - component: {fileID: 1232426988}
-  - component: {fileID: 1232426990}
+  - component: {fileID: 1232426987}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5394,32 +5392,13 @@ Transform:
   m_GameObject: {fileID: 1232426979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.66, z: 0}
+  m_LocalPosition: {x: 0, y: 2.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1829907662}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1232426982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232426979}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85ab5eec9426ac848befbedbd2938e58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 1
-  mouseSensitivity: 1
-  cameraTransform: {fileID: 1525175191}
-  smoothTime: 0.05
-  speed: 0
-  gravityMultiplier: 1
-  jumpPower: 4
 --- !u!114 &1232426984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5453,52 +5432,19 @@ MonoBehaviour:
   crosshairUIScript: {fileID: 0}
   screenFade: {fileID: 1695577618}
   currentSize: 0
---- !u!65 &1232426988
-BoxCollider:
+--- !u!114 &1232426987
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232426979}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1.93882, y: 3.7464323, z: 1.8997965}
-  m_Center: {x: 0.057002008, y: 0.002613306, z: -0.015600681}
---- !u!143 &1232426990
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232426979}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60045b401a37024e84ab7b6ba776990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCameraTransform: {fileID: 1525175191}
 --- !u!1 &1262814783
 GameObject:
   m_ObjectHideFlags: 0
@@ -7618,7 +7564,7 @@ GameObject:
   - component: {fileID: 1829907669}
   m_Layer: 6
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7632,7 +7578,7 @@ Transform:
   m_GameObject: {fileID: 1829907661}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.9799998, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
