@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 39921377}
   - component: {fileID: 39921376}
   - component: {fileID: 39921380}
+  - component: {fileID: 39921381}
   m_Layer: 6
   m_Name: Capsule
   m_TagString: Player
@@ -289,6 +290,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: -10
+--- !u!114 &39921381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39921373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab57eaa9935833041829df988d5134db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 5
+  playerCamera: {fileID: 1820287264}
+  crosshairUI: {fileID: 0}
+  holdPoint: {fileID: 547354833}
+  isConsumedBig: 0
+  isConsumedSmall: 1
+  maxThrowForce: 20
+  chargeSpeed: 1
 --- !u!1 &88009555
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +877,7 @@ GameObject:
   - component: {fileID: 330705166}
   - component: {fileID: 330705165}
   - component: {fileID: 330705170}
+  - component: {fileID: 330705171}
   m_Layer: 6
   m_Name: Player (2)
   m_TagString: Player
@@ -971,6 +993,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: -10
+--- !u!114 &330705171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330705163}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab57eaa9935833041829df988d5134db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 5
+  playerCamera: {fileID: 1820287264}
+  crosshairUI: {fileID: 797294526}
+  holdPoint: {fileID: 547354833}
+  isConsumedBig: 0
+  isConsumedSmall: 1
+  maxThrowForce: 20
+  chargeSpeed: 1
 --- !u!1 &379107359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &462721922
 AudioListener:
   m_ObjectHideFlags: 0
