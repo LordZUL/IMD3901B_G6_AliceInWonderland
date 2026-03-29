@@ -1213,7 +1213,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 13.316667
+  - time: 11.933333
     functionName: EnablePlayerMovement
     data: 
     objectReferenceParameter: {fileID: 0}
