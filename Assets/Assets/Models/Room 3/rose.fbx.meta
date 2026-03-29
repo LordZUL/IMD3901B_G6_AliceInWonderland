@@ -3,7 +3,17 @@ guid: c8ebe9dcb082a484e8e80eca2896becb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leaf_mtl
+    second: {fileID: 2100000, guid: 05ded8f79365fe94ebcf8139e7c681ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: openPBR_shader1
+    second: {fileID: 2100000, guid: 8f3c4840c8d7849458fb8c1d38ebcdc6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
