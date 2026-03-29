@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class NEWPlayerInteraction : MonoBehaviour
 {
@@ -70,6 +72,21 @@ public class NEWPlayerInteraction : MonoBehaviour
 
 
             }*/
+
+            // If player is near door, then when they interact with it by pressing e it loads the next scene in the build profile
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit doorHit, 5f))
+            {
+                if (doorHit.collider.CompareTag("Door"))
+                {
+                    if (Keyboard.current.eKey.wasPressedThisFrame)
+                    {
+                        Debug.Log("Loading next room...");
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    }
+
+                    return;
+                }
+            }
 
         }
         // if Q is pressed when currently holding something -> eat object
