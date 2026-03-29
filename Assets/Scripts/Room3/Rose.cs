@@ -20,20 +20,10 @@ public class Rose : MonoBehaviour
             // Only apply the material change to rose_geo, not leaves_geo
             if (r.gameObject.name == "rose_geo")
             {
-                // Get all materials
-                Material[] mats = r.materials;
-
-                for (int i = 0; i < mats.Length; i++)
-                {
-                    // Applies the red material
-                    mats[i] = redMaterial;
-                }
-
-                r.materials = mats;
+                r.material = redMaterial;
+                Debug.Log("Rose painted red");
             }
         }
-
-        Debug.Log("Rose painted red");
 
         // Painted rose count++
         MazeManager.instance.AddPaintedRose();

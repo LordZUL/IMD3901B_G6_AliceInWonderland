@@ -43,7 +43,7 @@ public class Room3Player : MonoBehaviour
                     npc.TryStartDialogue();
                 }
             }
-            // 🌹 ROSE
+            // ROSE
             else if (hitObj.GetComponent<Rose>() != null)
             {
                 isLookingAtSomething = true;
@@ -51,11 +51,11 @@ public class Room3Player : MonoBehaviour
 
                 if (Keyboard.current.eKey.wasPressedThisFrame && hasPaint)
                 {
-                    Debug.Log("🌹 Painting Rose");
+                    Debug.Log("Painting Rose");
                     hitObj.GetComponent<Rose>().Paint();
                 }
             }
-            // 📦 GRABBABLE
+            // GRABBABLE
             else if (((1 << hitObj.layer) & pickUpLayerMask) != 0)
             {
                 if (hitObj.GetComponent<R3ObjectGrabbable1>() != null)
