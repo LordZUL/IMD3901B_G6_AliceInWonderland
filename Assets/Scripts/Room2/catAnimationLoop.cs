@@ -7,11 +7,13 @@ public class catAnimationLoop : MonoBehaviour
     public Animator animator;
     //public string stateName = "Play";
     //public float animationLength = 3f; // set this manually or detect dynamically
-    public float delayAfter = 10f;
+    public float loop = 1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator = GetComponent<Animator>();
+        animator.enabled = true;
         StartCoroutine(AnimationLoop());
     }
 
@@ -20,17 +22,15 @@ public class catAnimationLoop : MonoBehaviour
         while (true)
         {
             // Start animation
-            animator.Play("Play", 0, 0f);
+            animator.Play("path", 0 , 0f);
+            yield return new WaitForSeconds(loop);
 
             // Wait until the animation is actually playing
             //yield return null;
 
             // Wait until animation finishes
-            yield return new WaitUntil(() =>
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
-        );
-
-            yield return new WaitForSeconds(10f);
+            // yield return new WaitUntil(() =>
+            // animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
         }
     }
 }
