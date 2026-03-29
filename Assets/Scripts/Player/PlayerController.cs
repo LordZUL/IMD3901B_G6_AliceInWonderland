@@ -3,9 +3,42 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 // Added Player Jumping: https://www.youtube.com/watch?v=cKPdSKBM4rs -> Player control
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 8f;
+    public bool canMove = true;
+    private Vector2 _input;
+    private CharacterController _characterController;
+    private Vector3 _direction;
+
+    [SerializeField] private float speed;
+
+    private void Awake()
+    {
+        _characterController = GetComponent<CharacterController>();
+    }
+
+    private void Update()
+    {
+        _characterController.Move(_direction * speed *Time.deltaTime);
+    }
+    public void Move(InputAction.CallbackContext context)
+    {
+        _input = context.ReadValue<Vector2>();
+        _direction = new Vector3(_input.x, y: 0.0f, z: _input.y);
+    }
+
+
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+    /*public float speed = 8f;
     public float mouseSensitivity = 1f;
     public float jumpForce = 5f;
 
@@ -67,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 1.5f);
+        return Physics.Raycast(transform.position, Vector3.down, 2f);
     }
 
 
@@ -80,5 +113,5 @@ public class PlayerController : MonoBehaviour
     public void EnableMovement()
     {
         canMove = true;
-    }
+    }*/
 }
