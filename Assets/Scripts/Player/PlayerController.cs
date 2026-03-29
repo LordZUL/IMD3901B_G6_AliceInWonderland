@@ -23,11 +23,14 @@ public class PlayerController : MonoBehaviour
     private float _currentVelocity;
     [SerializeField] private float speed;
 
-    // Jumping variables:
+    // Gravity variables:
     private float _gravity = -9.81f;
     [SerializeField] private float gravityMultiplier = 3.0f;
     //private float _velocity;
     private Vector3 _velocity;
+
+    //Jumping 
+    [SerializeField] private float jumpPower;
 
     void Start()
     {
@@ -116,6 +119,14 @@ public class PlayerController : MonoBehaviour
         _direction = new Vector3(_input.x, 0.0f, _input.y);
     }
 
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        if (!_characterController.isGrounded) return;
+
+        _velocity.y = jumpPower;
+
+    }
     public void DisableMovement()
     {
         canMove = false;
