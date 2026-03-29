@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 0dc1c23d199b79b4da39bbc41db7363c
+  - enabled: 1
+    path: Assets/Scenes/Tutorial_Room.unity
+    guid: 8e5512ae43b44474b9ae149ca9b7d9d0
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
@@ -15,8 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Room1_TeaParty.unity
     guid: f057a2d987cd15945882bcd74ef83e82
   - enabled: 1
-    path: Assets/Scenes/Tutorial_Room.unity
-    guid: 8e5512ae43b44474b9ae149ca9b7d9d0
+    path: Assets/Scenes/Room2_CheshireCatTiles.unity
+    guid: 6f35897fcec59b14db75894e35a50587
+  - enabled: 1
+    path: Assets/Scenes/Room3_QueenOfHeartsMaze.unity
+    guid: c392693f164e9894da0af5d910b61ea0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
