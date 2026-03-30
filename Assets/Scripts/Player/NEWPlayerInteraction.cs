@@ -54,8 +54,6 @@ public class NEWPlayerInteraction : MonoBehaviour
                     {
                         //crosshairUIScript.SetInteract(true);
                         objectGrabbable.Grab(objectGrabPointTransform);
-
-
                     }
                 }
 
@@ -70,28 +68,32 @@ public class NEWPlayerInteraction : MonoBehaviour
             /*if (heldObject == null)
             {
                 PickUpObject(hit.collider.gameObject);
-
-
             }*/
-
-            // SCENE LOADING STUFF
-            // If player is near door, then when they interact with it by pressing e it loads the next scene in the build profile
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit doorHit, 5f))
-            {
-                if (doorHit.collider.CompareTag("Door"))
-                {
-                    if (Keyboard.current.eKey.wasPressedThisFrame)
-                    {
-                        Debug.Log("Loading next room...");
-                        StartCoroutine(LoadNextScene());
-                        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                    }
-
-                    return;
-                }
-            }
-
         }
+
+        // SCENE LOADING STUFF
+        // If player is near door, then when they interact with it by pressing e it loads the next scene in the build profile
+        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit doorHit, 5f))
+        {
+            // Show UI
+            crosshairUIScript.SetInteract(true, doorHit.collider.gameObject);
+
+            if (doorHit.collider.CompareTag("Door"))
+            {
+                if (Keyboard.current.eKey.wasPressedThisFrame)
+                {
+                    Debug.Log("Loading next room...");
+                    StartCoroutine(LoadNextScene());
+                     // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                 }
+               }
+          }
+          else
+          {
+            // Hide UI
+            crosshairUIScript.SetInteract(false, null);
+          }
+
         // if Q is pressed when currently holding something -> eat object
         // need to check if object is mushroom or carrot
         if ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot"))
