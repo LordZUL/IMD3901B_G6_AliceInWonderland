@@ -53,7 +53,7 @@ public class ScaleOnButton : MonoBehaviour
         else if (lastSizeState == NEWPlayerInteraction.SizeState.Big)
         {
 
-            ScaleAroundPlayer(0.05f);
+            ScaleAroundPlayer(0.1f);
         }
         else
         {
