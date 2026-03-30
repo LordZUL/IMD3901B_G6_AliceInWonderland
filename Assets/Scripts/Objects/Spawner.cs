@@ -2,11 +2,21 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject carrot;
+    public GameObject carrotPrefab;
+    private GameObject currentCarrot;
+
+    void Start()
+    {
+        SpawnCarrot();
+    }
     public void SpawnCarrot()
     {
-        Instantiate(carrot);
+        currentCarrot = Instantiate(carrotPrefab, transform.position, transform.rotation);
+        currentCarrot.GetComponent<ObjectGrabbable>().spawner = this;
 
+    }
+    public void OnCarrotDestroyed()
+    {
+        SpawnCarrot();
     }
 }

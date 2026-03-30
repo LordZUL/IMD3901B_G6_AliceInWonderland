@@ -27,6 +27,8 @@ public class NEWPlayerInteraction : MonoBehaviour
     public enum SizeState { Normal, Small, Big }
     public SizeState currentSize = SizeState.Normal;
 
+    Spawner spawn;
+
     void Start()
     {
         // make heldobject defy gravityyy -> make object kinematic
@@ -160,9 +162,11 @@ public class NEWPlayerInteraction : MonoBehaviour
                     {
                         currentSize = SizeState.Small;
                     }
+                    spawn.SpawnCarrot(objectGrabbable.gameObject);
                 }
-
+                
                 Destroy(objectGrabbable.gameObject);
+                
                 objectGrabbable = null;
             }
         }
