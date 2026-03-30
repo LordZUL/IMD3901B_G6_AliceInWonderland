@@ -12,12 +12,12 @@ public class Rose : MonoBehaviour
 
         isPainted = true;
 
-        // The materials on leaves_geo and rose_geo are grabbed
+        
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
 
         foreach (Renderer r in renderers)
         {
-            // Only apply the material change to rose_geo, not leaves_geo
+  
             if (r.gameObject.name == "rose_geo")
             {
                 r.material = redMaterial;
@@ -25,7 +25,7 @@ public class Rose : MonoBehaviour
             }
         }
 
-        // Painted rose count++
+    
         MazeManager.instance.AddPaintedRose();
     }
 }
