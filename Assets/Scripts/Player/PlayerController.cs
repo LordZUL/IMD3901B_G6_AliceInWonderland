@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     //Jumping 
     [SerializeField] private float jumpPower;
+    private Rigidbody rb;
+    LedgeGrabbing ledge;
 
     void Start()
     {
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -125,6 +128,18 @@ public class PlayerController : MonoBehaviour
         if (!_characterController.isGrounded) return;
 
         _velocity.y = jumpPower;
+        /*
+        if (ledge.hanging)
+        {
+            rb.useGravity = true;
+            ledge.hanging = false;
+            _velocity.y = jumpPower;
+        }
+        else
+        {
+            _velocity.y = jumpPower;
+        }*/
+        
 
     }
     public void DisableMovement()
