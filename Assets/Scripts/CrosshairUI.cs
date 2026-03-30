@@ -10,16 +10,26 @@ public class CrosshairUI : MonoBehaviour
     public GameObject interactionText;
     public GameObject rabbitInteractionText;
     public GameObject paintInteractionText;
+    public GameObject doorInteractionText;
 
     private bool hasInteractedOnce = false;
 
     void Start()
     {
         if (interactionText != null)
+        {
             interactionText.SetActive(false);
+        }
 
         if (rabbitInteractionText != null)
+        {
             rabbitInteractionText.SetActive(false);
+        }
+
+        if (doorInteractionText != null)
+        {
+            doorInteractionText.SetActive(false);
+        }
     }
 
     public void SetInteract(bool isInteract, GameObject target)
@@ -28,21 +38,30 @@ public class CrosshairUI : MonoBehaviour
         interactionText.SetActive(false);
         rabbitInteractionText.SetActive(false);
         paintInteractionText.SetActive(false);
+        doorInteractionText.SetActive(false);
 
-        if (!isInteract || target == null) return;
+        if (!isInteract || target == null)
+        {
+            return;
+        }
 
-        // 🐰 Rabbit
+        // Rabbit
         if (target.GetComponent<DialogueNPC3D>() != null)
         {
             rabbitInteractionText.SetActive(true);
         }
-        // 🌹 Rose
+        // Rose
         else if (target.GetComponent<Rose>() != null)
         {
             paintInteractionText.SetActive(true);
         }
-        // 📦 Default pickup
-        else
+        // Door
+        else if (target.CompareTag("Door"))
+        {
+            doorInteractionText.SetActive(true);
+        }
+        // Default pickup
+        else if (target.GetComponent<ObjectGrabbable>() != null || target.CompareTag("PaintCan"))
         {
             interactionText.SetActive(true);
         }
@@ -57,5 +76,10 @@ public class CrosshairUI : MonoBehaviour
 
         if (rabbitInteractionText != null)
             rabbitInteractionText.SetActive(false);
+
+        if (doorInteractionText != null)
+        {
+            doorInteractionText.SetActive(false);
+        }
     }
 }

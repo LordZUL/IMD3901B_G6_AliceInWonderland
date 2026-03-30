@@ -4,13 +4,14 @@ public class MazeManager : MonoBehaviour
 {
     public static MazeManager instance;
 
-    public int totalRoses = 5;
+    public int totalRoses = 7;
     private int paintedRoses = 0;
 
-    public GameObject exitDoor; // or hedge wall
+    public GameObject exitDoor;
 
     void Awake()
     {
+        
         instance = this;
     }
 
@@ -30,9 +31,7 @@ public class MazeManager : MonoBehaviour
     {
         Debug.Log("Maze Complete!");
 
-        // Option 1: disable door
-        exitDoor.SetActive(false);
-
-        // Option 2 (better later): play animation
+        
+        exitDoor.SetActive(true);
     }
 }

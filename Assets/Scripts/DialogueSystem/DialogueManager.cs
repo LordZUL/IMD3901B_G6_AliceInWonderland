@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
-    // SINGLETON
+    
     public static DialogueManager instance;
 
     [Header("Linked Components")]
@@ -51,7 +51,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(DialogueLine[] lines)
     {
-        dialogueLines = lines;           // assign the NPC's dialogue
+        dialogueLines = lines;           
         dialogueGameObject.SetActive(true);
         dialogueFinished = false;
         currentIndex = 0;

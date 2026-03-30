@@ -31,7 +31,7 @@ public class Room3Player : MonoBehaviour
         {
             GameObject hitObj = hit.transform.gameObject;
 
-            // 🐰 RABBIT
+            
             DialogueNPC3D npc = hitObj.GetComponent<DialogueNPC3D>();
             if (npc != null)
             {
@@ -43,7 +43,7 @@ public class Room3Player : MonoBehaviour
                     npc.TryStartDialogue();
                 }
             }
-            // 🌹 ROSE
+            // ROSE
             else if (hitObj.GetComponent<Rose>() != null)
             {
                 isLookingAtSomething = true;
@@ -51,11 +51,11 @@ public class Room3Player : MonoBehaviour
 
                 if (Keyboard.current.eKey.wasPressedThisFrame && hasPaint)
                 {
-                    Debug.Log("🌹 Painting Rose");
+                    Debug.Log("Painting Rose");
                     hitObj.GetComponent<Rose>().Paint();
                 }
             }
-            // 📦 GRABBABLE
+            // GRABBABLE
             else if (((1 << hitObj.layer) & pickUpLayerMask) != 0)
             {
                 if (hitObj.GetComponent<R3ObjectGrabbable1>() != null)
@@ -66,13 +66,13 @@ public class Room3Player : MonoBehaviour
             }
         }
 
-        // ❌ NOTHING HIT
+        //  NOTHING HIT
         if (!isLookingAtSomething)
         {
             crosshairUIScript.SetInteract(false, null);
         }
 
-        // 🖐️ GRAB / DROP (NOW ALWAYS RUNS)
+       
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
             if (objectGrabbable == null)
@@ -91,7 +91,7 @@ public class Room3Player : MonoBehaviour
                 if (objectGrabbable.CompareTag("PaintCan"))
                 {
                     hasPaint = true;
-                    Debug.Log("🎨 Got Paint!");
+                    Debug.Log("Got Paint!");
                     Destroy(objectGrabbable.gameObject);
                 }
                 else

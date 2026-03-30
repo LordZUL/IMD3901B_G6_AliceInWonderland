@@ -6,25 +6,26 @@ public class Rose : MonoBehaviour
     private Renderer rend;
     private bool isPainted = false;
 
-    void Start()
-    {
-        rend = GetComponent<Renderer>();
-    }
-
     public void Paint()
     {
         if (isPainted) return;
 
         isPainted = true;
 
-        if (redMaterial != null)
+        
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
+        foreach (Renderer r in renderers)
         {
-            rend.material = redMaterial;
+  
+            if (r.gameObject.name == "rose_geo")
+            {
+                r.material = redMaterial;
+                Debug.Log("Rose painted red");
+            }
         }
 
-        Debug.Log("Rose painted 🌹");
-
-        // ✅ ADD THIS
+    
         MazeManager.instance.AddPaintedRose();
     }
 }
