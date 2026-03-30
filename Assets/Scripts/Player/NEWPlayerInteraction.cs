@@ -12,10 +12,10 @@ public class NEWPlayerInteraction : MonoBehaviour
     // Jumping advanced: not doing it right now https://www.youtube.com/watch?v=h2r3_KjChf4
 
     //public Camera playerCamera;
-    [SerializeField] private Transform playerCameraTransform;
-    //[SerializeField] private LayerMask pickUpLayerMask;
-    [SerializeField] private Transform puzzleGrabPointTransform;
-    [SerializeField] private Transform inventoryGrabPointTransform;
+    public Transform playerCameraTransform;
+    [SerializeField] private LayerMask pickUpLayerMask;
+    public Transform puzzleGrabPointTransform;
+    public Transform inventoryGrabPointTransform;
 
     public CrosshairUI crosshairUIScript;
     public ScreenFade screenFade;
@@ -37,9 +37,9 @@ public class NEWPlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        //if (Keyboard.current.eKey.wasPressedThisFrame)
-        if (Input.GetKeyDown(KeyCode.E))
-            {
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        //if (Input.GetKeyDown(KeyCode.E))
+        {
             // if hands empty, grab object
             if (objectGrabbable == null)
             {
@@ -59,7 +59,7 @@ public class NEWPlayerInteraction : MonoBehaviour
                     // if object under ray has that script
                     if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                     {
-                        objectGrabbable.Grab(inventoryGrabPointTransform);
+                        //objectGrabbable.Grab(inventoryGrabPointTransform);
                         //crosshairUIScript.SetInteract(true);
                         if ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot"))
                         {

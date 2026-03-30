@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 231368667}
   - component: {fileID: 231368671}
   - component: {fileID: 231368672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Carrot
   m_TagString: Carrot
   m_Icon: {fileID: 0}
@@ -1064,7 +1064,7 @@ Transform:
   m_GameObject: {fileID: 231368666}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.23, y: 2.27, z: 2.71}
+  m_LocalPosition: {x: 6.23, y: 2.27, z: -17.2}
   m_LocalScale: {x: 1, y: 3.2436, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1094,9 +1094,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &231368672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4657,12 +4657,12 @@ Transform:
   m_GameObject: {fileID: 1069342370}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.82, y: 0, z: 1.076}
+  m_LocalPosition: {x: 0.82, y: -0.5, z: 1.076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 909139424}
-  m_Father: {fileID: 1829907662}
+  m_Father: {fileID: 1525175191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1091796878
 GameObject:
@@ -5277,7 +5277,7 @@ Transform:
   m_GameObject: {fileID: 1232426979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.68, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5310,6 +5310,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCameraTransform: {fileID: 1525175191}
+  pickUpLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   puzzleGrabPointTransform: {fileID: 1053919650}
   inventoryGrabPointTransform: {fileID: 1069342371}
   crosshairUIScript: {fileID: 139333578}
@@ -5322,7 +5325,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232426979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d187a35c4cf5434cb4574f7107b44c3, type: 3}
   m_Name: 
@@ -5936,7 +5939,7 @@ Transform:
   m_GameObject: {fileID: 1424846009}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.00001, z: 0}
+  m_LocalPosition: {x: 0, y: 0.00001, z: -57.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6552,6 +6555,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1053919650}
+  - {fileID: 1069342371}
   m_Father: {fileID: 1829907662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1525175192
@@ -7368,7 +7372,7 @@ GameObject:
   - component: {fileID: 1799432392}
   - component: {fileID: 1799432396}
   - component: {fileID: 1799432397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mushroom
   m_TagString: Mushroom
   m_Icon: {fileID: 0}
@@ -7458,7 +7462,7 @@ Transform:
   m_GameObject: {fileID: 1799432391}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.37, y: 1.23, z: 3.02}
+  m_LocalPosition: {x: -3.37, y: 1.23, z: -16.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7518,6 +7522,8 @@ GameObject:
   - component: {fileID: 1829907667}
   - component: {fileID: 1829907668}
   - component: {fileID: 1829907669}
+  - component: {fileID: 1829907670}
+  - component: {fileID: 1829907671}
   m_Layer: 6
   m_Name: Capsule
   m_TagString: Player
@@ -7534,12 +7540,11 @@ Transform:
   m_GameObject: {fileID: 1829907661}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.9799998, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1525175191}
-  - {fileID: 1069342371}
   m_Father: {fileID: 1232426980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1829907665
@@ -7660,6 +7665,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1829907670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829907661}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d187a35c4cf5434cb4574f7107b44c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: -10
+--- !u!114 &1829907671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829907661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5062820fe72ed42a389e76b1f6c70f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: -10
 --- !u!1 &1888811525
 GameObject:
   m_ObjectHideFlags: 0
@@ -7758,6 +7789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCameraTransform: {fileID: 1649065847}
+  pickUpLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   puzzleGrabPointTransform: {fileID: 0}
   inventoryGrabPointTransform: {fileID: 0}
   crosshairUIScript: {fileID: 0}
@@ -8578,7 +8612,7 @@ Transform:
   m_GameObject: {fileID: 2079955948}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 57.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//when
 public class Sticky : MonoBehaviour
 {
     private Rigidbody rb;

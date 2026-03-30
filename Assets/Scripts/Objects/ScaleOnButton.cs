@@ -48,10 +48,12 @@ public class ScaleOnButton : MonoBehaviour
         if (lastSizeState == NEWPlayerInteraction.SizeState.Small)
         {
             ScaleAroundPlayer(10f);
+            //transform.position = new Vector3(0f, 10f, 25f);
         }
         else if (lastSizeState == NEWPlayerInteraction.SizeState.Big)
         {
-            ScaleAroundPlayer(0.1f);
+
+            ScaleAroundPlayer(0.05f);
         }
         else
         {
@@ -98,34 +100,17 @@ public class ScaleOnButton : MonoBehaviour
     }*/
     void ScaleAroundPlayer(float scaleFactor)
     {
-        //Vector3 pos = player.transform.position;
 
-        /*
-        Vector3 offset = transform.position - playerTransform.position;
+       
 
-        transform.localScale *= scaleFactor;
-        transform.position = playerTransform.position + offset * scaleFactor;*/
+       // Vector3 pivot = new Vector3 (player.transform.position.x,0f, player.transform.position.z);
 
-        //float playerY = player.transform.position.y;
-        Vector3 pivot = new Vector3 (player.transform.position.x,0f, player.transform.position.z);
+        //Vector3 offset = transform.position - pivot;
 
-        //Vector3 offset = originalPosition - pivot;
-        Vector3 offset = transform.position - pivot;
-
-        transform.position = pivot + offset * scaleFactor;
+        //transform.position = pivot + offset * scaleFactor;
 
         transform.localScale = originalScale * scaleFactor;
-        //Vector3 pos = player.transform.position;
-        //pos.y = 500f;   // new height
-        //player.transform.position = pos;
-        //player.transform.position = 10f;
-
-        //SnapPlayerToGround();
-
-        // keep player height
-        /*
-        Vector3 p = player.transform.position;
-        player.transform.position = new Vector3(p.x, playerY, p.z);*/
+        
     }
 
     void SnapPlayerToGround()
