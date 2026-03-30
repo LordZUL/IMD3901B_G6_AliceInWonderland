@@ -14,6 +14,7 @@ public class ObjectGrabbable : MonoBehaviour
         objectRigidbody = GetComponent<Rigidbody>();
     }
 
+    //object picked up become non-kinematic
     public void Grab(Transform objectGrabPointTransform)
     {
         /*
