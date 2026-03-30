@@ -145,19 +145,13 @@ public class PlayerController : MonoBehaviour
             return;
         }
         if (!_characterController.isGrounded) return;*/
-        if (player.currentSize == lastSizeState) return;
 
-        lastSizeState = player.currentSize;
-        if (lastSizeState == NEWPlayerInteraction.SizeState.Big)
+        if (player.currentSize == NEWPlayerInteraction.SizeState.Big)
         {
-            _velocity.y = 0;
             return;
         }
-        else
-        {
-            _velocity.y = jumpPower;
-        }
-        
+        _velocity.y = jumpPower;
+
 
 
     }

@@ -7478,6 +7478,7 @@ MonoBehaviour:
   speed: 5
   gravityMultiplier: 2
   jumpPower: 15
+  player: {fileID: 1232426986}
 --- !u!143 &1829907668
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7727,7 +7728,8 @@ MonoBehaviour:
   smoothTime: 0.05
   speed: 0
   gravityMultiplier: 3
-  jumpPower: 0
+  jumpPower: 15
+  player: {fileID: 0}
 --- !u!4 &1888811533
 Transform:
   m_ObjectHideFlags: 0
