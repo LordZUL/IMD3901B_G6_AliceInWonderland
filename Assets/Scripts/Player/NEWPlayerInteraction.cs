@@ -13,7 +13,7 @@ public class NEWPlayerInteraction : MonoBehaviour
 
     //public Camera playerCamera;
     [SerializeField] private Transform playerCameraTransform;
-    [SerializeField] private LayerMask pickUpLayerMask;
+    //[SerializeField] private LayerMask pickUpLayerMask;
     [SerializeField] private Transform puzzleGrabPointTransform;
     [SerializeField] private Transform inventoryGrabPointTransform;
 
@@ -37,25 +37,29 @@ public class NEWPlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame)
-        {
+        //if (Keyboard.current.eKey.wasPressedThisFrame)
+        if (Input.GetKeyDown(KeyCode.E))
+            {
             // if hands empty, grab object
             if (objectGrabbable == null)
             {
                 float pickupDistance = 5f;
                 if (currentSize == SizeState.Big)
                 {
-                    pickupDistance = 2f;
+                    pickupDistance = 100f;
                 }
                 // raycast will hit everything infront of player camera within distance and not on playerLayer
-                if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickupDistance, pickUpLayerMask))
+                //if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickupDistance, pickUpLayerMask))
+
+                if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickupDistance))
                 {
 
 
                     //Debug.Log(raycastHit.transform);
                     // if object under ray has that script
-                    if (raycastHit.transform.TryGetComponent(out ObjectGrabbable objectGrabbable))
+                    if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                     {
+                        objectGrabbable.Grab(inventoryGrabPointTransform);
                         //crosshairUIScript.SetInteract(true);
                         if ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot"))
                         {
@@ -72,7 +76,7 @@ public class NEWPlayerInteraction : MonoBehaviour
                 }
 
             }
-            //currently holding something
+            //currently holding something -> drop
             else
             {
                 objectGrabbable.Drop();
