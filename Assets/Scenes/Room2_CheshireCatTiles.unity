@@ -377,7 +377,8 @@ MonoBehaviour:
   pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 183
-  objectGrabPointTransform: {fileID: 782944656}
+  puzzleGrabPointTransform: {fileID: 0}
+  inventoryGrabPointTransform: {fileID: 0}
   crosshairUIScript: {fileID: 0}
   screenFade: {fileID: 0}
   currentSize: 0
@@ -963,7 +964,8 @@ MonoBehaviour:
   pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 183
-  objectGrabPointTransform: {fileID: 547354833}
+  puzzleGrabPointTransform: {fileID: 0}
+  inventoryGrabPointTransform: {fileID: 0}
   crosshairUIScript: {fileID: 847430434}
   screenFade: {fileID: 1655286404}
   currentSize: 0
@@ -4599,7 +4601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1020809815
 RectTransform:
   m_ObjectHideFlags: 0

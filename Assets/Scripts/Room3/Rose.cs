@@ -11,8 +11,9 @@ public class Rose : MonoBehaviour
         if (isPainted) return;
 
         isPainted = true;
+        //counter
+        RoseCounter.Instance.AddRose();
 
-        
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
 
         foreach (Renderer r in renderers)
