@@ -1,48 +1,40 @@
 using UnityEngine;
 
-//when large, object grabbed it becomes kinematic, and other interactables become non kinematic or other way around. Object grabbed becomes non-kinematic
+//when 
 public class Sticky : MonoBehaviour
 {
     private Rigidbody rb;
     private Renderer objectRenderer;
-    public bool isBlocked = false;
+    private ObjectGrabbable grabbable;
+
     void Start()
     {
-        objectRenderer = GetComponent<Renderer>();
-        rb = GetComponent<Rigidbody>();
+        //objectRenderer = GetComponent<Renderer>();
 
+        rb = GetComponent<Rigidbody>();
+        grabbable = GetComponent<ObjectGrabbable>();
     }
 
     // Update is called once per frame
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         // Check if the object that entered is interactable
-        if (other.CompareTag("NotInteractable"))
+        if (grabbable != null && !grabbable.isHeld && other.collider.CompareTag("NotInteractable"))
         {
             //objectRenderer.material.color = Color.green;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
             rb.isKinematic = true;
-            isBlocked = true;
-            //rb.constraints = RigidbodyConstraints.FreezeAll;
-
-            /*
-            Physics.IgnoreLayerCollision(
-            LayerMask.NameToLayer("Sticky"),
-            LayerMask.NameToLayer("Grabbable"),
-            true
-            );
-            gameObject.layer = LayerMask.NameToLayer("Sticky");*/
-
-
+            //rb.useGravity = false;
         }
     }
-
+    /*
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("NotInteractable"))
         {
             //objectRenderer.material.color = Color.red;
             rb.isKinematic = false;
-            isBlocked = false;
         }
-    }
+    }*/
 }
