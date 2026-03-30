@@ -24,6 +24,6 @@ public class RoseCounter : MonoBehaviour
 
     void UpdateUI()
     {
-        counterText.text = "🌹 " + paintedRoses + " / " + totalRoses;
+        counterText.text = "Roses: " + paintedRoses + " / " + totalRoses;
     }
 }
