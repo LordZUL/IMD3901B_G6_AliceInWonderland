@@ -302,9 +302,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &51254731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,9 +1518,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &329779056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,9 +2013,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &357551360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2404,9 +2404,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &459704261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3216,7 +3216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.77
+      value: 9.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3224,7 +3224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 56.57
+      value: 11.56
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3502,9 +3502,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &736898710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4022,9 +4022,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &883662518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4525,6 +4525,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 16.363676, y: 21.232862, z: 2.2627594}
   m_Center: {x: -0.09075225, y: -0.16127911, z: -0.053046297}
+--- !u!1 &1053919649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1053919650}
+  m_Layer: 6
+  m_Name: puzzelInteractionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1053919650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053919649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1525175191}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1066542213
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,9 +5067,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1219279725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5228,7 +5259,6 @@ GameObject:
   - component: {fileID: 1232426980}
   - component: {fileID: 1232426984}
   - component: {fileID: 1232426986}
-  - component: {fileID: 1232426987}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5281,23 +5311,11 @@ MonoBehaviour:
   pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 183
-  objectGrabPointTransform: {fileID: 1069342371}
+  puzzleGrabPointTransform: {fileID: 0}
+  inventoryGrabPointTransform: {fileID: 0}
   crosshairUIScript: {fileID: 139333578}
   screenFade: {fileID: 1695577618}
   currentSize: 0
---- !u!114 &1232426987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232426979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f60045b401a37024e84ab7b6ba776990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCameraTransform: {fileID: 1525175191}
 --- !u!1 &1262814783
 GameObject:
   m_ObjectHideFlags: 0
@@ -5725,9 +5743,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1417576338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6173,9 +6191,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1474308135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6404,7 +6422,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1053919650}
   m_Father: {fileID: 1829907662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1525175192
@@ -6971,9 +6990,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1676856783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7614,7 +7633,8 @@ MonoBehaviour:
   pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 183
-  objectGrabPointTransform: {fileID: 903425819}
+  puzzleGrabPointTransform: {fileID: 0}
+  inventoryGrabPointTransform: {fileID: 0}
   crosshairUIScript: {fileID: 0}
   screenFade: {fileID: 0}
   currentSize: 0

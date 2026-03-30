@@ -12,9 +12,11 @@ public class NEWPlayerInteraction : MonoBehaviour
     // Jumping advanced: not doing it right now https://www.youtube.com/watch?v=h2r3_KjChf4
 
     //public Camera playerCamera;
-    public Transform playerCameraTransform;
-    public LayerMask pickUpLayerMask;
-    public Transform objectGrabPointTransform;
+    [SerializeField] private Transform playerCameraTransform;
+    [SerializeField] private LayerMask pickUpLayerMask;
+    [SerializeField] private Transform puzzleGrabPointTransform;
+    [SerializeField] private Transform inventoryGrabPointTransform;
+
     public CrosshairUI crosshairUIScript;
     public ScreenFade screenFade;
 
@@ -43,7 +45,7 @@ public class NEWPlayerInteraction : MonoBehaviour
                 float pickupDistance = 5f;
                 if (currentSize == SizeState.Big)
                 {
-                    pickupDistance = 100f;
+                    pickupDistance = 2f;
                 }
                 // raycast will hit everything infront of player camera within distance and not on playerLayer
                 if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickupDistance, pickUpLayerMask))
@@ -52,10 +54,18 @@ public class NEWPlayerInteraction : MonoBehaviour
 
                     //Debug.Log(raycastHit.transform);
                     // if object under ray has that script
-                    if (raycastHit.transform.TryGetComponent(out objectGrabbable))
+                    if (raycastHit.transform.TryGetComponent(out ObjectGrabbable objectGrabbable))
                     {
                         //crosshairUIScript.SetInteract(true);
-                        objectGrabbable.Grab(objectGrabPointTransform);
+                        if ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot"))
+                        {
+                            objectGrabbable.Grab(inventoryGrabPointTransform);
+                        }
+                        else
+                        {
+                            objectGrabbable.Grab(puzzleGrabPointTransform);
+
+                        }
                     }
 
 
