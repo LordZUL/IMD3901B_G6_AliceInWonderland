@@ -25,21 +25,32 @@ public class PlayerController : MonoBehaviour
 
     // Gravity variables:
     private float _gravity = -9.81f;
-    [SerializeField] private float gravityMultiplier = 3.0f;
+    [SerializeField] private float gravityMultiplier = 2.0f;
     //private float _velocity;
     private Vector3 _velocity;
 
     //Jumping 
-    [SerializeField] private float jumpPower;
+    [SerializeField] private float jumpPower = 15f;
+    LedgeGrabbing ledge;
+    public NEWPlayerInteraction player;
+
+    private NEWPlayerInteraction.SizeState lastSizeState;
+
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        if (player != null)
+        {
+            lastSizeState = player.currentSize;
+        }
     }
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
+        ledge = GetComponent<LedgeGrabbing>();
+        //rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -124,7 +135,24 @@ public class PlayerController : MonoBehaviour
         if (!context.started) return;
         if (!_characterController.isGrounded) return;
 
+        //_velocity.y = jumpPower;
+
+        /*
+        if (ledge != null && ledge.hanging)
+        {
+            ledge.hanging = false;
+            _velocity.y = jumpPower;
+            return;
+        }
+        if (!_characterController.isGrounded) return;*/
+
+        if (player.currentSize == NEWPlayerInteraction.SizeState.Big)
+        {
+            return;
+        }
         _velocity.y = jumpPower;
+
+
 
     }
     public void DisableMovement()
@@ -135,6 +163,11 @@ public class PlayerController : MonoBehaviour
     public void EnableMovement()
     {
         canMove = true;
+    }
+
+    public Vector3 GetVelocity()
+    {
+        return _velocity;
     }
     /*public float speed = 8f;
     public float mouseSensitivity = 1f;

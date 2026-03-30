@@ -17,6 +17,11 @@ public class ScaleOnButton : MonoBehaviour
     private Vector3 originalScale;
     private Vector3 originalPosition;
 
+    //set set sizes
+    [SerializeField] private Vector3 smallScale = new Vector3(10f, 10f, 10f);
+    [SerializeField] private Vector3 normalScale = Vector3.one;
+    [SerializeField] private Vector3 bigScale = new Vector3(0.1f, 0.1f, 0.1f);
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,17 +52,20 @@ public class ScaleOnButton : MonoBehaviour
 
         if (lastSizeState == NEWPlayerInteraction.SizeState.Small)
         {
-            ScaleAroundPlayer(10f);
+            //ScaleAroundPlayer(10f);
+            SetScale(smallScale);
             //transform.position = new Vector3(0f, 10f, 25f);
         }
         else if (lastSizeState == NEWPlayerInteraction.SizeState.Big)
         {
 
-            ScaleAroundPlayer(0.05f);
+            //ScaleAroundPlayer(0.1f);
+            SetScale(bigScale);
         }
         else
         {
-            ScaleAroundPlayer(1f);
+            //ScaleAroundPlayer(1f);
+            SetScale(normalScale);
         }
         //float scaleFactor = 1f;
         /*
@@ -98,18 +106,14 @@ public class ScaleOnButton : MonoBehaviour
             SetScaleAroundPlayer(1f);
         }
     }*/
-    void ScaleAroundPlayer(float scaleFactor)
+
+    //void ScaleAroundPlayer(float scaleFactor)
+    void SetScale(Vector3 targetScale)
     {
 
-       
+        transform.localScale = targetScale;
 
-       // Vector3 pivot = new Vector3 (player.transform.position.x,0f, player.transform.position.z);
-
-        //Vector3 offset = transform.position - pivot;
-
-        //transform.position = pivot + offset * scaleFactor;
-
-        transform.localScale = originalScale * scaleFactor;
+        //transform.localScale = originalScale * scaleFactor;
         
     }
 
