@@ -12,6 +12,10 @@ public class ObjectGrabbable : MonoBehaviour
 
     private void Awake()
     {
+        if (player == null)
+        {
+            player = FindFirstObjectByType<NEWPlayerInteraction>();
+        }
         objectRigidbody = GetComponent<Rigidbody>();
     }
 
