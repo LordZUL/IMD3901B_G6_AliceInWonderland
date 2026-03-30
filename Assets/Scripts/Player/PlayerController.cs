@@ -25,18 +25,26 @@ public class PlayerController : MonoBehaviour
 
     // Gravity variables:
     private float _gravity = -9.81f;
-    [SerializeField] private float gravityMultiplier = 3.0f;
+    [SerializeField] private float gravityMultiplier = 2.0f;
     //private float _velocity;
     private Vector3 _velocity;
 
     //Jumping 
-    [SerializeField] private float jumpPower;
+    [SerializeField] private float jumpPower = 15f;
     LedgeGrabbing ledge;
+    public NEWPlayerInteraction player;
+
+    private NEWPlayerInteraction.SizeState lastSizeState;
+
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        if (player != null)
+        {
+            lastSizeState = player.currentSize;
+        }
     }
     private void Awake()
     {
@@ -128,7 +136,7 @@ public class PlayerController : MonoBehaviour
         if (!_characterController.isGrounded) return;
 
         //_velocity.y = jumpPower;
-        
+
         /*
         if (ledge != null && ledge.hanging)
         {
@@ -137,8 +145,19 @@ public class PlayerController : MonoBehaviour
             return;
         }
         if (!_characterController.isGrounded) return;*/
+        if (player.currentSize == lastSizeState) return;
 
-        _velocity.y = jumpPower;
+        lastSizeState = player.currentSize;
+        if (lastSizeState == NEWPlayerInteraction.SizeState.Big)
+        {
+            _velocity.y = 0;
+            return;
+        }
+        else
+        {
+            _velocity.y = jumpPower;
+        }
+        
 
 
     }
