@@ -61,7 +61,7 @@ public class CrosshairUI : MonoBehaviour
             doorInteractionText.SetActive(true);
         }
         // Default pickup
-        else
+        else if (target.GetComponent<ObjectGrabbable>() != null || target.CompareTag("PaintCan"))
         {
             interactionText.SetActive(true);
         }
