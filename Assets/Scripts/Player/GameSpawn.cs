@@ -4,7 +4,7 @@ using UnityEngine;
 // https://www.youtube.com/watch?v=Mic9ERhr0HA 
 public class GameSpawn : MonoBehaviour
 {
-    public float threshold = -10; //defined as y value of the transform
+    public float threshold = -5; //defined as y value of the transform
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

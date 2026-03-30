@@ -8,12 +8,14 @@ public class ObjectGrabbable : MonoBehaviour
     public NEWPlayerInteraction player;
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
+    public bool isHeld { get; private set; }
 
     private void Awake()
     {
         objectRigidbody = GetComponent<Rigidbody>();
     }
 
+    //object picked up become non-kinematic
     public void Grab(Transform objectGrabPointTransform)
     {
         /*
@@ -30,12 +32,20 @@ public class ObjectGrabbable : MonoBehaviour
 
         // set gravity to false
         this.objectGrabPointTransform = objectGrabPointTransform;
+        isHeld = true;
+        objectRigidbody.isKinematic = false;
         objectRigidbody.useGravity = false;
+
+        objectRigidbody.linearVelocity = Vector3.zero;
+        objectRigidbody.angularVelocity = Vector3.zero;
+        //objectRigidbody.isKinematic = false;
+
 
     }
     public void Drop()
     {
         this.objectGrabPointTransform = null;
+        isHeld = false;
         objectRigidbody.useGravity = true;
     }
 

@@ -13,8 +13,10 @@ public class NEWPlayerInteraction : MonoBehaviour
 
     //public Camera playerCamera;
     public Transform playerCameraTransform;
-    public LayerMask pickUpLayerMask;
-    public Transform objectGrabPointTransform;
+    [SerializeField] private LayerMask pickUpLayerMask;
+    public Transform puzzleGrabPointTransform;
+    public Transform inventoryGrabPointTransform;
+
     public CrosshairUI crosshairUIScript;
     public ScreenFade screenFade;
 
@@ -36,6 +38,7 @@ public class NEWPlayerInteraction : MonoBehaviour
     void Update()
     {
         if (Keyboard.current.eKey.wasPressedThisFrame)
+        //if (Input.GetKeyDown(KeyCode.E))
         {
             // if hands empty, grab object
             if (objectGrabbable == null)
@@ -46,7 +49,9 @@ public class NEWPlayerInteraction : MonoBehaviour
                     pickupDistance = 100f;
                 }
                 // raycast will hit everything infront of player camera within distance and not on playerLayer
-                if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickupDistance, pickUpLayerMask))
+                //if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickupDistance, pickUpLayerMask))
+
+                if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickupDistance))
                 {
 
 
@@ -54,15 +59,24 @@ public class NEWPlayerInteraction : MonoBehaviour
                     // if object under ray has that script
                     if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                     {
+                        //objectGrabbable.Grab(inventoryGrabPointTransform);
                         //crosshairUIScript.SetInteract(true);
-                        objectGrabbable.Grab(objectGrabPointTransform);
+                        if ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot"))
+                        {
+                            objectGrabbable.Grab(inventoryGrabPointTransform);
+                        }
+                        else
+                        {
+                            objectGrabbable.Grab(puzzleGrabPointTransform);
+
+                        }
                     }
 
 
                 }
 
             }
-            //currently holding something
+            //currently holding something -> drop
             else
             {
                 objectGrabbable.Drop();
