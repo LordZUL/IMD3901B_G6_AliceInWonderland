@@ -97,8 +97,6 @@ public class NEWPlayerInteraction : MonoBehaviour
             }*/
         }
 
-        // SCENE LOADING STUFF
-        // If player is near door, then when they interact with it by pressing e it loads the next scene in the build profile
         if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit doorHit, 5f))
         {
 
@@ -118,7 +116,8 @@ public class NEWPlayerInteraction : MonoBehaviour
                 return; // end
             }
             
-            // DOOR SCENE SWITCH
+            // SCENE LOADING STUFF
+            // If player is near door, then when they interact with it by pressing e it loads the next scene in the build profile
             // Show UI
             crosshairUIScript.SetInteract(true, doorHit.collider.gameObject);
 

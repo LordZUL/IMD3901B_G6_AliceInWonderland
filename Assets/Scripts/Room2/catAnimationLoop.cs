@@ -12,7 +12,9 @@ public class catAnimationLoop : MonoBehaviour
     public float animationLength = 13f;
 
     // UI
-    public TMP_Text instructionText; 
+    public TMP_Text instructionText;
+    // VR UI
+    public TMP_Text VRinstructionText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +31,7 @@ public class catAnimationLoop : MonoBehaviour
             // Make cat visible when animation plays
             cat.enabled = true;
             instructionText.text = "Wait your turn!";
+            VRinstructionText.text = "Wait your turn!";
 
             // Start animation
             animator.Play("path", 0 , 0f);
@@ -37,6 +40,7 @@ public class catAnimationLoop : MonoBehaviour
             // Hide cat after animation plays
             cat.enabled = false;
             instructionText.text = "Get to the other side!";
+            VRinstructionText.text = "Get to the other side!";
 
             yield return new WaitForSeconds(loop);
         }
