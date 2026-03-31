@@ -1,6 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 // Added Player Jumping: https://www.youtube.com/watch?v=cKPdSKBM4rs -> Player control
 //Player control playlist: https://youtube.com/playlist?list=PLBcfp6HMOJwzDcdCzoAx3jJKm7sIcBXJZ&si=snXGOItQbdXOjrj0
 
@@ -35,7 +37,6 @@ public class PlayerController : MonoBehaviour
     public NEWPlayerInteraction player;
 
     private NEWPlayerInteraction.SizeState lastSizeState;
-
 
     void Start()
     {
