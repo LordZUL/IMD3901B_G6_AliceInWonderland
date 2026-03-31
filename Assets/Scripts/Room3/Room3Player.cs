@@ -18,7 +18,16 @@ public class Room3Player : MonoBehaviour
     public enum SizeState { Normal, Small, Big }
     public SizeState currentSize = SizeState.Normal;
 
+    // Audio
+    public AudioClip paintSound;
+    private AudioSource ac;
+
     private bool hasPaint = false;
+
+    void Start()
+    {
+        ac = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -51,6 +60,7 @@ public class Room3Player : MonoBehaviour
 
                 if (Keyboard.current.eKey.wasPressedThisFrame && hasPaint)
                 {
+                    ac.PlayOneShot(paintSound);
                     Debug.Log("Painting Rose");
                     hitObj.GetComponent<Rose>().Paint();
                 }

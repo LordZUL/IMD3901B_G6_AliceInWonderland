@@ -22,6 +22,7 @@ public class NEWPlayerInteraction : MonoBehaviour
 
     // Audio
     public AudioClip nextScene;
+    public AudioClip eatSound;
     private AudioSource ac;
 
     // to track if hands empty rn
@@ -173,6 +174,10 @@ public class NEWPlayerInteraction : MonoBehaviour
                     //spawn.SpawnCarrot(objectGrabbable.gameObject);
                 }
                 objectGrabbable.OnConsumed();
+
+                // Play audio clip
+                ac.PlayOneShot(eatSound);
+
                 Destroy(objectGrabbable.gameObject);
                 
                 objectGrabbable = null;
