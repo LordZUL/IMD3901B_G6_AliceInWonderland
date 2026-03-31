@@ -20,6 +20,10 @@ public class NEWPlayerInteraction : MonoBehaviour
     public CrosshairUI crosshairUIScript;
     public ScreenFade screenFade;
 
+    // Audio
+    public AudioClip nextScene;
+    private AudioSource ac;
+
     // to track if hands empty rn
     private ObjectGrabbable objectGrabbable;
 
@@ -33,6 +37,7 @@ public class NEWPlayerInteraction : MonoBehaviour
     {
         // make heldobject defy gravityyy -> make object kinematic
         //heldObject.GetComponent<Rigidbody>().isKinematic = true;
+        ac = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -111,6 +116,8 @@ public class NEWPlayerInteraction : MonoBehaviour
 
                 return; // end
             }
+            
+            // DOOR SCENE SWITCH
             // Show UI
             crosshairUIScript.SetInteract(true, doorHit.collider.gameObject);
 
@@ -123,13 +130,13 @@ public class NEWPlayerInteraction : MonoBehaviour
                     StartCoroutine(LoadNextScene());
                      // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                  }
-               }
-          }
-          else
-          {
-            // Hide UI
-            crosshairUIScript.SetInteract(false, null);
-          }
+            }
+            }
+            else
+            {
+                // Hide UI
+                crosshairUIScript.SetInteract(false, null);
+            }
 
         // if Q is pressed when currently holding something -> eat object
         // need to check if object is mushroom or carrot
@@ -177,6 +184,8 @@ public class NEWPlayerInteraction : MonoBehaviour
 
     IEnumerator LoadNextScene()
     {
+        ac.PlayOneShot(nextScene);
+        
         // Calls the FadeToBlack IEnumerator from the ScreenFade script 
         yield return StartCoroutine(screenFade.FadeToBlack());
 
