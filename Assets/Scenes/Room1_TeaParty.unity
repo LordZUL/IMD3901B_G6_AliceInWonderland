@@ -3362,7 +3362,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5587,7 +5587,8 @@ MonoBehaviour:
   inventoryGrabPointTransform: {fileID: 1069342371}
   crosshairUIScript: {fileID: 139333578}
   screenFade: {fileID: 1695577618}
-  nextScene: {fileID: 8300000, guid: ccbba9687bfd10045a10af45817f6270, type: 3}
+  nextScene: {fileID: 8300000, guid: 60dfb6f639c872346ae3298bb1e9d0e7, type: 3}
+  eatSound: {fileID: 8300000, guid: 1a65cacee76cf2444a414bb0970c82bd, type: 3}
   currentSize: 0
 --- !u!82 &1232426987
 AudioSource:
@@ -5602,7 +5603,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8167,6 +8168,7 @@ MonoBehaviour:
   crosshairUIScript: {fileID: 0}
   screenFade: {fileID: 0}
   nextScene: {fileID: 0}
+  eatSound: {fileID: 0}
   currentSize: 0
 --- !u!114 &1888811530
 MonoBehaviour:
