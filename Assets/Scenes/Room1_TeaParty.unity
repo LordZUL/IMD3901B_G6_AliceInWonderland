@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f76775c08a7bc4ba8784a30cec2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentContainer: {fileID: 0}
+  parentContainer: {fileID: 2079955950}
   prefab: {fileID: 7042008703109612278, guid: b21419ef1c9429744bb1c45079d9ef08, type: 3}
 --- !u!1 &161303995 stripped
 GameObject:
@@ -1691,7 +1691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f76775c08a7bc4ba8784a30cec2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentContainer: {fileID: 0}
+  parentContainer: {fileID: 2079955950}
   prefab: {fileID: 5700543809718046020, guid: 7447c94e35ac9d94f8f766d87581a04d, type: 3}
 --- !u!1 &268886704
 GameObject:
@@ -3491,7 +3491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4211,7 +4211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f76775c08a7bc4ba8784a30cec2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentContainer: {fileID: 0}
+  parentContainer: {fileID: 2079955950}
   prefab: {fileID: 5700543809718046020, guid: 7447c94e35ac9d94f8f766d87581a04d, type: 3}
 --- !u!1 &694808376
 GameObject:
@@ -4493,7 +4493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &717740669
 Transform:
   m_ObjectHideFlags: 0
@@ -5128,7 +5128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f76775c08a7bc4ba8784a30cec2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentContainer: {fileID: 0}
+  parentContainer: {fileID: 2079955950}
   prefab: {fileID: 7042008703109612278, guid: b21419ef1c9429744bb1c45079d9ef08, type: 3}
 --- !u!1 &844746895
 GameObject:
@@ -5174,7 +5174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f76775c08a7bc4ba8784a30cec2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentContainer: {fileID: 0}
+  parentContainer: {fileID: 2079955950}
   prefab: {fileID: 7042008703109612278, guid: b21419ef1c9429744bb1c45079d9ef08, type: 3}
 --- !u!1 &878613901
 GameObject:
@@ -6169,7 +6169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f76775c08a7bc4ba8784a30cec2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentContainer: {fileID: 0}
+  parentContainer: {fileID: 2079955950}
   prefab: {fileID: 5700543809718046020, guid: 7447c94e35ac9d94f8f766d87581a04d, type: 3}
 --- !u!1 &1053919649
 GameObject:
@@ -7861,7 +7861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f76775c08a7bc4ba8784a30cec2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentContainer: {fileID: 0}
+  parentContainer: {fileID: 2079955950}
   prefab: {fileID: 7042008703109612278, guid: b21419ef1c9429744bb1c45079d9ef08, type: 3}
 --- !u!1 &1396314881
 GameObject:
@@ -11522,7 +11522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mediator: {fileID: 1026164425}
   m_TransformationPriority: 0
-  m_MoveSpeed: 5
+  m_MoveSpeed: 15
   m_InAirControlModifier: 0.5
   m_EnableStrafe: 1
   m_EnableFly: 0
