@@ -72,9 +72,13 @@ public class ObjectGrabbable : MonoBehaviour
     {
         if (spawner != null && gameObject.tag == "Carrot")
         {
-            spawner.OnCarrotDestroyed();
+            spawner.OnPrefabDestroyed();
         }
-        
+        if (spawner != null && gameObject.tag == "Mushroom")
+        {
+            spawner.OnPrefabDestroyed();
+        }
+
     }
 
 

@@ -116,7 +116,8 @@ public class NEWPlayerInteraction : MonoBehaviour
 
             if (doorHit.collider.CompareTag("Door"))
             {
-                if (Keyboard.current.eKey.wasPressedThisFrame)
+                //changed so size must be small to get through
+                if (Keyboard.current.eKey.wasPressedThisFrame && currentSize == SizeState.Normal)
                 {
                     Debug.Log("Loading next room...");
                     StartCoroutine(LoadNextScene());

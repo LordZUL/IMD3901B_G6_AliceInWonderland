@@ -54,6 +54,7 @@ public class ScaleOnButton : MonoBehaviour
         {
             //ScaleAroundPlayer(10f);
             SetScale(smallScale);
+
             //transform.position = new Vector3(0f, 10f, 25f);
         }
         else if (lastSizeState == NEWPlayerInteraction.SizeState.Big)

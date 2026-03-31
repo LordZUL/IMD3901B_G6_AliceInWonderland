@@ -3,34 +3,34 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform parentContainer;
-    public GameObject carrotPrefab;
-    private GameObject currentCarrot;
+    public GameObject prefab;
+    private GameObject currentPrefab;
     void Awake()
     {
         parentContainer = GameObject.Find("PivotCenter").transform;
     }
     void Start()
     {
-        SpawnCarrot();
+        SpawnPrefab();
     }
-    public void SpawnCarrot()
+    public void SpawnPrefab()
     {
-        currentCarrot = Instantiate(
-        carrotPrefab,
+        currentPrefab = Instantiate(
+        prefab,
         transform.position,
         transform.rotation,
         parentContainer
         );
 
-        var grabbable = currentCarrot.GetComponent<ObjectGrabbable>();
+        var grabbable = currentPrefab.GetComponent<ObjectGrabbable>();
         if (grabbable != null)
         {
             grabbable.spawner = this;
         }
 
     }
-    public void OnCarrotDestroyed()
+    public void OnPrefabDestroyed()
     {
-        SpawnCarrot();
+        SpawnPrefab();
     }
 }
