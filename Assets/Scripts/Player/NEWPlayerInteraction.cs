@@ -162,9 +162,9 @@ public class NEWPlayerInteraction : MonoBehaviour
                     {
                         currentSize = SizeState.Small;
                     }
-                    spawn.SpawnCarrot(objectGrabbable.gameObject);
+                    //spawn.SpawnCarrot(objectGrabbable.gameObject);
                 }
-                
+                objectGrabbable.OnConsumed();
                 Destroy(objectGrabbable.gameObject);
                 
                 objectGrabbable = null;
