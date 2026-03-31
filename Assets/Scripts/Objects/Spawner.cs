@@ -2,11 +2,35 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject carrot;
-    public void SpawnCarrot()
+    public Transform parentContainer;
+    public GameObject prefab;
+    private GameObject currentPrefab;
+    void Awake()
     {
-        Instantiate(carrot);
+        parentContainer = GameObject.Find("PivotCenter").transform;
+    }
+    void Start()
+    {
+        SpawnPrefab();
+    }
+    public void SpawnPrefab()
+    {
+        currentPrefab = Instantiate(
+        prefab,
+        transform.position,
+        transform.rotation,
+        parentContainer
+        );
 
+        var grabbable = currentPrefab.GetComponent<ObjectGrabbable>();
+        if (grabbable != null)
+        {
+            grabbable.spawner = this;
+        }
+
+    }
+    public void OnPrefabDestroyed()
+    {
+        SpawnPrefab();
     }
 }

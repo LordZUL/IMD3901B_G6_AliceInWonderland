@@ -10,6 +10,8 @@ public class ObjectGrabbable : MonoBehaviour
     private Transform objectGrabPointTransform;
     public bool isHeld { get; private set; }
 
+    public Spawner spawner;
+
     private void Awake()
     {
         if (player == null)
@@ -65,4 +67,19 @@ public class ObjectGrabbable : MonoBehaviour
         }
 
     }
+
+    public void OnConsumed()
+    {
+        if (spawner != null && gameObject.tag == "Carrot")
+        {
+            spawner.OnPrefabDestroyed();
+        }
+        if (spawner != null && gameObject.tag == "Mushroom")
+        {
+            spawner.OnPrefabDestroyed();
+        }
+
+    }
+
+
 }

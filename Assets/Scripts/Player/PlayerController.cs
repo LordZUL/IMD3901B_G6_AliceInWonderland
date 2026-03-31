@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float smoothTime = 0.05f;
     private float _currentVelocity;
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 10f;
 
     // Gravity variables:
     private float _gravity = -9.81f;

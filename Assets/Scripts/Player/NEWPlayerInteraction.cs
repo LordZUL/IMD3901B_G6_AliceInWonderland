@@ -27,6 +27,8 @@ public class NEWPlayerInteraction : MonoBehaviour
     public enum SizeState { Normal, Small, Big }
     public SizeState currentSize = SizeState.Normal;
 
+    Spawner spawn;
+
     void Start()
     {
         // make heldobject defy gravityyy -> make object kinematic
@@ -114,7 +116,8 @@ public class NEWPlayerInteraction : MonoBehaviour
 
             if (doorHit.collider.CompareTag("Door"))
             {
-                if (Keyboard.current.eKey.wasPressedThisFrame)
+                //changed so size must be small to get through
+                if (Keyboard.current.eKey.wasPressedThisFrame && currentSize == SizeState.Normal)
                 {
                     Debug.Log("Loading next room...");
                     StartCoroutine(LoadNextScene());
@@ -160,9 +163,11 @@ public class NEWPlayerInteraction : MonoBehaviour
                     {
                         currentSize = SizeState.Small;
                     }
+                    //spawn.SpawnCarrot(objectGrabbable.gameObject);
                 }
-
+                objectGrabbable.OnConsumed();
                 Destroy(objectGrabbable.gameObject);
+                
                 objectGrabbable = null;
             }
         }
