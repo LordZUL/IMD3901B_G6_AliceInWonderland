@@ -6,9 +6,9 @@ public class ChangeTags : MonoBehaviour
 {
     public ObjectGrabbable objectGrabbable;
     public NEWPlayerInteraction player;
-    public string newTag;
-    public Text TagText;
-    public ScaleOnButton scaleOnButton;
+    //public string newTag;
+    //public Text TagText;
+    //public ScaleOnButton scaleOnButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
