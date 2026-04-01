@@ -8,10 +8,11 @@ public class VRGravity : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 velocity;
+    public XREat VRplayer;
 
     public float gravity = -9.81f;
     public float gravityMultiplier = 2f;
-    public float jumpForce = 5f;
+    public float jumpForce = 15f;
 
     public InputActionReference primaryButton; // RIGHT primary
 
@@ -34,7 +35,7 @@ public class VRGravity : MonoBehaviour
         }
 
         // ===== JUMP =====
-        if (primaryButton.action.WasPressedThisFrame() && controller.isGrounded)
+        if (primaryButton.action.WasPressedThisFrame() && controller.isGrounded && VRplayer.currentSize != XREat.SizeState.Big)
         {
             velocity.y = jumpForce;
             Debug.Log("JUMP!");

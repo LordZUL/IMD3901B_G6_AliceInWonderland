@@ -5533,9 +5533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b8b3bdd19e1fa4189bae12f3070502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VRplayer: {fileID: 636699157}
   gravity: -9.81
   gravityMultiplier: 2
-  jumpForce: 5
+  jumpForce: 15
   primaryButton: {fileID: -3599823989380923159, guid: b6d5c44ebe3244b7692e81ae8265eb22, type: 3}
 --- !u!114 &878613911
 MonoBehaviour:
@@ -5564,6 +5565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryButton: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+  VRplayer: {fileID: 0}
   jumpForce: 5
   gravity: -9.81
   gravityMultiplier: 2

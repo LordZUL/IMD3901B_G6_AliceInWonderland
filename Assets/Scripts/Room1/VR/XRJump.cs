@@ -8,6 +8,7 @@ public class XRJump : MonoBehaviour
     public InputActionReference primaryButton; // Right controller primary (1 key in simulator)
 
     private CharacterController controller;
+    public XREat VRplayer;
     private Vector3 velocity;
 
     public float jumpForce = 5f;
@@ -33,7 +34,7 @@ public class XRJump : MonoBehaviour
         }
 
         // ===== JUMP =====
-        if (primaryButton.action.WasPressedThisFrame() && controller.isGrounded)
+        if (primaryButton.action.WasPressedThisFrame() && controller.isGrounded && VRplayer.currentSize != XREat.SizeState.Big)
         {
             velocity.y = jumpForce;
             Debug.Log("JUMP!");
