@@ -3,12 +3,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 
 public class DialogueManager : MonoBehaviour
 {
     
     public static DialogueManager instance;
+    public InputActionReference rightHandGrabAction;
 
     [Header("Linked Components")]
     public TextMeshProUGUI nameBox;
@@ -44,11 +46,20 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (dialogueGameObject.activeSelf && Keyboard.current.eKey.wasPressedThisFrame)
+        bool vrGrabPressed = false;
+
+
+        if (rightHandGrabAction != null)
+        {
+            vrGrabPressed = rightHandGrabAction.action.WasPressedThisFrame();
+        }
+
+        if (dialogueGameObject.activeSelf && (Keyboard.current.eKey.wasPressedThisFrame || vrGrabPressed))
         {
             NextLine();
         }
     }
+
     public void StartDialogue(DialogueLine[] lines)
     {
         dialogueLines = lines;           
