@@ -16,6 +16,7 @@ public class VRGravity : MonoBehaviour
     public float gravity = -9.81f;
     public float gravityMultiplier = 2f;
     public float jumpForce = 15f;
+    private bool wasGrounded;
 
     public InputActionReference primaryButton; // RIGHT primary
 
@@ -32,20 +33,26 @@ public class VRGravity : MonoBehaviour
     void Update()
     {
         bool grounded = controller.isGrounded;
+        if (!wasGrounded && grounded)
+        {
+            // player JUST landed
+            velocity.y = -2f;
+
+           
+            moveProvider.moveSpeed = 0f;
+        }
+
         // ===== GROUND CHECK =====
         if (grounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
+        if (grounded && moveProvider.moveSpeed == 0f)
+        {
+            moveProvider.moveSpeed = 15f; 
+        }
 
-        if (!grounded)
-        {
-            moveProvider.moveSpeed = 2f; // slower in air
-        }
-        else
-        {
-            moveProvider.moveSpeed = 5f; // normal speed
-        }
+
 
         // ===== JUMP =====
         if (primaryButton.action.WasPressedThisFrame() && grounded && VRplayer.currentSize != XREat.SizeState.Big)
@@ -58,6 +65,7 @@ public class VRGravity : MonoBehaviour
         velocity.y += gravity * gravityMultiplier * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+        wasGrounded = grounded;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     /*private CharacterController controller;
