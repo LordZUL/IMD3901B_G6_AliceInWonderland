@@ -170,6 +170,11 @@ public class PlayerController : MonoBehaviour
     {
         return _velocity;
     }
+    public float Speed
+    {
+        get { return speed; }
+        set { speed = value; }
+    }
     /*public float speed = 8f;
     public float mouseSensitivity = 1f;
     public float jumpForce = 5f;

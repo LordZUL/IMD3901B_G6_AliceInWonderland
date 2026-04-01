@@ -9,8 +9,9 @@ public class ScaleOnButton : MonoBehaviour
     //trigger action very certain amount of time: https://www.youtube.com/watch?v=NFvmfoRnarY <- this is way too much for my brain to handle... ill just do it after demo -> if I have time qwq
     public float scale = 10f;
     //public Transform playerTransform;
-  
+
     //private ObjectGrabbable objectGrabbable;
+    PlayerController playerCtrl;
     public NEWPlayerInteraction player;
     private NEWPlayerInteraction.SizeState lastSizeState;
 
@@ -26,6 +27,7 @@ public class ScaleOnButton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerCtrl = FindFirstObjectByType<PlayerController>();
         originalScale = transform.localScale;
         originalPosition = transform.position;
         //playerTransform = player.transform;
@@ -55,6 +57,7 @@ public class ScaleOnButton : MonoBehaviour
         {
             //ScaleAroundPlayer(10f);
             SetScale(smallScale);
+            playerCtrl.Speed = 75f;
 
             //transform.position = new Vector3(0f, 10f, 25f);
         }
@@ -63,11 +66,13 @@ public class ScaleOnButton : MonoBehaviour
 
             //ScaleAroundPlayer(0.1f);
             SetScale(bigScale);
+            playerCtrl.Speed = 5f;
         }
         else
         {
             //ScaleAroundPlayer(1f);
             SetScale(normalScale);
+            playerCtrl.Speed = 10f;
         }
         //float scaleFactor = 1f;
         /*
