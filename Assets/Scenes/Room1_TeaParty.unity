@@ -6248,6 +6248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b8b3bdd19e1fa4189bae12f3070502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveProvider: {fileID: 2104923619}
   VRplayer: {fileID: 636699157}
   gravity: -9.81
   gravityMultiplier: 2
