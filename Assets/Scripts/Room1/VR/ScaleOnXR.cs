@@ -61,7 +61,7 @@ public class ScaleOnXR : MonoBehaviour
         {
             //ScaleAroundPlayer(10f);
             sizeBig = false;
-            moveProvider.moveSpeed = 25f;
+            //moveProvider.moveSpeed = 25f;
             SetScale(smallScale);
 
             //transform.position = new Vector3(0f, 10f, 25f);
@@ -69,7 +69,7 @@ public class ScaleOnXR : MonoBehaviour
         else if (lastSizeState == XREat.SizeState.Big)
         {
             sizeBig = true;
-            moveProvider.moveSpeed = 5f;
+            //moveProvider.moveSpeed = 5f;
 
             //ScaleAroundPlayer(0.1f);
             SetScale(bigScale);
@@ -78,7 +78,7 @@ public class ScaleOnXR : MonoBehaviour
         else
         {
             sizeBig = false;
-            moveProvider.moveSpeed = 15f;
+            //moveProvider.moveSpeed = 15f;
 
             //ScaleAroundPlayer(1f);
             SetScale(normalScale);

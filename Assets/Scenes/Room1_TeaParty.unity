@@ -12187,6 +12187,7 @@ MonoBehaviour:
   scale: 10
   VRplayer: {fileID: 636699157}
   sizeBig: 0
+  moveProvider: {fileID: 2104923619}
   smallScale: {x: 10, y: 10, z: 10}
   normalScale: {x: 1, y: 1, z: 1}
   bigScale: {x: 0.1, y: 0.1, z: 0.1}
