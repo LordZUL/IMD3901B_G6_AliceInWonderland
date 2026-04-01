@@ -3591,7 +3591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5082,7 +5082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &804045680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5308,6 +5308,8 @@ GameObject:
   - component: {fileID: 878613904}
   - component: {fileID: 878613908}
   - component: {fileID: 878613909}
+  - component: {fileID: 878613910}
+  - component: {fileID: 878613911}
   m_Layer: 0
   m_Name: VR Player
   m_TagString: Untagged
@@ -5356,7 +5358,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878613901}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d187a35c4cf5434cb4574f7107b44c3, type: 3}
   m_Name: 
@@ -5392,7 +5394,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 3
   m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -5529,6 +5531,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &878613910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878613901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b8b3bdd19e1fa4189bae12f3070502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -9.81
+  gravityMultiplier: 2
+--- !u!114 &878613911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878613901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5062820fe72ed42a389e76b1f6c70f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: -5
+  spawnPoint: {fileID: 1018804619}
 --- !u!1001 &882949154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12247,6 +12277,7 @@ MeshFilter:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 176982476}
   - {fileID: 84952861}
   - {fileID: 699253231}
   - {fileID: 1396314886}
@@ -12257,6 +12288,5 @@ SceneRoots:
   - {fileID: 804045683}
   - {fileID: 2094588647}
   - {fileID: 2079955950}
-  - {fileID: 176982476}
   - {fileID: 717740669}
   - {fileID: 825081470}

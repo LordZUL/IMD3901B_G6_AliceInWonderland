@@ -56,14 +56,14 @@ public class ScaleOnXR : MonoBehaviour
             //ScaleAroundPlayer(10f);
             SetScale(smallScale);
 
-            transform.position = new Vector3(0f, 10f, 25f);
+            //transform.position = new Vector3(0f, 10f, 25f);
         }
         else if (lastSizeState == XREat.SizeState.Big)
         {
 
             //ScaleAroundPlayer(0.1f);
             SetScale(bigScale);
-            transform.position = new Vector3(0f, 2.25f, 2.43f);
+            //transform.position = new Vector3(0f, 2.25f, 2.43f);
         }
         else
         {
