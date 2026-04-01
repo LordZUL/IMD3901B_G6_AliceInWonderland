@@ -13,6 +13,7 @@ public class ScaleOnButton : MonoBehaviour
     //private ObjectGrabbable objectGrabbable;
     public NEWPlayerInteraction player;
     private NEWPlayerInteraction.SizeState lastSizeState;
+
     private Vector3 scaleSize = Vector3.one;
     private Vector3 originalScale;
     private Vector3 originalPosition;
@@ -118,7 +119,7 @@ public class ScaleOnButton : MonoBehaviour
         
     }
 
-    void SnapPlayerToGround()
+    /*void SnapPlayerToGround()
     {
         RaycastHit hit;
 
@@ -139,5 +140,5 @@ public class ScaleOnButton : MonoBehaviour
 
             player.transform.position = pos;
         }
-    }
+    }*/
 }

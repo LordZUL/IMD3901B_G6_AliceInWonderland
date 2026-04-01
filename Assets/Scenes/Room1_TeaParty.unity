@@ -3749,6 +3749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directInteractor: {fileID: 636699156}
   triggerAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  currentSize: 0
 --- !u!1001 &637090360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11413,6 +11414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2079955950}
   - component: {fileID: 2079955949}
+  - component: {fileID: 2079955951}
   m_Layer: 0
   m_Name: PivotCenter
   m_TagString: Untagged
@@ -11460,6 +11462,23 @@ Transform:
   - {fileID: 844746896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2079955951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079955948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c6c229f12d5d8428e253235edef98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 10
+  VRplayer: {fileID: 636699157}
+  smallScale: {x: 10, y: 10, z: 10}
+  normalScale: {x: 1, y: 1, z: 1}
+  bigScale: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!1 &2094588646
 GameObject:
   m_ObjectHideFlags: 0
