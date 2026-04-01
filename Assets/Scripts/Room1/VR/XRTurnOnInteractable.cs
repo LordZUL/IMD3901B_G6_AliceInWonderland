@@ -16,10 +16,10 @@ public class XRTurnOnInteractable : MonoBehaviour
         bool canGrab = size.sizeBig && gameObject.CompareTag("NotInteractable");
 
         TurnPickableComponent.enabled = canGrab;
-        if (objectGrabbable != null)
+        /*if (objectGrabbable != null)
         {
             objectGrabbable.enabled = false;
-        }
+        }*/
         /*
         if ((size.sizeBig == true) && (gameObject.tag == "NotInteractable"))
         {

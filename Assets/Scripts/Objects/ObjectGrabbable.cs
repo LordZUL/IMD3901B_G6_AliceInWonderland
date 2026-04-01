@@ -1,12 +1,17 @@
 // to identify objects
 using NUnit.Framework.Internal;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+
 //to activate and deactive componentshttps://www.youtube.com/watch?v=ELhWPrxxks8
 public class ObjectGrabbable : MonoBehaviour
 {
 
     public NEWPlayerInteraction player;
     private Rigidbody objectRigidbody;
+    private XRGrabInteractable xrGrab;
     private Transform objectGrabPointTransform;
     public bool isHeld { get; private set; }
 
@@ -19,8 +24,24 @@ public class ObjectGrabbable : MonoBehaviour
             player = FindFirstObjectByType<NEWPlayerInteraction>();
         }
         objectRigidbody = GetComponent<Rigidbody>();
+        xrGrab = GetComponent<XRGrabInteractable>();
+
+        xrGrab.selectEntered.AddListener(OnGrab);
+        xrGrab.selectExited.AddListener(OnDrop);
     }
 
+    private void OnGrab(SelectEnterEventArgs args)
+    {
+        objectRigidbody.isKinematic = true;
+        objectRigidbody.useGravity = false;
+    }
+
+    // 👉 When released
+    private void OnDrop(SelectExitEventArgs args)
+    {
+        objectRigidbody.isKinematic = false;
+        objectRigidbody.useGravity = true;
+    }
     //object picked up become non-kinematic
     public void Grab(Transform objectGrabPointTransform)
     {
