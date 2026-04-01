@@ -15,7 +15,7 @@ public class VRPlayerController : MonoBehaviour
         if (moveProvider != null)
         {
             Debug.Log("Found VR Move Provider");
-            moveProvider.enabled = false;
+            //moveProvider.enabled = false;
         }
     }
 
