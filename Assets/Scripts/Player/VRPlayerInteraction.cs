@@ -14,6 +14,10 @@ public class VRPlayerInteraction : MonoBehaviour
     public UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable rabbitInteractable;
     public DialogueNPC3D npcDialogue;
 
+    // Rose
+    public UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable[] roseInteractable;
+    public AudioClip paintSound;
+
     private AudioSource ac;
 
     bool doorTriggered = false;
@@ -25,6 +29,12 @@ public class VRPlayerInteraction : MonoBehaviour
 
         doorInteractable.selectEntered.AddListener(OnDoorPoked);
         rabbitInteractable.selectEntered.AddListener(OnRabbitPoked);
+
+        // Roses
+        foreach (UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable rose in roseInteractable)
+        {
+            rose.selectEntered.AddListener(OnRosePoked);
+        }
     }
 
     // Update is called once per frame
@@ -38,6 +48,13 @@ public class VRPlayerInteraction : MonoBehaviour
         Debug.Log("Loading next room...");
         doorTriggered = true;
         StartCoroutine(LoadNextScene());
+    }
+
+    void OnRosePoked(SelectEnterEventArgs args)
+    {
+        ac.PlayOneShot(paintSound);
+        Rose rose = args.interactableObject.transform.GetComponent<Rose>();
+        rose.Paint();
     }
 
     IEnumerator LoadNextScene()
