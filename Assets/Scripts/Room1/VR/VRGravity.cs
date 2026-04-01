@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 
 
 [RequireComponent(typeof(CharacterController))]
 public class VRGravity : MonoBehaviour
 {
+    public ContinuousMoveProvider moveProvider;
 
     private CharacterController controller;
     private Vector3 velocity;
@@ -28,14 +31,24 @@ public class VRGravity : MonoBehaviour
 
     void Update()
     {
+        bool grounded = controller.isGrounded;
         // ===== GROUND CHECK =====
-        if (controller.isGrounded && velocity.y < 0)
+        if (grounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
 
+        if (!grounded)
+        {
+            moveProvider.moveSpeed = 2f; // slower in air
+        }
+        else
+        {
+            moveProvider.moveSpeed = 5f; // normal speed
+        }
+
         // ===== JUMP =====
-        if (primaryButton.action.WasPressedThisFrame() && controller.isGrounded && VRplayer.currentSize != XREat.SizeState.Big)
+        if (primaryButton.action.WasPressedThisFrame() && grounded && VRplayer.currentSize != XREat.SizeState.Big)
         {
             velocity.y = jumpForce;
             Debug.Log("JUMP!");
