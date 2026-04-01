@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8513861805276012894, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
       propertyPath: m_Name
@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
       propertyPath: m_TagString
@@ -316,9 +316,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 51254728}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &51254733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,13 +342,13 @@ GameObject:
   - component: {fileID: 56992029}
   - component: {fileID: 56992028}
   - component: {fileID: 56992027}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: vault
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &56992026
 Transform:
   m_ObjectHideFlags: 0
@@ -2162,9 +2159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 329779056}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &329779058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2738,9 +2732,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 357551360}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &357551362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3096,9 +3087,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 459704262}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &459704262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3411,6 +3399,10 @@ PrefabInstance:
     - target: {fileID: 1421448517221049236, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317709330110014058, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4841,9 +4833,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 736898712}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &736898712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5310,6 +5299,7 @@ GameObject:
   - component: {fileID: 878613909}
   - component: {fileID: 878613910}
   - component: {fileID: 878613911}
+  - component: {fileID: 878613912}
   m_Layer: 0
   m_Name: VR Player
   m_TagString: Untagged
@@ -5545,6 +5535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: -9.81
   gravityMultiplier: 2
+  jumpForce: 5
+  primaryButton: {fileID: -3599823989380923159, guid: b6d5c44ebe3244b7692e81ae8265eb22, type: 3}
 --- !u!114 &878613911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5559,6 +5551,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: -5
   spawnPoint: {fileID: 1018804619}
+--- !u!114 &878613912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878613901}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c87c63600fda584f9c2f86f056c8188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryButton: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+  jumpForce: 5
+  gravity: -9.81
+  gravityMultiplier: 2
 --- !u!1001 &882949154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5849,9 +5857,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 883662518}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &883662520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7538,7 +7543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3297952792483089584, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       propertyPath: m_Name
@@ -7546,7 +7551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       propertyPath: m_TagString
@@ -7574,6 +7579,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1219279727}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1219279729}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1219279728}
   m_SourcePrefab: {fileID: 100100000, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
 --- !u!4 &1219279721 stripped
 Transform:
@@ -7654,16 +7665,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219279722}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c65a22069e8965a40a24aa581ee7087d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 1219279725}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &1219279727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7676,6 +7684,143 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc6b85991d306347a08aece94f1e4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1219279728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219279722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f74b6ab2925a24ea2c7f55342296fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnPickableComponent: {fileID: 1219279729}
+  objectGrabbable: {fileID: 1219279725}
+  size: {fileID: 2079955951}
+--- !u!114 &1219279729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219279722}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AttachTransform: {fileID: 0}
+  m_SecondaryAttachTransform: {fileID: 0}
+  m_UseDynamicAttach: 0
+  m_MatchAttachPosition: 1
+  m_MatchAttachRotation: 1
+  m_SnapToColliderVolume: 1
+  m_ReinitializeDynamicAttachEverySingleGrab: 1
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 2
+  m_VelocityDamping: 1
+  m_VelocityScale: 1
+  m_AngularVelocityDamping: 1
+  m_AngularVelocityScale: 1
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 8
+  m_TightenPosition: 0.1
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 8
+  m_TightenRotation: 0.1
+  m_TrackScale: 1
+  m_SmoothScale: 0
+  m_SmoothScaleAmount: 8
+  m_TightenScale: 0.1
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_ForceGravityOnDetach: 0
+  m_RetainTransformParent: 1
+  m_StartingSingleGrabTransformers: []
+  m_StartingMultipleGrabTransformers: []
+  m_AddDefaultGrabTransformers: 1
+  m_FarAttachMode: 0
 --- !u!1 &1228635090
 GameObject:
   m_ObjectHideFlags: 0
@@ -8220,7 +8365,7 @@ Transform:
   m_GameObject: {fileID: 1298413015}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8579,9 +8724,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 1417576338}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &1417576340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9101,9 +9243,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 1474308136}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &1474308136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9262,6 +9401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710a070310529ab46a118ae539ff9b6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightHandGrabAction: {fileID: 0}
   nameBox: {fileID: 1091796880}
   textBox: {fileID: 1262814785}
   speakerImage: {fileID: 1066542215}
@@ -10006,9 +10146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGrabbable: {fileID: 1676856784}
   player: {fileID: 1232426986}
-  newTag: 
-  TagText: {fileID: 0}
-  scaleOnButton: {fileID: 0}
 --- !u!114 &1676856784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12072,6 +12209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scale: 10
   VRplayer: {fileID: 636699157}
+  sizeBig: 0
+  moveProvider: {fileID: 2104923619}
   smallScale: {x: 10, y: 10, z: 10}
   normalScale: {x: 1, y: 1, z: 1}
   bigScale: {x: 0.1, y: 0.1, z: 0.1}

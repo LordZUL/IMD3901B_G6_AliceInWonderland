@@ -1,6 +1,8 @@
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using static UnityEditor.PlayerSettings;
 
 public class ScaleOnXR : MonoBehaviour
@@ -13,15 +15,19 @@ public class ScaleOnXR : MonoBehaviour
     //private ObjectGrabbable objectGrabbable;
     public XREat VRplayer;
     private XREat.SizeState lastSizeState;
+    public bool sizeBig = false;
 
     private Vector3 scaleSize = Vector3.one;
     private Vector3 originalScale;
     private Vector3 originalPosition;
 
+    public ContinuousMoveProvider moveProvider;
+
     //set set sizes
     [SerializeField] private Vector3 smallScale = new Vector3(10f, 10f, 10f);
     [SerializeField] private Vector3 normalScale = Vector3.one;
     [SerializeField] private Vector3 bigScale = new Vector3(0.1f, 0.1f, 0.1f);
+    //private bool isItBig;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,12 +60,16 @@ public class ScaleOnXR : MonoBehaviour
         if (lastSizeState == XREat.SizeState.Small)
         {
             //ScaleAroundPlayer(10f);
+            sizeBig = false;
+            //moveProvider.moveSpeed = 25f;
             SetScale(smallScale);
 
             //transform.position = new Vector3(0f, 10f, 25f);
         }
         else if (lastSizeState == XREat.SizeState.Big)
         {
+            sizeBig = true;
+            //moveProvider.moveSpeed = 5f;
 
             //ScaleAroundPlayer(0.1f);
             SetScale(bigScale);
@@ -67,6 +77,9 @@ public class ScaleOnXR : MonoBehaviour
         }
         else
         {
+            sizeBig = false;
+            //moveProvider.moveSpeed = 15f;
+
             //ScaleAroundPlayer(1f);
             SetScale(normalScale);
         }
