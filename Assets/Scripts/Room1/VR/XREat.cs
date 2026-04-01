@@ -18,6 +18,7 @@ public class XREat : MonoBehaviour
         // If trigger pressed
         if (triggerAction.action.WasPressedThisFrame())
         {
+            Debug.Log("TRIGGER PRESSED");
             if (directInteractor.hasSelection)
             {
                 var interactable = directInteractor.firstInteractableSelected;

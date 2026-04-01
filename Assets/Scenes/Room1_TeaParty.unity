@@ -870,7 +870,7 @@ Transform:
   m_GameObject: {fileID: 159684961}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.4, y: 2.133, z: -40.1}
+  m_LocalPosition: {x: -0.12, y: 2.133, z: -51.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3554,6 +3554,7 @@ GameObject:
   - component: {fileID: 636699154}
   - component: {fileID: 636699156}
   - component: {fileID: 636699155}
+  - component: {fileID: 636699157}
   m_Layer: 0
   m_Name: 'Right direct interactor '
   m_TagString: Untagged
@@ -3734,6 +3735,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_PhysicsTriggerInteraction: 1
+--- !u!114 &636699157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636699153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148f32add59ce2246b481f4140806484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directInteractor: {fileID: 636699156}
+  triggerAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1001 &637090360
 PrefabInstance:
   m_ObjectHideFlags: 0
