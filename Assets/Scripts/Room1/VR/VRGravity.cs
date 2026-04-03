@@ -2,21 +2,26 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using static UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics.HapticsUtility;
 
-
+// code based on https://www.youtube.com/watch?v=Xf2eDfLxcB8
 [RequireComponent(typeof(CharacterController))]
 public class VRGravity : MonoBehaviour
 {
     public ContinuousMoveProvider moveProvider;
 
-    private CharacterController controller;
+    public CharacterController controller;
     private Vector3 velocity;
     public XREat VRplayer;
 
-    public float gravity = -9.81f;
+    //public float gravity = -9.81f;
+    private float gravity = Physics.gravity.y;
     public float gravityMultiplier = 2f;
-    public float jumpForce = 15f;
-    private bool wasGrounded;
+    //public float jumpForce = 15f;
+    [SerializeField]  private float jumpHeight = 10f;
+    [SerializeField] private LayerMask groundLayers;
+    private Vector3 movement;
+    //private bool wasGrounded;
 
     public InputActionReference primaryButton; // RIGHT primary
 
@@ -32,8 +37,9 @@ public class VRGravity : MonoBehaviour
 
     void Update()
     {
-        bool grounded = controller.isGrounded;
-        if (!wasGrounded && grounded)
+        //bool _isGrounded = controller.isGrounded;
+        bool _isGrounded = IsGrounded();
+        /*if (!wasGrounded && grounded)
         {
             // player JUST landed
             velocity.y = -2f;
@@ -50,22 +56,36 @@ public class VRGravity : MonoBehaviour
         if (grounded && moveProvider.moveSpeed == 0f)
         {
             moveProvider.moveSpeed = 15f; 
-        }
+        */
 
 
 
         // ===== JUMP =====
-        if (primaryButton.action.WasPressedThisFrame() && grounded && VRplayer.currentSize != XREat.SizeState.Big)
+        if (primaryButton.action.WasPressedThisFrame() && _isGrounded && VRplayer.currentSize != XREat.SizeState.Big)
         {
-            velocity.y = jumpForce;
-            Debug.Log("JUMP!");
+            Jump();
+            //velocity.y = jumpForce;
+            //Debug.Log("JUMP!");
         }
 
-        // ===== GRAVITY =====
-        velocity.y += gravity * gravityMultiplier * Time.deltaTime;
+        movement.y += gravity * Time.deltaTime;
+        controller.Move(movement * Time.deltaTime);
 
-        controller.Move(velocity * Time.deltaTime);
-        wasGrounded = grounded;
+        // ===== GRAVITY =====
+        //velocity.y += gravity * gravityMultiplier * Time.deltaTime;
+
+        //controller.Move(velocity * Time.deltaTime);
+        //wasGrounded = grounded;
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.CheckSphere(transform.position, 0.2f, groundLayers);
+    }
+
+    private void Jump()
+    {
+        movement.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     /*private CharacterController controller;

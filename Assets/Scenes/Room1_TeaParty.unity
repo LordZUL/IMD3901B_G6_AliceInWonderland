@@ -3974,7 +3974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5317709330110014058, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6249,10 +6249,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveProvider: {fileID: 2104923619}
+  controller: {fileID: 878613906}
   VRplayer: {fileID: 636699157}
-  gravity: -9.81
   gravityMultiplier: 2
-  jumpForce: 15
+  jumpHeight: 10
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 2048
   primaryButton: {fileID: -3599823989380923159, guid: b6d5c44ebe3244b7692e81ae8265eb22, type: 3}
 --- !u!114 &878613911
 MonoBehaviour:
@@ -13500,6 +13503,7 @@ MonoBehaviour:
   scale: 10
   VRplayer: {fileID: 636699157}
   sizeBig: 0
+  sizeNormal: 0
   moveProvider: {fileID: 2104923619}
   smallScale: {x: 10, y: 10, z: 10}
   normalScale: {x: 1, y: 1, z: 1}
