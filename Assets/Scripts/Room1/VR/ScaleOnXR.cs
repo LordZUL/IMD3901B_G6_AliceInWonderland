@@ -16,6 +16,7 @@ public class ScaleOnXR : MonoBehaviour
     public XREat VRplayer;
     private XREat.SizeState lastSizeState;
     public bool sizeBig = false;
+    public bool sizeNormal = true;
 
     private Vector3 scaleSize = Vector3.one;
     private Vector3 originalScale;
@@ -34,6 +35,7 @@ public class ScaleOnXR : MonoBehaviour
     {
         originalScale = transform.localScale;
         originalPosition = transform.position;
+        sizeNormal = true;
         //playerTransform = player.transform;
         if (VRplayer != null)
         {
@@ -61,6 +63,7 @@ public class ScaleOnXR : MonoBehaviour
         {
             //ScaleAroundPlayer(10f);
             sizeBig = false;
+            sizeNormal = false;
             //moveProvider.moveSpeed = 25f;
             SetScale(smallScale);
 
@@ -69,6 +72,7 @@ public class ScaleOnXR : MonoBehaviour
         else if (lastSizeState == XREat.SizeState.Big)
         {
             sizeBig = true;
+            sizeNormal = false;
             //moveProvider.moveSpeed = 5f;
 
             //ScaleAroundPlayer(0.1f);
@@ -78,6 +82,7 @@ public class ScaleOnXR : MonoBehaviour
         else
         {
             sizeBig = false;
+            sizeNormal = true;
             //moveProvider.moveSpeed = 15f;
 
             //ScaleAroundPlayer(1f);

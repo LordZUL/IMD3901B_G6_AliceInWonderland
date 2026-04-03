@@ -12,6 +12,14 @@ public class XRTurnOnInteractable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (size.sizeNormal == true)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Ground");
+        }
+        else
+        {
+            gameObject.layer = LayerMask.NameToLayer("Default");
+        }
         objectGrabbable.enabled = false;
         bool canGrab = size.sizeBig && gameObject.CompareTag("NotInteractable");
 
