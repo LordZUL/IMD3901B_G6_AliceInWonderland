@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class XREat : MonoBehaviour
 {
-    //public XRDirectInteractor directInteractor;
+    public XRDirectInteractor directInteractor;
     public NearFarInteractor nearFarInteractor;
     //public XRRayInteractor rayInteractor;
     //public InputActionReference triggerAction;
@@ -43,7 +43,6 @@ public class XREat : MonoBehaviour
                     //ObjectGrabbable grabbable = obj.GetComponent<ObjectGrabbable>();
 
                     //ObjectGrabbable grabbable = interactable.transform.GetComponentInParent<ObjectGrabbable>();
-                    Debug.Log("Transform: " + interactable.transform.name);
 
                     ObjectGrabbable grabbable = null;
 
@@ -56,6 +55,38 @@ public class XREat : MonoBehaviour
                     if (grabbable != null)
                     {
                         Eat(grabbable);
+                        Debug.Log("Its eating: " + grabbable);
+                    }
+                }
+            }
+
+            else if (directInteractor.hasSelection)
+            {
+                Debug.Log("Has Selection: " + directInteractor.hasSelection);
+
+                var interactable = directInteractor.firstInteractableSelected;
+                Debug.Log("Interactable: " + interactable);
+
+
+                if (interactable != null)
+                {
+                    //GameObject obj = interactable.transform.gameObject;
+
+
+                    //ObjectGrabbable grabbable = obj.GetComponent<ObjectGrabbable>();
+
+                    //ObjectGrabbable grabbable = interactable.transform.GetComponentInParent<ObjectGrabbable>();
+
+                    ObjectGrabbable grabbable = null;
+
+                    GameObject obj = interactable.transform.gameObject;
+
+                    ObjectGrabbable grabbable2 = obj.GetComponent<ObjectGrabbable>();
+
+                    if (grabbable2 != null)
+                    {
+                        Eat(grabbable2);
+                        Debug.Log("Its eating: " + grabbable2);
                     }
                 }
             }
