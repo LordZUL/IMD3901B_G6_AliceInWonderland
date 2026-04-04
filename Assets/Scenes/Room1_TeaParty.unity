@@ -231,6 +231,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 51254734}
+    - targetCorrespondingSourceObject: {fileID: -8513861805276012894, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 144296926}
   m_SourcePrefab: {fileID: 100100000, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
 --- !u!4 &51254725 stripped
 Transform:
@@ -884,6 +887,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &144296922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8513861805276012894, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+  m_PrefabInstance: {fileID: 51254724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &144296924 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8336305899092318260, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+  m_PrefabInstance: {fileID: 51254724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &144296926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144296922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 144296924}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &151594072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,6 +3002,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 329779059}
+    - targetCorrespondingSourceObject: {fileID: -8513861805276012894, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1002285639}
   m_SourcePrefab: {fileID: 100100000, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
 --- !u!4 &329779051 stripped
 Transform:
@@ -3109,10 +3139,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1002285639}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1002285639}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8057,6 +8111,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 342408967951d40449d2077e29a54cac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 883662523}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 342408967951d40449d2077e29a54cac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 883662527}
   m_SourcePrefab: {fileID: 100100000, guid: 342408967951d40449d2077e29a54cac, type: 3}
 --- !u!4 &883662513 stripped
 Transform:
@@ -8293,6 +8350,20 @@ MonoBehaviour:
   TurnPickableComponent: {fileID: 883662523}
   objectGrabbable: {fileID: 883662518}
   size: {fileID: 2079955951}
+--- !u!114 &883662527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883662514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &903425818
 GameObject:
   m_ObjectHideFlags: 0
@@ -8527,6 +8598,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 717740669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1002285635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8513861805276012894, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+  m_PrefabInstance: {fileID: 329779050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1002285637 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8336305899092318260, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+  m_PrefabInstance: {fileID: 329779050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1002285639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002285635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 1002285637}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1004792609
 GameObject:
   m_ObjectHideFlags: 0
@@ -10017,6 +10112,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1219279728}
+    - targetCorrespondingSourceObject: {fileID: -3297952792483089584, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1642669101}
   m_SourcePrefab: {fileID: 100100000, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
 --- !u!4 &1219279721 stripped
 Transform:
@@ -13857,6 +13955,30 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
+--- !u!1 &1642669097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3297952792483089584, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+  m_PrefabInstance: {fileID: 1219279720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1642669099 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3578468534679068887, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+  m_PrefabInstance: {fileID: 1219279720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1642669101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642669097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 1642669099}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1649065846
 GameObject:
   m_ObjectHideFlags: 0
