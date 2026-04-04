@@ -195,6 +195,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: NotInteractable
       objectReference: {fileID: 0}
+    - target: {fileID: 8336305899092318260, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336305899092318260, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -223,6 +231,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 51254734}
+    - targetCorrespondingSourceObject: {fileID: -8513861805276012894, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 144296926}
   m_SourcePrefab: {fileID: 100100000, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
 --- !u!4 &51254725 stripped
 Transform:
@@ -386,10 +397,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 144296926}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 144296926}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -398,10 +433,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 144296926}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 144296926}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -876,6 +935,31 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &144296922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8513861805276012894, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+  m_PrefabInstance: {fileID: 51254724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &144296924 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8336305899092318260, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+  m_PrefabInstance: {fileID: 51254724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &144296926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144296922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 144296924}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1 &151594072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,6 +3018,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: NotInteractable
       objectReference: {fileID: 0}
+    - target: {fileID: 8336305899092318260, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336305899092318260, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2959,6 +3051,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 329779059}
+    - targetCorrespondingSourceObject: {fileID: -8513861805276012894, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1002285639}
   m_SourcePrefab: {fileID: 100100000, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
 --- !u!4 &329779051 stripped
 Transform:
@@ -3093,10 +3188,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1002285639}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1002285639}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -3105,10 +3224,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1002285639}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1002285639}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -3341,6 +3484,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1424846010}
     m_Modifications:
+    - target: {fileID: -8833414935524313994, guid: 0644f74af8417e34fa5b316a456b9e99, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8833414935524313994, guid: 0644f74af8417e34fa5b316a456b9e99, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: -8679921383154817045, guid: 0644f74af8417e34fa5b316a456b9e99, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2870751
@@ -3638,6 +3789,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5c69316ea593c434788b797a5e076798, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5c69316ea593c434788b797a5e076798, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 5c69316ea593c434788b797a5e076798, type: 3}
       propertyPath: m_Name
       value: teacup2
@@ -3675,6 +3834,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c69316ea593c434788b797a5e076798, type: 3}
       insertIndex: -1
       addedObject: {fileID: 357551365}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c69316ea593c434788b797a5e076798, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 357551369}
   m_SourcePrefab: {fileID: 100100000, guid: 5c69316ea593c434788b797a5e076798, type: 3}
 --- !u!4 &357551355 stripped
 Transform:
@@ -3809,10 +3971,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 357551369}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 357551369}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -3821,10 +4007,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 357551369}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 357551369}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -3911,6 +4121,26 @@ MonoBehaviour:
   TurnPickableComponent: {fileID: 357551365}
   objectGrabbable: {fileID: 357551360}
   size: {fileID: 2079955951}
+--- !u!23 &357551367 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 5c69316ea593c434788b797a5e076798, type: 3}
+  m_PrefabInstance: {fileID: 357551354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &357551369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357551356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 357551367}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1 &415514005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9079635536681186296, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
@@ -4495,6 +4725,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
       propertyPath: m_Name
       value: teacup1 (1)
@@ -4532,6 +4770,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
       insertIndex: -1
       addedObject: {fileID: 459704266}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 459704270}
   m_SourcePrefab: {fileID: 100100000, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
 --- !u!4 &459704256 stripped
 Transform:
@@ -4666,10 +4907,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 459704270}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 459704270}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -4678,10 +4943,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 459704270}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 459704270}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -4768,6 +5057,26 @@ MonoBehaviour:
   TurnPickableComponent: {fileID: 459704266}
   objectGrabbable: {fileID: 459704262}
   size: {fileID: 2079955951}
+--- !u!23 &459704268 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
+  m_PrefabInstance: {fileID: 459704255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &459704270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459704257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 459704268}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1 &495493045
 GameObject:
   m_ObjectHideFlags: 0
@@ -5047,6 +5356,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -676158338656540354, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -676158338656540354, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
       propertyPath: m_Name
       value: room1
@@ -5055,6 +5372,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4640378710488306106, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640378710488306106, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 5317709330110014058, guid: 17de9a8cfb2ceef4caf47f01941abe5b, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -5559,10 +5884,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3015216796220151876, guid: 8c3fb3f100978634da29058c9f7fe083, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3015216796220151876, guid: 8c3fb3f100978634da29058c9f7fe083, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 8c3fb3f100978634da29058c9f7fe083, type: 3}
       propertyPath: m_Name
       value: table
       objectReference: {fileID: 0}
+    - target: {fileID: 5033177722865062963, guid: 8c3fb3f100978634da29058c9f7fe083, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033177722865062963, guid: 8c3fb3f100978634da29058c9f7fe083, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6374,6 +6715,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 342408967951d40449d2077e29a54cac, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 342408967951d40449d2077e29a54cac, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 342408967951d40449d2077e29a54cac, type: 3}
       propertyPath: m_Name
       value: teapot2 (1)
@@ -6411,6 +6760,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 342408967951d40449d2077e29a54cac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 736898715}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 342408967951d40449d2077e29a54cac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 736898719}
   m_SourcePrefab: {fileID: 100100000, guid: 342408967951d40449d2077e29a54cac, type: 3}
 --- !u!4 &736898705 stripped
 Transform:
@@ -6545,10 +6897,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 736898719}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 736898719}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -6557,10 +6933,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 736898719}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 736898719}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -6647,6 +7047,26 @@ MonoBehaviour:
   TurnPickableComponent: {fileID: 736898715}
   objectGrabbable: {fileID: 736898712}
   size: {fileID: 2079955951}
+--- !u!23 &736898717 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 342408967951d40449d2077e29a54cac, type: 3}
+  m_PrefabInstance: {fileID: 736898704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &736898719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736898706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 736898717}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1001 &742364370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6707,6 +7127,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -35.023
       objectReference: {fileID: 0}
+    - target: {fileID: -4494770723884020255, guid: d48070b8b224977438e821e6f77b0661, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4494770723884020255, guid: d48070b8b224977438e821e6f77b0661, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: d48070b8b224977438e821e6f77b0661, type: 3}
       propertyPath: m_Name
       value: sign3
@@ -6814,6 +7242,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sign2
       objectReference: {fileID: 0}
+    - target: {fileID: 4985511278273075083, guid: a9afac3588eeb7b489d249e54665ef3a, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985511278273075083, guid: a9afac3588eeb7b489d249e54665ef3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7916,6 +8352,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 342408967951d40449d2077e29a54cac, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 342408967951d40449d2077e29a54cac, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 342408967951d40449d2077e29a54cac, type: 3}
       propertyPath: m_Name
       value: teapot2
@@ -7953,6 +8397,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 342408967951d40449d2077e29a54cac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 883662523}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 342408967951d40449d2077e29a54cac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 883662527}
   m_SourcePrefab: {fileID: 100100000, guid: 342408967951d40449d2077e29a54cac, type: 3}
 --- !u!4 &883662513 stripped
 Transform:
@@ -8087,10 +8534,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 883662527}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 883662527}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8099,10 +8570,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 883662527}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 883662527}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8189,6 +8684,26 @@ MonoBehaviour:
   TurnPickableComponent: {fileID: 883662523}
   objectGrabbable: {fileID: 883662518}
   size: {fileID: 2079955951}
+--- !u!23 &883662525 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 342408967951d40449d2077e29a54cac, type: 3}
+  m_PrefabInstance: {fileID: 883662512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &883662527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883662514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 883662525}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1 &903425818
 GameObject:
   m_ObjectHideFlags: 0
@@ -8423,6 +8938,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 717740669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1002285635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8513861805276012894, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+  m_PrefabInstance: {fileID: 329779050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1002285637 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8336305899092318260, guid: de98fd046f2003b47b3f9a2f69f58c8e, type: 3}
+  m_PrefabInstance: {fileID: 329779050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1002285639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002285635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 1002285637}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1 &1004792609
 GameObject:
   m_ObjectHideFlags: 0
@@ -9861,6 +10401,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3578468534679068887, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3578468534679068887, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: -3297952792483089584, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -9905,6 +10453,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1219279728}
+    - targetCorrespondingSourceObject: {fileID: -3297952792483089584, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1642669101}
   m_SourcePrefab: {fileID: 100100000, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
 --- !u!4 &1219279721 stripped
 Transform:
@@ -10054,10 +10605,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1642669101}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1642669101}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -10066,10 +10641,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1642669101}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1642669101}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -12176,6 +12775,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -159.7
       objectReference: {fileID: 0}
+    - target: {fileID: -3578468534679068887, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3578468534679068887, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: -3297952792483089584, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -12217,6 +12824,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1417576341}
+    - targetCorrespondingSourceObject: {fileID: -3297952792483089584, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2047192068}
   m_SourcePrefab: {fileID: 100100000, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
 --- !u!4 &1417576333 stripped
 Transform:
@@ -12351,10 +12961,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2047192068}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2047192068}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -12363,10 +12997,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2047192068}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2047192068}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -12513,6 +13171,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 52.831
       objectReference: {fileID: 0}
+    - target: {fileID: -4309244552997593976, guid: 62c5791c982060b45835d7ccab9120a5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4309244552997593976, guid: 62c5791c982060b45835d7ccab9120a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 62c5791c982060b45835d7ccab9120a5, type: 3}
       propertyPath: m_Name
       value: sign1 (1)
@@ -12856,6 +13522,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
       propertyPath: m_Name
       value: teacup1
@@ -12893,6 +13567,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1474308140}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1474308144}
   m_SourcePrefab: {fileID: 100100000, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
 --- !u!4 &1474308130 stripped
 Transform:
@@ -13027,10 +13704,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1474308144}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1474308144}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -13039,10 +13740,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1474308144}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1474308144}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -13129,6 +13854,26 @@ MonoBehaviour:
   TurnPickableComponent: {fileID: 1474308140}
   objectGrabbable: {fileID: 1474308136}
   size: {fileID: 2079955951}
+--- !u!23 &1474308142 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 2831d6bdf6624114593ee5ebe1878916, type: 3}
+  m_PrefabInstance: {fileID: 1474308129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1474308144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474308131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 1474308142}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1001 &1488873660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13189,6 +13934,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 15.971
       objectReference: {fileID: 0}
+    - target: {fileID: -4309244552997593976, guid: 62c5791c982060b45835d7ccab9120a5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4309244552997593976, guid: 62c5791c982060b45835d7ccab9120a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 62c5791c982060b45835d7ccab9120a5, type: 3}
       propertyPath: m_Name
       value: sign1
@@ -13488,6 +14241,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5246684616875285290, guid: df451e976eb88cc4db5daf9d0c801d52, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5246684616875285290, guid: df451e976eb88cc4db5daf9d0c801d52, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: df451e976eb88cc4db5daf9d0c801d52, type: 3}
       propertyPath: m_Name
       value: NPC
@@ -13705,6 +14466,31 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
+--- !u!1 &1642669097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3297952792483089584, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+  m_PrefabInstance: {fileID: 1219279720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1642669099 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3578468534679068887, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+  m_PrefabInstance: {fileID: 1219279720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1642669101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642669097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 1642669099}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1 &1649065846
 GameObject:
   m_ObjectHideFlags: 0
@@ -13902,6 +14688,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 45f2e48d0e3a39a488d9464a1a9b56e7, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 45f2e48d0e3a39a488d9464a1a9b56e7, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 45f2e48d0e3a39a488d9464a1a9b56e7, type: 3}
       propertyPath: m_Name
       value: teacup3
@@ -13939,6 +14733,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45f2e48d0e3a39a488d9464a1a9b56e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1676856788}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45f2e48d0e3a39a488d9464a1a9b56e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1676856792}
   m_SourcePrefab: {fileID: 100100000, guid: 45f2e48d0e3a39a488d9464a1a9b56e7, type: 3}
 --- !u!4 &1676856778 stripped
 Transform:
@@ -14073,10 +14870,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1676856792}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1676856792}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -14085,10 +14906,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1676856792}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1676856792}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -14175,6 +15020,26 @@ MonoBehaviour:
   TurnPickableComponent: {fileID: 1676856788}
   objectGrabbable: {fileID: 1676856784}
   size: {fileID: 2079955951}
+--- !u!23 &1676856790 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 45f2e48d0e3a39a488d9464a1a9b56e7, type: 3}
+  m_PrefabInstance: {fileID: 1676856777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1676856792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676856779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 1676856790}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1 &1695577617
 GameObject:
   m_ObjectHideFlags: 0
@@ -16157,6 +17022,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038171060}
   m_CullTransparentMesh: 1
+--- !u!1 &2047192064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3297952792483089584, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+  m_PrefabInstance: {fileID: 1417576332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2047192066 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3578468534679068887, guid: e46c3ad99794f8f45a1f4fde677c3209, type: 3}
+  m_PrefabInstance: {fileID: 1417576332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2047192068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047192064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 2047192066}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1 &2079955948
 GameObject:
   m_ObjectHideFlags: 0

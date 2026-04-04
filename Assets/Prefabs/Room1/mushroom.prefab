@@ -72,6 +72,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 7811454546378411408, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811454546378411408, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 8013225163141945443, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -96,7 +104,35 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1894136828683130618}
+    - targetCorrespondingSourceObject: {fileID: 8013225163141945443, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9134083857131418643}
   m_SourcePrefab: {fileID: 100100000, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
+--- !u!23 &80089315857478199 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7811454546378411408, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
+  m_PrefabInstance: {fileID: 7888991853671088039}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &166604184048625604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8013225163141945443, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
+  m_PrefabInstance: {fileID: 7888991853671088039}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9134083857131418643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166604184048625604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b3ba080c1d46e48b682623c3c20cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 80089315857478199}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
 --- !u!1 &7042008703109612278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ab642e8a675acf499a1e715e9178575, type: 3}
@@ -199,10 +235,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9134083857131418643}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9134083857131418643}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -211,10 +271,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9134083857131418643}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9134083857131418643}
+        m_TargetAssemblyTypeName: ObjectHover, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
