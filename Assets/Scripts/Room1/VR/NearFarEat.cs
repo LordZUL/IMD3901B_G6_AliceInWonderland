@@ -3,13 +3,11 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class XREat : MonoBehaviour
+public class NearFarEat : MonoBehaviour
 {
     public XRDirectInteractor directInteractor;
-    public NearFarInteractor nearFarInteractor;
     //public XRRayInteractor rayInteractor;
-    //public InputActionReference triggerAction;
-    public InputActionReference secondaryButton;
+    public InputActionReference triggerAction;
     // to see what size is player -> small, average, giant
     public enum SizeState { Normal, Small, Big }
     public SizeState currentSize = SizeState.Normal;
@@ -18,75 +16,27 @@ public class XREat : MonoBehaviour
 
     private void OnEnable()
     {
-        //triggerAction.action.Enable();
-        secondaryButton.action.Enable();
+        triggerAction.action.Enable();
     }
     private void Update()
     {
         // If trigger pressed
-        if (secondaryButton.action.WasPressedThisFrame())
+        if (triggerAction.action.WasPressedThisFrame())
         {
             Debug.Log("TRIGGER PRESSED");
-            if (nearFarInteractor.hasSelection)
+            if (directInteractor.hasSelection)
             {
-                Debug.Log("Has Selection: " + nearFarInteractor.hasSelection);
-
-                var interactable = nearFarInteractor.firstInteractableSelected;
-                Debug.Log("Interactable: " + interactable);
-
+                var interactable = directInteractor.firstInteractableSelected;
 
                 if (interactable != null)
                 {
-                    //GameObject obj = interactable.transform.gameObject;
+                    GameObject obj = interactable.transform.gameObject;
 
-
-                    //ObjectGrabbable grabbable = obj.GetComponent<ObjectGrabbable>();
-
-                    //ObjectGrabbable grabbable = interactable.transform.GetComponentInParent<ObjectGrabbable>();
-
-                    ObjectGrabbable grabbable = null;
-
-                    var mb = interactable as MonoBehaviour;
-                    if (mb != null)
-                    {
-                        grabbable = mb.GetComponentInParent<ObjectGrabbable>();
-                    }
+                    ObjectGrabbable grabbable = obj.GetComponent<ObjectGrabbable>();
 
                     if (grabbable != null)
                     {
                         Eat(grabbable);
-                        Debug.Log("Its eating: " + grabbable);
-                    }
-                }
-            }
-
-            else if (directInteractor.hasSelection)
-            {
-                Debug.Log("Has Selection: " + directInteractor.hasSelection);
-
-                var interactable = directInteractor.firstInteractableSelected;
-                Debug.Log("Interactable: " + interactable);
-
-
-                if (interactable != null)
-                {
-                    //GameObject obj = interactable.transform.gameObject;
-
-
-                    //ObjectGrabbable grabbable = obj.GetComponent<ObjectGrabbable>();
-
-                    //ObjectGrabbable grabbable = interactable.transform.GetComponentInParent<ObjectGrabbable>();
-
-                    ObjectGrabbable grabbable = null;
-
-                    GameObject obj = interactable.transform.gameObject;
-
-                    ObjectGrabbable grabbable2 = obj.GetComponent<ObjectGrabbable>();
-
-                    if (grabbable2 != null)
-                    {
-                        Eat(grabbable2);
-                        Debug.Log("Its eating: " + grabbable2);
                     }
                 }
             }
