@@ -765,6 +765,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5246684616875285290, guid: df451e976eb88cc4db5daf9d0c801d52, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5246684616875285290, guid: df451e976eb88cc4db5daf9d0c801d52, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: df451e976eb88cc4db5daf9d0c801d52, type: 3}
       propertyPath: m_Name
       value: NPC
@@ -1156,6 +1164,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: acce33f5aeb75004f8f76863a0491dfa, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: acce33f5aeb75004f8f76863a0491dfa, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: acce33f5aeb75004f8f76863a0491dfa, type: 3}
       propertyPath: m_Name
       value: roseSign2
@@ -1230,6 +1246,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -17.99
       objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
       propertyPath: m_Name
       value: rose2
@@ -1497,6 +1521,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 13.343
       objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
       propertyPath: m_Name
       value: rose3
@@ -1761,10 +1793,15 @@ MonoBehaviour:
   crosshairImage: {fileID: 443760483}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 1990541242}
   rabbitInteractionText: {fileID: 714109987}
   paintInteractionText: {fileID: 882272763}
   doorInteractionText: {fileID: 1808172914}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
+  playerSize: {fileID: 0}
 --- !u!114 &443760483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2447,6 +2484,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 46c2f8f2d1df27c4d95977991dd6980f, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 46c2f8f2d1df27c4d95977991dd6980f, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 46c2f8f2d1df27c4d95977991dd6980f, type: 3}
       propertyPath: m_Name
       value: roseSign4
@@ -3775,6 +3820,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 164275863}
     m_Modifications:
+    - target: {fileID: -8833414935524313994, guid: 0644f74af8417e34fa5b316a456b9e99, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8833414935524313994, guid: 0644f74af8417e34fa5b316a456b9e99, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: -8679921383154817045, guid: 0644f74af8417e34fa5b316a456b9e99, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.24582021
@@ -3960,6 +4013,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 19.871
       objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
       propertyPath: m_Name
       value: rose7
@@ -5175,6 +5236,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 11.429
       objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
       propertyPath: m_Name
       value: rose6
@@ -6307,6 +6376,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 46c2f8f2d1df27c4d95977991dd6980f, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 46c2f8f2d1df27c4d95977991dd6980f, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 46c2f8f2d1df27c4d95977991dd6980f, type: 3}
       propertyPath: m_Name
       value: roseSign1
@@ -7889,6 +7966,30 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PaintCan
       objectReference: {fileID: 0}
+    - target: {fileID: 4548366042468768899, guid: 47c765de67ba4a84880e31ebfa463801, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548366042468768899, guid: 47c765de67ba4a84880e31ebfa463801, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
+    - target: {fileID: 7022262005200097995, guid: 47c765de67ba4a84880e31ebfa463801, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022262005200097995, guid: 47c765de67ba4a84880e31ebfa463801, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
+    - target: {fileID: 8246835712304603558, guid: 47c765de67ba4a84880e31ebfa463801, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246835712304603558, guid: 47c765de67ba4a84880e31ebfa463801, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8174,6 +8275,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8248646848937018866, guid: 337c1ff257c45264db0df7f698d20f78, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8248646848937018866, guid: 337c1ff257c45264db0df7f698d20f78, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
+    - target: {fileID: -2727770918844046680, guid: 337c1ff257c45264db0df7f698d20f78, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2727770918844046680, guid: 337c1ff257c45264db0df7f698d20f78, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 337c1ff257c45264db0df7f698d20f78, type: 3}
       propertyPath: m_Name
       value: room3
@@ -8922,10 +9039,15 @@ MonoBehaviour:
   crosshairImage: {fileID: 443760483}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 1990541242}
   rabbitInteractionText: {fileID: 714109987}
   paintInteractionText: {fileID: 882272763}
   doorInteractionText: {fileID: 1808172914}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
+  playerSize: {fileID: 0}
 --- !u!114 &1994221268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9069,6 +9191,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 14.124
       objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
       propertyPath: m_Name
       value: rose4
@@ -9336,6 +9466,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -24.406
       objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
       propertyPath: m_Name
       value: rose5
@@ -9794,6 +9932,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7d00fa2905b53184e92885a64022483d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7d00fa2905b53184e92885a64022483d, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 7d00fa2905b53184e92885a64022483d, type: 3}
       propertyPath: m_Name
       value: roseSign3
@@ -10133,6 +10279,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.605
       objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3788741665110453703, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b8c7cab937a2464aa7b2ec1b1d3fcd3, type: 2}
+    - target: {fileID: -2624628676546380863, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2624628676546380863, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ac09c2cb7564fb48942157f7b71fe25, type: 2}
     - target: {fileID: 919132149155446097, guid: c8ebe9dcb082a484e8e80eca2896becb, type: 3}
       propertyPath: m_Name
       value: rose1
