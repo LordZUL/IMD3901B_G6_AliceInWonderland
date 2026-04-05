@@ -884,6 +884,8 @@ MonoBehaviour:
   rabbitInteractionText: {fileID: 1901148668}
   paintInteractionText: {fileID: 1919983272}
   doorInteractionText: {fileID: 1901203899}
+  EatInteractableText: {fileID: 455654201}
+  DropInteractableText: {fileID: 588928280}
   playerSize: {fileID: 1232426986}
 --- !u!222 &139333579
 CanvasRenderer:
@@ -1360,6 +1362,8 @@ MonoBehaviour:
   rabbitInteractionText: {fileID: 1133324618}
   paintInteractionText: {fileID: 169704565}
   doorInteractionText: {fileID: 1978360382}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
   playerSize: {fileID: 0}
 --- !u!114 &187658818
 MonoBehaviour:
@@ -10213,6 +10217,8 @@ MonoBehaviour:
   rabbitInteractionText: {fileID: 1228635090}
   paintInteractionText: {fileID: 0}
   doorInteractionText: {fileID: 0}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
   playerSize: {fileID: 0}
 --- !u!1 &1133324618
 GameObject:
@@ -12759,6 +12765,8 @@ MonoBehaviour:
   rabbitInteractionText: {fileID: 1901148668}
   paintInteractionText: {fileID: 1919983272}
   doorInteractionText: {fileID: 1901203899}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
   playerSize: {fileID: 0}
 --- !u!114 &1396314883
 MonoBehaviour:
@@ -13484,6 +13492,8 @@ MonoBehaviour:
   rabbitInteractionText: {fileID: 1228635090}
   paintInteractionText: {fileID: 0}
   doorInteractionText: {fileID: 0}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
   playerSize: {fileID: 0}
 --- !u!1 &1438660721
 GameObject:
@@ -15496,6 +15506,8 @@ MonoBehaviour:
   rabbitInteractionText: {fileID: 1133324618}
   paintInteractionText: {fileID: 169704565}
   doorInteractionText: {fileID: 1978360382}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
   playerSize: {fileID: 0}
 --- !u!114 &1789938174
 MonoBehaviour:
