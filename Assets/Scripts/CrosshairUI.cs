@@ -36,11 +36,6 @@ public class CrosshairUI : MonoBehaviour
             rabbitInteractionText.SetActive(false);
         }
 
-        if (paintInteractionText != null)
-        {
-            paintInteractionText.SetActive(false);
-        }
-
         if (doorInteractionText != null)
         {
             doorInteractionText.SetActive(false);
@@ -58,7 +53,7 @@ public class CrosshairUI : MonoBehaviour
             lastSizeState = playerSize.currentSize;
         }
         //if (rend == null)
-            //rend = GetComponent<Renderer>();
+        //rend = GetComponent<Renderer>();
 
         //originalColor = rend.material.GetColor("_Color");
     }
@@ -142,7 +137,7 @@ public class CrosshairUI : MonoBehaviour
                 mats[1].SetColor("_Color", hoverColor);
             }
             lastTarget = target;
-            
+
 
             //var mats = rend.materials;
             //mats[1].SetColor("_Color", hoverColor);
