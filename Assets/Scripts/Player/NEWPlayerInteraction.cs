@@ -88,6 +88,7 @@ public class NEWPlayerInteraction : MonoBehaviour
             else
             {
                 objectGrabbable.Drop();
+                crosshairUIScript.SetOutline(objectGrabbable.gameObject, Color.black);
                 objectGrabbable = null;
                 crosshairUIScript.SetHoldUI(false, false);
             }
@@ -177,7 +178,7 @@ public class NEWPlayerInteraction : MonoBehaviour
 
                 // Play audio clip
                 ac.PlayOneShot(eatSound);
-
+                crosshairUIScript.SetOutline(objectGrabbable.gameObject, Color.black);
                 Destroy(objectGrabbable.gameObject);
                 
                 objectGrabbable = null;
@@ -198,6 +199,7 @@ public class NEWPlayerInteraction : MonoBehaviour
             crosshairUIScript.SetHoldUI(false, false);
             return;
         }
+        crosshairUIScript.SetOutline(objectGrabbable.gameObject, Color.white);
         bool showDrop = true;
         bool isFood =
             objectGrabbable.CompareTag("Carrot") ||

@@ -134,6 +134,19 @@ public class CrosshairUI : MonoBehaviour
             mats[1].SetColor("_Color", Color.black); // or your default
         }
     }
+
+    public void SetOutline(GameObject obj, Color color)
+    {
+        if (obj == null) return;
+
+        Renderer r = obj.GetComponentInChildren<Renderer>();
+
+        if (r != null && r.materials.Length > 1)
+        {
+            var mats = r.materials;
+            mats[1].SetColor("_Color", color);
+        }
+    }
     public void SetHoldUI(bool showDrop, bool showEat)
     {
         if (DropInteractableText != null)
