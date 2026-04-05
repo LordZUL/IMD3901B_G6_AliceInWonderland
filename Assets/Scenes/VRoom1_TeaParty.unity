@@ -893,10 +893,15 @@ MonoBehaviour:
   crosshairImage: {fileID: 139333580}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 284107172}
   rabbitInteractionText: {fileID: 1901148668}
   paintInteractionText: {fileID: 1919983272}
   doorInteractionText: {fileID: 1901203899}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
+  playerSize: {fileID: 0}
 --- !u!222 &139333579
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1475,10 +1480,15 @@ MonoBehaviour:
   crosshairImage: {fileID: 187658818}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 637210156}
   rabbitInteractionText: {fileID: 1133324618}
   paintInteractionText: {fileID: 169704565}
   doorInteractionText: {fileID: 1978360382}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
+  playerSize: {fileID: 0}
 --- !u!114 &187658818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10085,10 +10095,15 @@ MonoBehaviour:
   crosshairImage: {fileID: 1436210839}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 332879279}
   rabbitInteractionText: {fileID: 1228635090}
   paintInteractionText: {fileID: 0}
   doorInteractionText: {fileID: 0}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
+  playerSize: {fileID: 0}
 --- !u!1 &1133324618
 GameObject:
   m_ObjectHideFlags: 0
@@ -12628,10 +12643,15 @@ MonoBehaviour:
   crosshairImage: {fileID: 139333580}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 284107172}
   rabbitInteractionText: {fileID: 1901148668}
   paintInteractionText: {fileID: 1919983272}
   doorInteractionText: {fileID: 1901203899}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
+  playerSize: {fileID: 0}
 --- !u!114 &1396314883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13350,10 +13370,15 @@ MonoBehaviour:
   crosshairImage: {fileID: 1436210839}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 332879279}
   rabbitInteractionText: {fileID: 1228635090}
   paintInteractionText: {fileID: 0}
   doorInteractionText: {fileID: 0}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
+  playerSize: {fileID: 0}
 --- !u!1 &1438660721
 GameObject:
   m_ObjectHideFlags: 0
@@ -15496,10 +15521,15 @@ MonoBehaviour:
   crosshairImage: {fileID: 187658818}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 637210156}
   rabbitInteractionText: {fileID: 1133324618}
   paintInteractionText: {fileID: 169704565}
   doorInteractionText: {fileID: 1978360382}
+  EatInteractableText: {fileID: 0}
+  DropInteractableText: {fileID: 0}
+  playerSize: {fileID: 0}
 --- !u!114 &1789938174
 MonoBehaviour:
   m_ObjectHideFlags: 0
