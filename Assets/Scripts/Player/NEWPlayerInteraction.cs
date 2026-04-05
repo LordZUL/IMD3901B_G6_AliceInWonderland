@@ -18,6 +18,7 @@ public class NEWPlayerInteraction : MonoBehaviour
     public Transform inventoryGrabPointTransform;
 
     public CrosshairUI crosshairUIScript;
+
     public ScreenFade screenFade;
 
     // Audio
@@ -185,7 +186,10 @@ public class NEWPlayerInteraction : MonoBehaviour
             
         //crosshairUIScript.SetInteract(false);
     }
-
+    public ObjectGrabbable GetHeldObject()
+    {
+        return objectGrabbable;
+    }
     IEnumerator LoadNextScene()
     {
         ac.PlayOneShot(nextScene);

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class CrosshairUI : MonoBehaviour
+public class CrosshairUIRabbit : MonoBehaviour
 {
     public Image crosshairImage;
     public Color normalColor = Color.white;
