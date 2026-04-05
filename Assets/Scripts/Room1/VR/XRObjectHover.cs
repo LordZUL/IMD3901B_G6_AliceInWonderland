@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-public class ObjectHover : MonoBehaviour
+public class XRObjectHover : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Renderer rend;
