@@ -876,6 +876,8 @@ MonoBehaviour:
   crosshairImage: {fileID: 139333580}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 284107172}
   rabbitInteractionText: {fileID: 1901148668}
   paintInteractionText: {fileID: 1919983272}
@@ -1350,6 +1352,8 @@ MonoBehaviour:
   crosshairImage: {fileID: 187658818}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 637210156}
   rabbitInteractionText: {fileID: 1133324618}
   paintInteractionText: {fileID: 169704565}
@@ -9929,6 +9933,8 @@ MonoBehaviour:
   crosshairImage: {fileID: 1436210839}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 332879279}
   rabbitInteractionText: {fileID: 1228635090}
   paintInteractionText: {fileID: 0}
@@ -12473,11 +12479,13 @@ MonoBehaviour:
   crosshairImage: {fileID: 139333580}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 284107172}
   rabbitInteractionText: {fileID: 1901148668}
   paintInteractionText: {fileID: 1919983272}
   doorInteractionText: {fileID: 1901203899}
-  playerSize: {fileID: 0}
+  playerSize: {fileID: 1232426986}
 --- !u!114 &1396314883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13196,6 +13204,8 @@ MonoBehaviour:
   crosshairImage: {fileID: 1436210839}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 332879279}
   rabbitInteractionText: {fileID: 1228635090}
   paintInteractionText: {fileID: 0}
@@ -15206,6 +15216,8 @@ MonoBehaviour:
   crosshairImage: {fileID: 187658818}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   interactColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  isSelected: 0
   interactionText: {fileID: 637210156}
   rabbitInteractionText: {fileID: 1133324618}
   paintInteractionText: {fileID: 169704565}
