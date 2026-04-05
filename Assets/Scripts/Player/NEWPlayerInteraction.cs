@@ -88,7 +88,9 @@ public class NEWPlayerInteraction : MonoBehaviour
             else
             {
                 objectGrabbable.Drop();
+                crosshairUIScript.SetOutline(objectGrabbable.gameObject, Color.black);
                 objectGrabbable = null;
+                crosshairUIScript.SetHoldUI(false, false);
             }
 
             /*if (heldObject == null)
@@ -140,7 +142,7 @@ public class NEWPlayerInteraction : MonoBehaviour
 
         // if Q is pressed when currently holding something -> eat object
         // need to check if object is mushroom or carrot
-        if ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot"))
+        if (objectGrabbable != null && ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot")))
         {
             if (Keyboard.current.qKey.wasPressedThisFrame && objectGrabbable != null)
             {
@@ -176,14 +178,40 @@ public class NEWPlayerInteraction : MonoBehaviour
 
                 // Play audio clip
                 ac.PlayOneShot(eatSound);
-
+                crosshairUIScript.SetOutline(objectGrabbable.gameObject, Color.black);
                 Destroy(objectGrabbable.gameObject);
                 
                 objectGrabbable = null;
+                crosshairUIScript.SetHoldUI(false, false);
             }
         }
-            
+
         //crosshairUIScript.SetInteract(false);
+        UpdateHeldUI();
+    }
+    void UpdateHeldUI()
+    {
+        if (crosshairUIScript == null) return;
+
+        if (objectGrabbable == null)
+        {
+            // nothing in hand → hide both
+            crosshairUIScript.SetHoldUI(false, false);
+            return;
+        }
+        crosshairUIScript.SetOutline(objectGrabbable.gameObject, Color.white);
+        bool showDrop = true;
+        bool isFood =
+            objectGrabbable.CompareTag("Carrot") ||
+            objectGrabbable.CompareTag("Mushroom");
+
+        // holding something
+        crosshairUIScript.SetHoldUI(showDrop, isFood);
+    }
+
+    public ObjectGrabbable GetHeldObject()
+    {
+        return objectGrabbable;
     }
 
     IEnumerator LoadNextScene()

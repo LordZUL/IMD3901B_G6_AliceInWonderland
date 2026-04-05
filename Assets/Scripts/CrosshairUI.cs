@@ -16,6 +16,8 @@ public class CrosshairUI : MonoBehaviour
     public GameObject rabbitInteractionText;
     public GameObject paintInteractionText;
     public GameObject doorInteractionText;
+    public GameObject EatInteractableText;
+    public GameObject DropInteractableText;
     public NEWPlayerInteraction playerSize;
     private NEWPlayerInteraction.SizeState lastSizeState;
     private GameObject lastTarget;
@@ -37,6 +39,14 @@ public class CrosshairUI : MonoBehaviour
         if (doorInteractionText != null)
         {
             doorInteractionText.SetActive(false);
+        }
+        if (EatInteractableText != null)
+        {
+            EatInteractableText.SetActive(false);
+        }
+        if (DropInteractableText != null)
+        {
+            DropInteractableText.SetActive(false);
         }
         if (playerSize != null)
         {
@@ -87,7 +97,7 @@ public class CrosshairUI : MonoBehaviour
             doorInteractionText.SetActive(true);
         }
         // Default pickup
-        else if (target.GetComponent<ObjectGrabbable>() != null || target.CompareTag("PaintCan"))
+        else if ((target.GetComponent<ObjectGrabbable>() != null || target.CompareTag("PaintCan")) && playerSize.GetComponent<NEWPlayerInteraction>().GetHeldObject() == null)
         {
             lastSizeState = playerSize.currentSize;
 
@@ -124,6 +134,28 @@ public class CrosshairUI : MonoBehaviour
             mats[1].SetColor("_Color", Color.black); // or your default
         }
     }
+
+    public void SetOutline(GameObject obj, Color color)
+    {
+        if (obj == null) return;
+
+        Renderer r = obj.GetComponentInChildren<Renderer>();
+
+        if (r != null && r.materials.Length > 1)
+        {
+            var mats = r.materials;
+            mats[1].SetColor("_Color", color);
+        }
+    }
+    public void SetHoldUI(bool showDrop, bool showEat)
+    {
+        if (DropInteractableText != null)
+            DropInteractableText.SetActive(showDrop);
+
+        if (EatInteractableText != null)
+            EatInteractableText.SetActive(showEat);
+    }
+
     public void RegisterInteraction()
     {
         hasInteractedOnce = true;
