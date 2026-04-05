@@ -12487,10 +12487,10 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   interactionText: {fileID: 284107172}
   rabbitInteractionText: {fileID: 1901148668}
-  paintInteractionText: {fileID: 1919983272}
+  paintInteractionText: {fileID: 0}
   doorInteractionText: {fileID: 1901203899}
-  grabEatText: {fileID: 0}
-  dropText: {fileID: 0}
+  grabEatText: {fileID: 2122471981}
+  dropText: {fileID: 1414892569}
   playerSize: {fileID: 1232426986}
 --- !u!114 &1396314883
 MonoBehaviour:

@@ -36,6 +36,11 @@ public class CrosshairUI : MonoBehaviour
             rabbitInteractionText.SetActive(false);
         }
 
+        if (paintInteractionText != null)
+        {
+            paintInteractionText.SetActive(false);
+        }
+
         if (doorInteractionText != null)
         {
             doorInteractionText.SetActive(false);
