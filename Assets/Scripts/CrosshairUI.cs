@@ -11,6 +11,8 @@ public class CrosshairUI : MonoBehaviour
     public GameObject rabbitInteractionText;
     public GameObject paintInteractionText;
     public GameObject doorInteractionText;
+    public NEWPlayerInteraction playerSize;
+    private NEWPlayerInteraction.SizeState lastSizeState;
 
     private bool hasInteractedOnce = false;
 
@@ -29,6 +31,10 @@ public class CrosshairUI : MonoBehaviour
         if (doorInteractionText != null)
         {
             doorInteractionText.SetActive(false);
+        }
+        if (playerSize != null)
+        {
+            lastSizeState = playerSize.currentSize;
         }
     }
 
@@ -63,6 +69,15 @@ public class CrosshairUI : MonoBehaviour
         // Default pickup
         else if (target.GetComponent<ObjectGrabbable>() != null || target.CompareTag("PaintCan"))
         {
+            //if (playerSize.currentSize == lastSizeState) return;
+
+            lastSizeState = playerSize.currentSize;
+
+            if (target.CompareTag("NotInteractable") && lastSizeState != NEWPlayerInteraction.SizeState.Big)
+            {
+                return;
+            }
+            
             interactionText.SetActive(true);
         }
     }
