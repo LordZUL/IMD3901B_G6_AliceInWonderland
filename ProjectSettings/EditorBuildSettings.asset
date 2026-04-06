@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial_Room.unity
     guid: 8e5512ae43b44474b9ae149ca9b7d9d0
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/VRoom1_TeaParty.unity
     guid: f057a2d987cd15945882bcd74ef83e82
@@ -28,13 +25,16 @@ EditorBuildSettings:
     guid: b76da84c815867e439d89fcb89326185
   - enabled: 1
     path: Assets/Scenes/VRRoom2_CheshireCatTiles.unity
-    guid: 57325c59aafba114fad435abe21413ed
+    guid: 97cf319d1b5b0cb4dae1bf8c50142e1c
   - enabled: 1
     path: Assets/Scenes/VRRoom3_QueenOfHeartsMaze.unity
     guid: 861742eac1bb2d44b9761ab1d1ea9d47
   - enabled: 1
     path: Assets/Scenes/VRFinish.unity
     guid: fb00035f1093b234ab531f97f5cc1b01
+  - enabled: 1
+    path: Assets/Scenes/VRMainMenu.unity
+    guid: 7d9c7fedfd29ae34e9b6a07ea91a0e81
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d513d8c741bf3064499a834e3b9f6f25, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

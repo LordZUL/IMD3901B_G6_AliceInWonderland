@@ -8,9 +8,15 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Room1_TeaParty");
     }
-    public void How_To_Play_Button()
+
+    public void VR_Button()
     {
-        SceneManager.LoadScene("Tutorial_Room");
+        SceneManager.LoadScene("VRMainMenu");
+    }
+
+    public void Desktop_Button()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
