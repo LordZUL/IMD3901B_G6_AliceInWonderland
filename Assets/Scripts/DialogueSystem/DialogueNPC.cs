@@ -3,22 +3,22 @@ using UnityEngine;
 public class DialogueNPC3D : MonoBehaviour
 {
     [Header("Dialogue")]
-    public DialogueLine[] dialogueLines;  // Assign NPC's dialogue in Inspector
+    public DialogueLine[] dialogueLines;  
 
     [Header("Interaction")]
-    public float interactRange = 5f;      // Distance at which player can interact
+    public float interactRange = 5f;      
 
     private bool dialogueStarted = false;
 
     void Update()
     {
-        // Reset dialogueStarted when dialogue finishes
+   
         if (dialogueStarted && DialogueManager.instance.dialogueFinished)
         {
             dialogueStarted = false;
         }
 
-        // Optional: trigger dialogue by player pressing 'E' when in range
+   
         if (!dialogueStarted && PlayerInRange() && Input.GetKeyDown(KeyCode.E))
         {
             TryStartDialogue();
@@ -27,7 +27,6 @@ public class DialogueNPC3D : MonoBehaviour
 
 
 
-    // Check if player is within interaction range
     bool PlayerInRange()
     {
         GameObject player = GameObject.FindWithTag("Player");
@@ -37,7 +36,7 @@ public class DialogueNPC3D : MonoBehaviour
         return distance <= interactRange;
     }
 
-    // Start dialogue
+    
     public void TryStartDialogue()
     {
         if (dialogueStarted || dialogueLines.Length == 0) return;

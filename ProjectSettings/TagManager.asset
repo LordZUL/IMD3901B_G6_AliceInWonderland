@@ -9,6 +9,12 @@ TagManager:
   - ConsumeGetSmall
   - ConsumeGetBig
   - NotInteractable
+  - Mushroom
+  - Carrot
+  - Rabbit
+  - PaintCan
+  - Cat
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -17,11 +23,11 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
+  - VaultLayer
+  - Interactable
+  - Cat
+  - Grabbable
+  - Ground
   - 
   - 
   - 
