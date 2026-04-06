@@ -3,15 +3,17 @@ using UnityEngine;
 public class playerAnimationInteraction : MonoBehaviour
 {
     public PlayerController player;
+    public VRPlayerController VRplayer;
 
     public void DisablePlayerMovement()
     {
         player.DisableMovement();
+        VRplayer.DisableMovement();
     }
 
     public void EnablePlayerMovement()
     {
         player.EnableMovement();
+        VRplayer.EnableMovement();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 }

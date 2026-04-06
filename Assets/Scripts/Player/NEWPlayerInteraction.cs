@@ -20,6 +20,11 @@ public class NEWPlayerInteraction : MonoBehaviour
     public CrosshairUI crosshairUIScript;
     public ScreenFade screenFade;
 
+    // Audio
+    public AudioClip nextScene;
+    public AudioClip eatSound;
+    private AudioSource ac;
+
     // to track if hands empty rn
     private ObjectGrabbable objectGrabbable;
 
@@ -27,10 +32,13 @@ public class NEWPlayerInteraction : MonoBehaviour
     public enum SizeState { Normal, Small, Big }
     public SizeState currentSize = SizeState.Normal;
 
+    Spawner spawn;
+
     void Start()
     {
         // make heldobject defy gravityyy -> make object kinematic
         //heldObject.GetComponent<Rigidbody>().isKinematic = true;
+        ac = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -80,7 +88,9 @@ public class NEWPlayerInteraction : MonoBehaviour
             else
             {
                 objectGrabbable.Drop();
+                crosshairUIScript.SetOutline(objectGrabbable.gameObject, Color.black);
                 objectGrabbable = null;
+                crosshairUIScript.SetHoldUI(false, false);
             }
 
             /*if (heldObject == null)
@@ -89,8 +99,6 @@ public class NEWPlayerInteraction : MonoBehaviour
             }*/
         }
 
-        // SCENE LOADING STUFF
-        // If player is near door, then when they interact with it by pressing e it loads the next scene in the build profile
         if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit doorHit, 5f))
         {
 
@@ -109,28 +117,32 @@ public class NEWPlayerInteraction : MonoBehaviour
 
                 return; // end
             }
+            
+            // SCENE LOADING STUFF
+            // If player is near door, then when they interact with it by pressing e it loads the next scene in the build profile
             // Show UI
             crosshairUIScript.SetInteract(true, doorHit.collider.gameObject);
 
             if (doorHit.collider.CompareTag("Door"))
             {
-                if (Keyboard.current.eKey.wasPressedThisFrame)
+                //changed so size must be small to get through
+                if (Keyboard.current.eKey.wasPressedThisFrame && currentSize == SizeState.Normal)
                 {
                     Debug.Log("Loading next room...");
                     StartCoroutine(LoadNextScene());
                      // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                  }
-               }
-          }
-          else
-          {
-            // Hide UI
-            crosshairUIScript.SetInteract(false, null);
-          }
+            }
+            }
+            else
+            {
+                // Hide UI
+                crosshairUIScript.SetInteract(false, null);
+            }
 
         // if Q is pressed when currently holding something -> eat object
         // need to check if object is mushroom or carrot
-        if ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot"))
+        if (objectGrabbable != null && ((objectGrabbable.gameObject.tag == "Mushroom") || (objectGrabbable.gameObject.tag == "Carrot")))
         {
             if (Keyboard.current.qKey.wasPressedThisFrame && objectGrabbable != null)
             {
@@ -160,18 +172,52 @@ public class NEWPlayerInteraction : MonoBehaviour
                     {
                         currentSize = SizeState.Small;
                     }
+                    //spawn.SpawnCarrot(objectGrabbable.gameObject);
                 }
+                objectGrabbable.OnConsumed();
 
+                // Play audio clip
+                ac.PlayOneShot(eatSound);
+                crosshairUIScript.SetOutline(objectGrabbable.gameObject, Color.black);
                 Destroy(objectGrabbable.gameObject);
+                
                 objectGrabbable = null;
+                crosshairUIScript.SetHoldUI(false, false);
             }
         }
-            
+
         //crosshairUIScript.SetInteract(false);
+        UpdateHeldUI();
+    }
+    void UpdateHeldUI()
+    {
+        if (crosshairUIScript == null) return;
+
+        if (objectGrabbable == null)
+        {
+            // nothing in hand → hide both
+            crosshairUIScript.SetHoldUI(false, false);
+            return;
+        }
+        crosshairUIScript.SetOutline(objectGrabbable.gameObject, Color.white);
+        bool showDrop = true;
+        bool isFood =
+            objectGrabbable.CompareTag("Carrot") ||
+            objectGrabbable.CompareTag("Mushroom");
+
+        // holding something
+        crosshairUIScript.SetHoldUI(showDrop, isFood);
+    }
+
+    public ObjectGrabbable GetHeldObject()
+    {
+        return objectGrabbable;
     }
 
     IEnumerator LoadNextScene()
     {
+        ac.PlayOneShot(nextScene);
+        
         // Calls the FadeToBlack IEnumerator from the ScreenFade script 
         yield return StartCoroutine(screenFade.FadeToBlack());
 

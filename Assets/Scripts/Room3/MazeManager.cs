@@ -11,8 +11,8 @@ public class MazeManager : MonoBehaviour
 
     void Awake()
     {
-        
         instance = this;
+        exitDoor.SetActive(false);
     }
 
     public void AddPaintedRose()

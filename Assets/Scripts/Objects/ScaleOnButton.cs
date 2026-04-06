@@ -1,7 +1,7 @@
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.PlayerSettings;
+//using static UnityEditor.PlayerSettings;
 
 public class ScaleOnButton : MonoBehaviour
 {
@@ -9,17 +9,25 @@ public class ScaleOnButton : MonoBehaviour
     //trigger action very certain amount of time: https://www.youtube.com/watch?v=NFvmfoRnarY <- this is way too much for my brain to handle... ill just do it after demo -> if I have time qwq
     public float scale = 10f;
     //public Transform playerTransform;
-  
+
     //private ObjectGrabbable objectGrabbable;
+    PlayerController playerCtrl;
     public NEWPlayerInteraction player;
     private NEWPlayerInteraction.SizeState lastSizeState;
+
     private Vector3 scaleSize = Vector3.one;
     private Vector3 originalScale;
     private Vector3 originalPosition;
 
+    //set set sizes
+    [SerializeField] private Vector3 smallScale = new Vector3(10f, 10f, 10f);
+    [SerializeField] private Vector3 normalScale = Vector3.one;
+    [SerializeField] private Vector3 bigScale = new Vector3(0.1f, 0.1f, 0.1f);
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerCtrl = FindFirstObjectByType<PlayerController>();
         originalScale = transform.localScale;
         originalPosition = transform.position;
         //playerTransform = player.transform;
@@ -47,17 +55,24 @@ public class ScaleOnButton : MonoBehaviour
 
         if (lastSizeState == NEWPlayerInteraction.SizeState.Small)
         {
-            ScaleAroundPlayer(10f);
+            //ScaleAroundPlayer(10f);
+            SetScale(smallScale);
+            playerCtrl.Speed = 75f;
+
             //transform.position = new Vector3(0f, 10f, 25f);
         }
         else if (lastSizeState == NEWPlayerInteraction.SizeState.Big)
         {
 
-            ScaleAroundPlayer(0.05f);
+            //ScaleAroundPlayer(0.1f);
+            SetScale(bigScale);
+            playerCtrl.Speed = 5f;
         }
         else
         {
-            ScaleAroundPlayer(1f);
+            //ScaleAroundPlayer(1f);
+            SetScale(normalScale);
+            playerCtrl.Speed = 10f;
         }
         //float scaleFactor = 1f;
         /*
@@ -98,22 +113,18 @@ public class ScaleOnButton : MonoBehaviour
             SetScaleAroundPlayer(1f);
         }
     }*/
-    void ScaleAroundPlayer(float scaleFactor)
+
+    //void ScaleAroundPlayer(float scaleFactor)
+    void SetScale(Vector3 targetScale)
     {
 
-       
+        transform.localScale = targetScale;
 
-       // Vector3 pivot = new Vector3 (player.transform.position.x,0f, player.transform.position.z);
-
-        //Vector3 offset = transform.position - pivot;
-
-        //transform.position = pivot + offset * scaleFactor;
-
-        transform.localScale = originalScale * scaleFactor;
+        //transform.localScale = originalScale * scaleFactor;
         
     }
 
-    void SnapPlayerToGround()
+    /*void SnapPlayerToGround()
     {
         RaycastHit hit;
 
@@ -134,5 +145,5 @@ public class ScaleOnButton : MonoBehaviour
 
             player.transform.position = pos;
         }
-    }
+    }*/
 }
