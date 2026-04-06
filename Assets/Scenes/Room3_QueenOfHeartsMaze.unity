@@ -5245,6 +5245,7 @@ GameObject:
   - component: {fileID: 1639143032}
   - component: {fileID: 1639143031}
   - component: {fileID: 1639143037}
+  - component: {fileID: 1639143038}
   m_Layer: 6
   m_Name: DESKTOP_PLAYER
   m_TagString: Player
@@ -5460,6 +5461,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1639143038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639143030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f7e7a6d9370bd448bfd5e5aa6c413a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCameraTransform: {fileID: 1453689943}
+  pickUpLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  puzzleGrabPointTransform: {fileID: 761167726}
+  inventoryGrabPointTransform: {fileID: 761167726}
+  crosshairUIScript: {fileID: 443760485}
+  screenFade: {fileID: 1662484085}
+  nextScene: {fileID: 8300000, guid: 60dfb6f639c872346ae3298bb1e9d0e7, type: 3}
+  eatSound: {fileID: 8300000, guid: 1a65cacee76cf2444a414bb0970c82bd, type: 3}
+  currentSize: 0
 --- !u!1 &1655992101
 GameObject:
   m_ObjectHideFlags: 0
