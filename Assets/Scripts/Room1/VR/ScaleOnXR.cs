@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
-using static UnityEditor.PlayerSettings;
+// static UnityEditor.PlayerSettings;
 
 public class ScaleOnXR : MonoBehaviour
 {
