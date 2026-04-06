@@ -7,7 +7,7 @@ public class Room3Player : MonoBehaviour
     public Transform playerCameraTransform;
     public LayerMask pickUpLayerMask;
     public Transform objectGrabPointTransform;
-    public CrosshairUI crosshairUIScript;
+    public CrosshairUIRoom3 crosshairUIScript;
 
     [Header("Settings")]
     public float normalPickupDistance = 5f;
